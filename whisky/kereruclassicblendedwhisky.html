@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--icons-->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!--boostrap css-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!--google translate-->
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <!--swiper css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/productdetail.css" />
+
+    <title>Warbler</title>
+  </head>
+  <body>
+    <!--age-gate-->
+    <div class="age-gate" id="ageGate">
+      <form class="age-form col-12 col-lg-6 col-xl-4" id="ageForm">
+        <div class="form-logo">
+          <img src="../images/logo.png" />
+        </div>
+        <div class="form-head">
+          <h2>Great to see you! We must check if you are over 21</h2>
+        </div>
+        <div class="form-input">
+          <div class="input-year">
+            <label for="birthYear">Birth Year</label>
+            <input
+              type="tel"
+              id="birthYear"
+              maxlength="4"
+              placeholder="YYYY"
+              pattern="\d{4}"
+              title="Please enter a valid 4-digit year"
+              required
+            />
+          </div>
+          <div class="year-btn">
+            <button type="submit" class="btns">Submit</button>
+          </div>
+        </div>
+        <div class="remember-device">
+          <label>
+            <input
+              type="checkbox"
+              id="rememberCheckbox"
+              class="checkbox"
+              checked
+            />
+            Remember me on this device (unless shared)
+          </label>
+        </div>
+        <div class="conditions-drinking">
+          <p>
+            By entering this site, you are agreeing to our
+            <a href="#!"> Terms & Conditions </a>,
+            <a href="#!"> Privacy Policy </a> and
+            <a href="#!"> Cookie Policy </a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!--header-1-->
+    <div class="header1-container">
+      <!--menu-bar-->
+      <div class="menu-bar">
+        <i class="ph ph-list"></i>
+      </div>
+
+      <!--header lang-login-->
+      <div class="login-lang">
+        <div id="google_translate_element"></div>
+
+        <div class="login">
+          <i class="ph ph-user"></i>
+        </div>
+      </div>
+    </div>
+
+    <!--header-2 -->
+    <div class="header-2-wrapper">
+      <i class="ph-bold ph-x"></i>
+      <div class="header-2-content">
+        <div class="navigations">
+          <h4>navigations</h4>
+          <ul>
+            <a href="../index.html">
+              <li>Home</li>
+            </a>
+            <a href="../about.html">
+              <li>About Us</li>
+            </a>
+            <a href="../products.html">
+              <li>Products</li>
+            </a>
+            <a href="../event.html">
+              <li>Updates</li>
+            </a>
+            <a href="#!">
+              <li>Investors</li>
+            </a>
+            <a href="#!">
+              <li>Careers</li>
+            </a>
+            <a href="../contact.html">
+              <li>Contact Us</li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="header-icons-content">
+          <h4>Catalog</h4>
+          <div class="catalog-link">
+            <a href="#!" class="btns"> View Catalog</a>
+            <a href="#!" class="btns"> Download Catalog </a>
+          </div>
+        </div>
+
+        <!-- <div class="header-icons-content">
+      <h4>Socials</h4>
+      <div class="header-icons">
+        <a
+          href="https://youtube.com/@warbler2016?si=EMXUMqXMa9GkGQu0"
+          target="_blank"
+        >
+          <i class="ph-fill ph-youtube-logo"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/warbler.in/profilecard/?igsh=MXNiajU4a3Rqc3ZlNQ=="
+          target="_blank"
+        >
+          <i class="ph-fill ph-instagram-logo"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/19TZYW75c2/"
+          target="_blank"
+        >
+          <i class="ph-fill ph-facebook-logo"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/randhir-sharma-83a04a75?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+        >
+          <i class="ph-fill ph-linkedin-logo"></i>
+        </a>
+      </div>
+    </div> -->
+      </div>
+      <div class="header-2-image"></div>
+    </div>
+
+    <div class="description-wrapper">
+      <div class="container">
+        <div class="row description-row">
+          <div class="col-12 col-lg-6 order-2 order-lg-1 product-description">
+            <div class="description-1">
+              <h3>Whisky</h3>
+              <h2 class="head-2">Kereru Classic Blended Irish Whiskey </h2>
+              <p>
+                Kereru Classic Blended Irish Whiskey is a harmonious
+                fusion of premium grains and hand-selected malts, meticulously
+                distilled and matured in American oak casks. Its golden hue
+                reflects its rich Irish heritage, while the aroma entices with
+                mild, delicate notes of citrus, green tomato, and toasted oak.
+              </p>
+
+              <p>
+                On the palate, this masterful blend delivers a smooth, mellow
+                experience with the signature crispness of traditional Irish
+                whiskey. A soft, sweet vanilla undertone beautifully balances
+                the flavors, leading to a lingering finish of velvety oakiness.
+                Elegant and refined, this whiskey is a true celebration of
+                craftsmanship and tradition.
+              </p>
+            </div>
+
+            <div class="description-3">
+              <div>
+                <h3>VISUAL CHARACTERISTICS</h3>
+                <p>
+                  Kereru Classic Blended Irish Whiskey’s golden hue radiates
+                  warmth and depth, a testament to its meticulous maturation in
+                  select American oak casks. This rich, inviting color mirrors
+                  the smooth, velvety elegance of its crafted character.
+                </p>
+              </div>
+              <div>
+                <h3>AROMATIC CHARACTERISTICS</h3>
+                <p>
+                  The mild and soft aroma of Kereru Classic Blended
+                  Irish Whiskey blends delicate notes of citrus, green tomato,
+                  and toasted oak. This gentle bouquet creates a refined and
+                  inviting scent, capturing the essence of its smooth and
+                  crafted character.
+                </p>
+              </div>
+
+              <div>
+                <h3>TASTE CHARACTERISTICS</h3>
+                <p>
+                  Kereru Classic Blended Irish Whiskey offers a mellow,
+                  smooth taste with a classic crispness of Irish whiskey,
+                  balanced by a subtle sweetness of vanilla. Each sip reveals
+                  layers of flavor that unfold on the palate with elegance.
+                </p>
+              </div>
+              <div>
+                <h3>Aftertaste</h3>
+                <p>
+                  The aftertaste of Kereru Classic Blended Irish Whiskey
+                  lingers with a soft, velvety oakiness, enhanced by delicate
+                  notes of sweet vanilla. This harmonious finish leaves a
+                  lasting impression of smooth sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 order-1 order-lg-2 description-img-cont">
+            <div class="img-cont">
+              <img src="../images/bottle-sample.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="large-img">
+      <img src="../images/home-bg-2.jpg" />
+    </div>
+
+    <div class="description-section3">
+      <div class="container">
+        <div class="headings">
+          <h2>Discover Our Products</h2>
+          <p>
+            Browse our exclusive range of premium spirits, crafted to perfection
+            for every occasion.
+          </p>
+        </div>
+        <div class="product-slider-container">
+          <div class="swiper productSwiper">
+            <div class="swiper-wrapper">
+              <!-- Swiper slides -->
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Whisky</h4>
+                          <p>Delivers refined sophistication.</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Tequila</h4>
+                          <p>Vibrant elegance in every sip</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Sotol</h4>
+                          <p>Wild and untamed elegance</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Gin</h4>
+                          <p>Crafted for Timeless Cocktails</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Beer</h4>
+                          <p>Crafted for the good times.</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Rum's</h4>
+                          <p>Delivers refined sophistication.</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Brandy's</h4>
+                          <p>Delivers refined sophistication.</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="../products.html">
+                  <div class="product-card">
+                    <div class="card-img-container">
+                      <img src="../images/sample.png" alt="Product Image" />
+                    </div>
+                    <div class="card-content-layer">
+                      <div class="card-content">
+                        <div class="card-product-name">
+                          <h4>Liquer's</h4>
+                          <p>Delivers refined sophistication.</p>
+                        </div>
+                        <div class="card-arrow">
+                          <i class="ph-bold ph-caret-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div> -->
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer-bg">
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-12 col-lg-5 footer-content-1">
+            <img src="../images/logo.png" />
+            <p>
+              At Warbler’s, we proudly curate an exquisite selection of premium
+              liquors, crafted for exceptional craftsmanship and complex,
+              layered flavors. Every sip, whether for a grand celebration or
+              quiet reflection, is an experience of unmatched sophistication and
+              luxury.
+            </p>
+            <div>
+              <p>
+                <a href="#!"> Warbler Breweries pvt ltd </a>
+              </p>
+              <p>
+                <a href="#!">
+                  Plot no. 190, sector -7,IMT Manesar, Gurgaon
+                  -122050, Haryana, India
+                </a>
+              </p>
+            </div>
+            <p>"Respect Your Limits, Enjoy the Spirit."</p>
+          </div>
+          <div class="col-12 col-lg-7 footer-content">
+            <div class="footer-head">
+              <h2>Request more information</h2>
+              <a href="../contact.html">
+                <button type="button" class="btns">
+                  <span> contact us </span>
+                </button>
+              </a>
+            </div>
+            <p>
+              To learn more about the Warbler story, new releases, and upcoming
+              events, we welcome you to follow us :
+            </p>
+            <div class="social-icons">
+              <a
+                href="https://youtube.com/@warbler2016?si=EMXUMqXMa9GkGQu0"
+                target="_blank"
+              >
+                <i class="ph-fill ph-youtube-logo"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/warbler.in/profilecard/?igsh=MXNiajU4a3Rqc3ZlNQ=="
+                target="_blank"
+              >
+                <i class="ph-fill ph-instagram-logo"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/19TZYW75c2/"
+                target="_blank"
+              >
+                <i class="ph-fill ph-facebook-logo"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/randhir-sharma-83a04a75?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+              >
+                <i class="ph-fill ph-linkedin-logo"></i>
+              </a>
+            </div>
+
+            <div class="footer-quick-links">
+              <h4>Quick Links</h4>
+              <div class="quick-links">
+                <ul>
+                  <a href="../index.html">
+                    <li>Home</li>
+                  </a>
+                  <a href="../about.html">
+                    <li>About Us</li>
+                  </a>
+                  <a href="../products.html">
+                    <li>Products</li>
+                  </a>
+                  <a href="../event.html">
+                    <li>Updates</li>
+                  </a>
+
+                  <a href="../career.html">
+                    <li>Careers</li>
+                  </a>
+
+                  <a href="../investors.html">
+                    <li>Investors</li>
+                  </a>
+                  <a href="../contact.html">
+                    <li>Contact Us</li>
+                  </a>
+                  <a href="../privacy.html">
+                    <li>privacy policy</li>
+                  </a>
+                  <a href="../terms">
+                    <li>terms & conditions</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <p class="mb-0 copyright">
+              © 2024 - All Rights Reserved
+              <a href="../index.html">Warbler </a> and
+              <a href="#!"> Kereru </a>. Developed by
+              <a href="#!"> WGI </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--jquery cdn-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--swiper script-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--boostrap js-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--script-->
+    <script src="../script/index.js"></script>
+  </body>
+</html>
