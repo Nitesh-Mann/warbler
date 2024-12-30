@@ -1,11 +1,12 @@
 $(document).ready(function() {
   new google.translate.TranslateElement(
     {
-      includedLanguages: 'en'
+      includedLanguages: 'en,es,de,ru,fr'
     },
     'google_translate_element'
   );
 });
+
 
 
 
