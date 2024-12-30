@@ -8,8 +8,6 @@ $(document).ready(function() {
 });
 
 
-
-
 $(document).ready(function () {
   const $ageGate = $("#ageGate");
   const $ageForm = $("#ageForm");
