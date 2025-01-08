@@ -16,24 +16,58 @@ $(document).ready(function () {
 
 // google translate //
 
-$(document).ready(function () {
-    new google.translate.TranslateElement(
-      {
-        // pageLanguage: 'en', // Set default language to English
-        includedLanguages: 'en,es,de,ru,fr' // Specify the languages to be included
-      },
-      'google_translate_element'
-    );
+// $(document).ready(function () {
+//     new google.translate.TranslateElement(
+//       {
+//         // pageLanguage: 'en', // Set default language to English
+//         includedLanguages: 'en,es,de,ru,fr' // Specify the languages to be included
+//       },
+//       'google_translate_element'
+//     );
   
-    // Ensure the English option is selected by default
-    setTimeout(function () {
-      var select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = 'en'; // Set the value to English
-        select.dispatchEvent(new Event('change')); // Trigger the change event
-      }
-    }, 100); // Adjust delay if needed
-  });
+//     // Ensure the English option is selected by default
+//     setTimeout(function () {
+//       var select = document.querySelector('.goog-te-combo');
+//       if (select) {
+//         select.value = 'en'; // Set the value to English
+//         select.dispatchEvent(new Event('change')); // Trigger the change event
+//       }
+//     }, 100); // Adjust delay if needed
+//   });
+
+
+  $(document).ready(function () {
+    function initializeGoogleTranslate() {
+        new google.translate.TranslateElement(
+            {
+                includedLanguages: 'en,es,de,ru,fr' // Specify the languages to be included
+            },
+            'google_translate_element'
+        );
+
+        // Ensure the English option is selected by default
+        setTimeout(function () {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = 'en'; // Set the value to English
+                select.dispatchEvent(new Event('change')); // Trigger the change event
+            }
+        }, 100); // Adjust delay if needed
+    }
+
+    // Ensure the Google Translate widget is initialized on every page load
+    if (typeof google !== "undefined" && google.translate) {
+        initializeGoogleTranslate();
+    }
+
+    // If you use AJAX page navigation or SPA, listen for page load/reload events
+    $(document).on('page:change', function () {
+        if (typeof google !== "undefined" && google.translate) {
+            initializeGoogleTranslate();
+        }
+    });
+});
+
 
 // age-gate//
 $(document).ready(function () {
