@@ -765,80 +765,80 @@ $(document).ready(function () {
 
 
 //search bar //
-$(document).ready(function() {
-  let productsArray = [];
+// $(document).ready(function() {
+//   let productsArray = [];
 
-  // Fetch the JSON file and extract product types and product names
-  $.getJSON('/products/products.json', function(data) {
-    // Extracting keywords from 'product_type' and 'product_name' fields
-    $.each(data.products, function(category, items) {
-      $.each(items, function(index, item) {
-        productsArray.push(item.product_type.toLowerCase());
-        productsArray.push(item.product_name.toLowerCase());
-      });
-    });
-  });
+//   // Fetch the JSON file and extract product types and product names
+//   $.getJSON('/products/products.json', function(data) {
+//     // Extracting keywords from 'product_type' and 'product_name' fields
+//     $.each(data.products, function(category, items) {
+//       $.each(items, function(index, item) {
+//         productsArray.push(item.product_type.toLowerCase());
+//         productsArray.push(item.product_name.toLowerCase());
+//       });
+//     });
+//   });
 
-  // Search input event handler
-  $('#search-input').on('input', function() {
-    const query = $(this).val().toLowerCase();
-    $('.suggestions').empty(); // Clear previous suggestions
+//   // Search input event handler
+//   $('#search-input').on('input', function() {
+//     const query = $(this).val().toLowerCase();
+//     $('.suggestions').empty(); // Clear previous suggestions
 
-    if (query.length > 0) {
-      // Create a Set to remove duplicate suggestions
-      const filteredSuggestions = [...new Set(productsArray.filter(function(item) {
-        return item.includes(query);
-      }))];
+//     if (query.length > 0) {
+//       // Create a Set to remove duplicate suggestions
+//       const filteredSuggestions = [...new Set(productsArray.filter(function(item) {
+//         return item.includes(query);
+//       }))];
 
-      // Loop through the filtered suggestions and append to suggestions div
-      $.each(filteredSuggestions, function(index, suggestion) {
-        const suggestionElement = $('<div>')
-          .addClass('suggestion-item')
-          .text(suggestion)
-          .on('click', function() {
-            $('#search-input').val(suggestion);
-            $('.suggestions').empty(); // Clear suggestions after selection
-            window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion); // Redirect to search results page
-          });
+//       // Loop through the filtered suggestions and append to suggestions div
+//       $.each(filteredSuggestions, function(index, suggestion) {
+//         const suggestionElement = $('<div>')
+//           .addClass('suggestion-item')
+//           .text(suggestion)
+//           .on('click', function() {
+//             $('#search-input').val(suggestion);
+//             $('.suggestions').empty(); // Clear suggestions after selection
+//             window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion); // Redirect to search results page
+//           });
 
-        $('.suggestions').append(suggestionElement);
-      });
-    }
-  });
+//         $('.suggestions').append(suggestionElement);
+//       });
+//     }
+//   });
 
-  // Handle the Enter key to trigger search
-  $('#search-input').on('keypress', function(e) {
-    if (e.which === 13) { // Enter key
-      const query = $(this).val().toLowerCase();
-      if (query.length > 0 && productsArray.includes(query)) {
-        window.location.href = 'searchresult.html?query=' + encodeURIComponent(query); // Redirect to search results page
-        $('#search-input').val(''); // Clear the search input after redirect
-      } else {
-        // Handle cases where the query doesn't match any suggestion
-        // For example, you can show a message or perform a different action
-        console.log('No matching product found.');
-      }
-      e.preventDefault(); // Prevent default form submission
-    }
-  });
+//   // Handle the Enter key to trigger search
+//   $('#search-input').on('keypress', function(e) {
+//     if (e.which === 13) { // Enter key
+//       const query = $(this).val().toLowerCase();
+//       if (query.length > 0 && productsArray.includes(query)) {
+//         window.location.href = 'searchresult.html?query=' + encodeURIComponent(query); // Redirect to search results page
+//         $('#search-input').val(''); // Clear the search input after redirect
+//       } else {
+//         // Handle cases where the query doesn't match any suggestion
+//         // For example, you can show a message or perform a different action
+//         console.log('No matching product found.');
+//       }
+//       e.preventDefault(); // Prevent default form submission
+//     }
+//   });
 
-  // Clear the input when the user leaves the page
-  $(window).on('beforeunload', function() {
-    $('#search-input').val(''); // Clear the input field before leaving
-  });
-});  
+//   // Clear the input when the user leaves the page
+//   $(window).on('beforeunload', function() {
+//     $('#search-input').val(''); // Clear the input field before leaving
+//   });
+// });  
 
 
-// prevent user to go back on search page //
-$(document).ready(function() {
-  // Set a flag in sessionStorage indicating that the user is on the search result page
-  sessionStorage.setItem('visitedSearchResult', 'true');
+// // prevent user to go back on search page //
+// $(document).ready(function() {
+//   // Set a flag in sessionStorage indicating that the user is on the search result page
+//   sessionStorage.setItem('visitedSearchResult', 'true');
 
-  // When the user leaves the searchresult.html page, clear the flag
-  $(window).on('beforeunload', function() {
-    sessionStorage.removeItem('visitedSearchResult'); // Remove the visited flag when leaving the page
-  });
-});
+//   // When the user leaves the searchresult.html page, clear the flag
+//   $(window).on('beforeunload', function() {
+//     sessionStorage.removeItem('visitedSearchResult'); // Remove the visited flag when leaving the page
+//   });
+// });
 
 
 $(document).ready(function() {
