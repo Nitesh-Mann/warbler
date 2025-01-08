@@ -35,18 +35,6 @@ $(document).ready(function () {
     }, 100); // Adjust delay if needed
   });
 
-  window.onload = function() {
-    if (!sessionStorage.getItem('hasRefreshed')) {
-        sessionStorage.setItem('hasRefreshed', 'true');
-        location.reload();
-    } else {
-        sessionStorage.removeItem('hasRefreshed');
-        // Your normal page logic here
-    }
-};
-
-
-
 // age-gate//
 $(document).ready(function () {
   const $ageGate = $("#ageGate");
