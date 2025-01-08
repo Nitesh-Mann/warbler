@@ -189,16 +189,6 @@ $(document).ready(function () {
     });
   });
 
-
-  //scroll to section//
-
-  
-  
-  
-
-
-
-
 //product swiper //
 
 // Swiper initialization
