@@ -1,11 +1,20 @@
-window.addEventListener("popstate", function() {
-  window.location.reload();
-});
+// Function to automatically refresh the page on URL change
+function autoRefreshOnUrlChange() {
+  // Listen for changes in the history state (URL change)
+  window.addEventListener('popstate', function() {
+      location.reload(); // Refresh the page
+  });
 
-window.addEventListener('hashchange', function() {
-  window.location.reload();
-});
+  // To cover URL changes done using history.pushState or history.replaceState
+  const originalPushState = history.pushState;
+  history.pushState = function(state, title, url) {
+      originalPushState.apply(history, arguments);
+      location.reload(); // Refresh the page
+  };
+}
 
+// Call the function to enable auto-refresh
+autoRefreshOnUrlChange();
 
 
 // loader//
@@ -41,10 +50,8 @@ $(document).ready(function () {
         select.value = 'en'; // Set the value to English
         select.dispatchEvent(new Event('change')); // Trigger the change event
       }
-    }, 100); // Adjust delay if needed
+    }, 0); // Adjust delay if needed
   });
-
-
 
 
 // age-gate//
