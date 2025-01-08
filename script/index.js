@@ -129,29 +129,34 @@ $(document).ready(function () {
 });
 
   // header //
-$(document).ready(function() {
+  $(document).ready(function() {
     const $menuBar = $(".menu-bar");
     const $closeButton = $(".ph-x");
     const $headerWrapper = $(".header-2-wrapper");
-  
+    const $headerImage = $(".header-2-image"); // Select the header image element
+    
     $menuBar.on("click", function() {
       $headerWrapper.toggleClass("show-header-2");
       toggleBodyScroll($headerWrapper.hasClass("show-header-2"));
     });
-  
   
     $closeButton.on("click", function() {
       $headerWrapper.removeClass("show-header-2");
       toggleBodyScroll(false);
     });
   
+    // Close the header when clicking on the header image
+    $headerImage.on("click", function() {
+      $headerWrapper.removeClass("show-header-2");
+      toggleBodyScroll(false);
+    });
   
     // Function to toggle body scrolling
     const toggleBodyScroll = (disable) => {
       $("body").css("overflow", disable ? "hidden" : "");
     };
   });
-
+  
   // search bar show and hide  //
 
   $(document).ready(function() {
@@ -184,6 +189,49 @@ $(document).ready(function() {
     });
   });
   
+
+  //scroll to section in header //
+
+  $(document).ready(function () {
+    // Delay the scroll to allow the page to fully render
+    setTimeout(() => {
+      // Check for query parameter or hash in the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetId = urlParams.get("target") || window.location.hash.substring(1);
+
+      if (targetId) {
+        const $targetSection = $("#" + targetId);
+
+        if ($targetSection.length) {
+          // Get the offset of the target section
+          const offset = $targetSection.offset().top;
+
+          // Adjust for fixed header height (replace '50' with your header height)
+          const headerHeight = $("header").outerHeight() || 0;
+
+          // Smooth scroll to the section
+          $("html, body").animate(
+            {
+              scrollTop: offset - headerHeight,
+            },
+            800 // Duration in milliseconds
+          );
+        }
+      }
+    }, 200); // Delay in milliseconds to ensure the page is fully rendered
+  });
+
+  $("a[data-target]").on("click", function (e) {
+    e.preventDefault(); // Prevent default link behavior
+  
+    const targetId = $(this).data("target");
+  
+    if (targetId) {
+      // Redirect to products.html with the target ID as a query parameter
+      window.location.href = `products.html?target=${targetId}`;
+    }
+  });
+
   
 //product swiper //
 
@@ -947,7 +995,6 @@ $(document).ready(function() {
     }
   });
 });
-
 
 
 // search bar for on searchresult page //
