@@ -13,6 +13,9 @@ $(document).ready(function () {
   $('#loader').show();
 });
 
+
+
+
 // google translate //
 
 $(document).ready(function () {
@@ -47,23 +50,21 @@ $(document).ready(function () {
   };
 
   // Function to trigger GSAP animations
-
-  //Home page //
-  // const triggerAnimations = () => {
-  //   gsap.from(".animation-1", {
-  //     delay:0.8,
-  //     duration: 0.8,
-  //     y: 100,
-  //     opacity: 0,
-  //     stagger:0.1,
-  //   });
-  //   gsap.from(".header1-container", {
-  //     delay:0.8,
-  //     duration: 0.8,
-  //     y: -100,
-  //     opacity: 0,
-  //   });
-  // };
+  const triggerAnimations = () => {
+    gsap.from(".animation-1", {
+      delay:0.8,
+      duration: 0.8,
+      y: 100,
+      opacity: 0,
+      stagger:0.1,
+    });
+    gsap.from(".header1-container", {
+      delay:0.8,
+      duration: 0.8,
+      y: -100,
+      opacity: 0,
+    });
+  };
 
   // Check if the user has already verified their age
   const ageVerified = localStorage.getItem("ageVerified");
