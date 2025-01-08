@@ -16,36 +16,15 @@ $(document).ready(function () {
 
 // google translate //
 
-// $(document).ready(function () {
-//     new google.translate.TranslateElement(
-//       {
-//         // pageLanguage: 'en', // Set default language to English
-//         includedLanguages: 'en,es,de,ru,fr' // Specify the languages to be included
-//       },
-//       'google_translate_element'
-//     );
-  
-//     // Ensure the English option is selected by default
-//     setTimeout(function () {
-//       var select = document.querySelector('.goog-te-combo');
-//       if (select) {
-//         select.value = 'en'; // Set the value to English
-//         select.dispatchEvent(new Event('change')); // Trigger the change event
-//       }
-//     }, 100); // Adjust delay if needed
-//   });
-
 $(document).ready(function () {
-  // Function to initialize Google Translate
-  const initializeGoogleTranslate = () => {
     new google.translate.TranslateElement(
       {
         // pageLanguage: 'en', // Set default language to English
-        includedLanguages: 'en,es,de,ru,fr', // Specify the languages to be included
+        includedLanguages: 'en,es,de,ru,fr' // Specify the languages to be included
       },
       'google_translate_element'
     );
-
+  
     // Ensure the English option is selected by default
     setTimeout(function () {
       var select = document.querySelector('.goog-te-combo');
@@ -54,19 +33,17 @@ $(document).ready(function () {
         select.dispatchEvent(new Event('change')); // Trigger the change event
       }
     }, 100); // Adjust delay if needed
-  };
-
-  // Initialize Google Translate on page load
-  initializeGoogleTranslate();
-
-  // Listen for page navigation or custom events
-  $(window).on('pageChange', function () {
-    // Clear previous Google Translate element if necessary
-    $('#google_translate_element').empty();
-    initializeGoogleTranslate();
   });
-});
 
+  window.onload = function() {
+    if (!sessionStorage.getItem('hasRefreshed')) {
+        sessionStorage.setItem('hasRefreshed', 'true');
+        location.reload();
+    } else {
+        sessionStorage.removeItem('hasRefreshed');
+        // Your normal page logic here
+    }
+};
 
 
 
