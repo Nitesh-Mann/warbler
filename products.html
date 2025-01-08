@@ -635,6 +635,69 @@
     <script src="./script/index.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        const targetId = window.location.hash.slice(1); // Extract the target ID (e.g., "beer")
+
+        if (targetId) {
+          const scrollToTarget = () => {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+              window.scrollTo({
+                top: targetPosition - 100, // Adjust for fixed headers
+                behavior: "smooth",
+              });
+            }
+          };
+
+          const waitForContentAndScroll = () => {
+            const targetContainer = document.getElementById(
+              `${targetId}-products`
+            );
+
+            // Check if the dynamic content has loaded
+            const isContentLoaded =
+              targetContainer &&
+              targetContainer.querySelectorAll(".swiper-slide").length > 0;
+
+            if (isContentLoaded) {
+              scrollToTarget();
+            } else {
+              // Retry after a small delay
+              setTimeout(waitForContentAndScroll, 100);
+            }
+          };
+
+          // Delay initial scrolling until everything is fully loaded
+          const ensureCompleteScroll = () => {
+            scrollToTarget();
+            setTimeout(() => {
+              // Recheck the position and scroll again if needed
+              const targetElement = document.getElementById(targetId);
+              const correctedPosition =
+                targetElement.getBoundingClientRect().top + window.pageYOffset;
+              const currentScroll = window.pageYOffset;
+
+              if (Math.abs(correctedPosition - currentScroll) > 10) {
+                // If the target is not fully reached, adjust the scroll
+                window.scrollTo({
+                  top: correctedPosition - -20,
+                  behavior: "smooth",
+                });
+              }
+            }, 500); // Wait for layout to stabilize
+          };
+
+          // Start by waiting for dynamic content, then ensure scrolling is accurate
+          waitForContentAndScroll();
+          window.addEventListener("load", ensureCompleteScroll);
+        }
+      });
+    </script>
+
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
         const targetId = window.location.hash.slice(1); // Removes the '#' from the hash
 
         if (targetId) {
@@ -660,6 +723,6 @@
           }
         }
       });
-    </script>
+    </script> -->
   </body>
 </html>
