@@ -1,17 +1,17 @@
+
 // loader//
 
 $(window).on('load', function () {
   // Add a delay before hiding the loader
   setTimeout(function () {
-    $('#loader').fadeOut('slow'); // Smoothly hide the loader
-  },100); // Delay of 2000ms (2 seconds)
+    $('#loader').fadeOut('fast'); // Smoothly hide the loader
+  },0); // Delay of 2000ms (2 seconds)
 });
 
 $(document).ready(function () {
   // Ensure the loader is visible while the page is loading
   $('#loader').show();
 });
-
 
 // google translate //
 
@@ -49,21 +49,21 @@ $(document).ready(function () {
   // Function to trigger GSAP animations
 
   //Home page //
-  const triggerAnimations = () => {
-    gsap.from(".animation-1", {
-      delay:0.8,
-      duration: 0.8,
-      y: 100,
-      opacity: 0,
-      stagger:0.1,
-    });
-    gsap.from(".header1-container", {
-      delay:0.8,
-      duration: 0.8,
-      y: -100,
-      opacity: 0,
-    });
-  };
+  // const triggerAnimations = () => {
+  //   gsap.from(".animation-1", {
+  //     delay:0.8,
+  //     duration: 0.8,
+  //     y: 100,
+  //     opacity: 0,
+  //     stagger:0.1,
+  //   });
+  //   gsap.from(".header1-container", {
+  //     delay:0.8,
+  //     duration: 0.8,
+  //     y: -100,
+  //     opacity: 0,
+  //   });
+  // };
 
   // Check if the user has already verified their age
   const ageVerified = localStorage.getItem("ageVerified");
@@ -188,51 +188,17 @@ $(document).ready(function () {
       event.stopPropagation();
     });
   });
-  
 
-  //scroll to section in header //
 
-  $(document).ready(function () {
-    // Delay the scroll to allow the page to fully render
-    setTimeout(() => {
-      // Check for query parameter or hash in the URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const targetId = urlParams.get("target") || window.location.hash.substring(1);
-
-      if (targetId) {
-        const $targetSection = $("#" + targetId);
-
-        if ($targetSection.length) {
-          // Get the offset of the target section
-          const offset = $targetSection.offset().top;
-
-          // Adjust for fixed header height (replace '50' with your header height)
-          const headerHeight = $("header").outerHeight() || 0;
-
-          // Smooth scroll to the section
-          $("html, body").animate(
-            {
-              scrollTop: offset - headerHeight,
-            },
-            800 // Duration in milliseconds
-          );
-        }
-      }
-    }, 200); // Delay in milliseconds to ensure the page is fully rendered
-  });
-
-  $("a[data-target]").on("click", function (e) {
-    e.preventDefault(); // Prevent default link behavior
-  
-    const targetId = $(this).data("target");
-  
-    if (targetId) {
-      // Redirect to products.html with the target ID as a query parameter
-      window.location.href = `products.html?target=${targetId}`;
-    }
-  });
+  //scroll to section//
 
   
+  
+  
+
+
+
+
 //product swiper //
 
 // Swiper initialization

@@ -124,6 +124,7 @@
 
 .product-1-wrapper {
   border-bottom: 2px solid var(--color5);
+  min-height: 100vh;
 }
 
 #beer {
