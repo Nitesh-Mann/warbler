@@ -1,10 +1,3 @@
-window.addEventListener("popstate", function() {
-  window.location.reload();
-});
-
-window.addEventListener('hashchange', function() {
-  window.location.reload();
-});
 
 
 // loader//
