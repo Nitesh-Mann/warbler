@@ -856,9 +856,9 @@ $(document).ready(function() {
 // search products display//
 
 $(document).ready(function() {
-  // Get the search query from the URL
+  // Get the search query from the URL, and ensure it's safe
   const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('query').toLowerCase();
+  const query = urlParams.get('query') ? urlParams.get('query').toLowerCase() : '';
 
   // Fetch the JSON file and extract product data
   $.getJSON('/products/products.json', function(data) {
@@ -867,8 +867,8 @@ $(document).ready(function() {
     // Loop through the data and filter products based on the search query
     $.each(data.products, function(category, items) {
       $.each(items, function(index, item) {
-        const productName = item.product_name.toLowerCase();
-        const productType = item.product_type.toLowerCase();
+        const productName = item.product_name ? item.product_name.toLowerCase() : '';
+        const productType = item.product_type ? item.product_type.toLowerCase() : '';
 
         // Check if either product name or product type matches the query
         if (productName.includes(query) || productType.includes(query)) {
@@ -880,7 +880,7 @@ $(document).ready(function() {
     const productsPerPage = 6;
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-    // Display the filtered products for the first page
+    // Display the filtered products for the current page
     function displayProducts(page) {
       const startIndex = (page - 1) * productsPerPage;
       const endIndex = page * productsPerPage;
@@ -902,7 +902,7 @@ $(document).ready(function() {
               <div class="product-card">
                 ${ribbonHTML} <!-- Only include the ribbon if it exists -->
                 <div class="card-img-container">
-                  <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
+                  <img src="${product.image || './images/bottle-sample.png'}" alt="product image" class="product-image" />
                 </div>
                 <div class="card-content">
                   <div class="card-product-name">
@@ -926,11 +926,12 @@ $(document).ready(function() {
     function createPagination() {
       if (totalPages > 1) {
         let paginationHTML = '<div class="pagination">';
-        
+
+        // Create page links
         for (let i = 1; i <= totalPages; i++) {
           paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
         }
-        
+
         paginationHTML += '</div>';
         $('.pagination-container').html(paginationHTML);
 
@@ -955,7 +956,179 @@ $(document).ready(function() {
 });
 
 
+// $(document).ready(function() {
+//   // Get the search query from the URL
+//   const urlParams = new URLSearchParams(window.location.search);
+//   const query = urlParams.get('query').toLowerCase();
+
+//   // Fetch the JSON file and extract product data
+//   $.getJSON('/products/products.json', function(data) {
+//     const filteredProducts = [];
+
+//     // Loop through the data and filter products based on the search query
+//     $.each(data.products, function(category, items) {
+//       $.each(items, function(index, item) {
+//         const productName = item.product_name.toLowerCase();
+//         const productType = item.product_type.toLowerCase();
+
+//         // Check if either product name or product type matches the query
+//         if (productName.includes(query) || productType.includes(query)) {
+//           filteredProducts.push(item);
+//         }
+//       });
+//     });
+
+//     const productsPerPage = 6;
+//     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+//     // Display the filtered products for the first page
+//     function displayProducts(page) {
+//       const startIndex = (page - 1) * productsPerPage;
+//       const endIndex = page * productsPerPage;
+//       const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+//       // Clear the current list
+//       $('.search-products-list .row').html('');
+
+//       // Loop through and display the products for the current page
+//       $.each(productsToShow, function(index, product) {
+//         let ribbonHTML = '';
+//         if (product.ribbon_image && product.ribbon_image !== '') {
+//           ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
+//         }
+
+//         const productCard = `
+//           <div class="col-4">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonHTML} <!-- Only include the ribbon if it exists -->
+//                 <div class="card-img-container">
+//                   <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+
+//         $('.search-products-list .row').append(productCard);
+//       });
+//     }
+
+//     // Pagination logic
+//     function createPagination() {
+//       if (totalPages > 1) {
+//         let paginationHTML = '<div class="pagination">';
+        
+//         for (let i = 1; i <= totalPages; i++) {
+//           paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
+//         }
+        
+//         paginationHTML += '</div>';
+//         $('.pagination-container').html(paginationHTML);
+
+//         // Handle page link click
+//         $('.page-link').on('click', function(event) {
+//           event.preventDefault();
+//           const page = $(this).data('page');
+//           displayProducts(page);
+//         });
+//       }
+//     }
+
+//     // Display products and pagination
+//     if (filteredProducts.length > 0) {
+//       displayProducts(1); // Show first page of products
+//       createPagination();  // Create pagination links
+//     } else {
+//       // Show a message if no products are found
+//       $('.search-products-list .row').html('<p>No products found matching your search.</p>');
+//     }
+//   });
+// });
+
+
 // search bar for on searchresult page //
+// $(document).ready(function() {
+//   function setupSearchBar(searchBarId, jsonFilePath, suggestionsClass) {
+//     let productsArray = [];
+
+//     // Fetch the JSON file and extract product types and product names
+//     $.getJSON(jsonFilePath, function(data) {
+//       $.each(data.products, function(category, items) {
+//         $.each(items, function(index, item) {
+//           productsArray.push(item.product_type.toLowerCase());
+//           productsArray.push(item.product_name.toLowerCase());
+//         });
+//       });
+//     });
+
+//     // Check if there's a search query in the URL (for search results page)
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const queryParam = urlParams.get('query');
+//     if (queryParam) {
+//       $(`#${searchBarId} #search-input`).val(decodeURIComponent(queryParam)); // Set the input value to the query
+//     }
+
+//     // Search input event handler
+//     $(`#${searchBarId} #search-input`).on('input', function() {
+//       const query = $(this).val().toLowerCase();
+//       $(`#${searchBarId} .${suggestionsClass}`).empty(); // Clear previous suggestions
+
+//       if (query.length > 0) {
+//         const filteredSuggestions = [...new Set(productsArray.filter(function(item) {
+//           return item.includes(query);
+//         }))];
+
+//         $.each(filteredSuggestions, function(index, suggestion) {
+//           const suggestionElement = $('<div>')
+//             .addClass('suggestion-item')
+//             .text(suggestion)
+//             .on('click', function() {
+//               // Set the clicked suggestion as the value of the input
+//               $(`#${searchBarId} #search-input`).val(suggestion);
+//               $(`#${searchBarId} .${suggestionsClass}`).empty();
+//               window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion);
+//             });
+
+//           $(`#${searchBarId} .${suggestionsClass}`).append(suggestionElement);
+//         });
+//       }
+//     });
+
+//     // Handle the Enter key to trigger search
+//     $(`#${searchBarId} #search-input`).on('keypress', function(e) {
+//       if (e.which === 13) {
+//         const query = $(this).val().toLowerCase();
+//         if (query.length > 0 && productsArray.includes(query)) {
+//           // Navigate to the search results page and keep the search term in the input field
+//           window.location.href = 'searchresult.html?query=' + encodeURIComponent(query);
+//         } else {
+//           // If no match is found, keep the input field value as is
+//           console.log('No matching product found.');
+//         }
+//         e.preventDefault();
+//       }
+//     });
+
+//     // Clear the input when the user leaves the page
+//     $(window).on('beforeunload', function() {
+//       $(`#${searchBarId} #search-input`).val('');
+//     });
+//   }
+
+//   // Initialize the search bar
+//   setupSearchBar('searchbar-2', '/products/products.json', 'suggestions');
+// });
+
 $(document).ready(function() {
   function setupSearchBar(searchBarId, jsonFilePath, suggestionsClass) {
     let productsArray = [];
@@ -1005,14 +1178,10 @@ $(document).ready(function() {
 
     // Handle the Enter key to trigger search
     $(`#${searchBarId} #search-input`).on('keypress', function(e) {
+      const query = $(this).val().toLowerCase();
       if (e.which === 13) {
-        const query = $(this).val().toLowerCase();
-        if (query.length > 0 && productsArray.includes(query)) {
-          // Navigate to the search results page and keep the search term in the input field
+        if (query.length > 0) {
           window.location.href = 'searchresult.html?query=' + encodeURIComponent(query);
-        } else {
-          // If no match is found, keep the input field value as is
-          console.log('No matching product found.');
         }
         e.preventDefault();
       }
@@ -1022,15 +1191,16 @@ $(document).ready(function() {
     $(window).on('beforeunload', function() {
       $(`#${searchBarId} #search-input`).val('');
     });
+
+    // Reset input on page load if no query parameter
+    if (!queryParam) {
+      $(`#${searchBarId} #search-input`).val('');
+    }
   }
 
   // Initialize the search bar
   setupSearchBar('searchbar-2', '/products/products.json', 'suggestions');
 });
-
-
-
-
 
 
 
