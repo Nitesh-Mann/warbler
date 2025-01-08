@@ -378,294 +378,293 @@ $(document).ready(function () {
 });
 
 
-
 //whisky products //
 
-// $(document).ready(function () {
-//   // Fetch the JSON file from the "products" folder
-//   $.getJSON("/products/products.json", function (data) {
-//     // Access both whisky and new arrivals product data
-//     const whisky = data.products.whisky;
-//     const newArrivals = data.products["new-arrivals"];
+$(document).ready(function () {
+  // Fetch the JSON file from the "products" folder
+  $.getJSON("/products/products.json", function (data) {
+    // Access both whisky and new arrivals product data
+    const whisky = data.products.whisky;
+    const newArrivals = data.products["new-arrivals"];
 
-//     // Combine both whisky and new-arrivals into a single array
-//     const combinedProducts = whisky.concat(newArrivals.filter(function (newArrival) {
-//       // Only include new arrival products with a type matching whisky products
-//       return whisky.some(function (whiskyProduct) {
-//         return whiskyProduct.product_type === newArrival.product_type;
-//       });
-//     }));
+    // Combine both whisky and new-arrivals into a single array
+    const combinedProducts = whisky.concat(newArrivals.filter(function (newArrival) {
+      // Only include new arrival products with a type matching whisky products
+      return whisky.some(function (whiskyProduct) {
+        return whiskyProduct.product_type === newArrival.product_type;
+      });
+    }));
 
-//     // Loop through the combined array and construct a slide for each product
-//     let slides = '';
-//     combinedProducts.forEach(function (product) {
-//       // Check if ribbon image exists before adding it to the slide
-//       const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
+    // Loop through the combined array and construct a slide for each product
+    let slides = '';
+    combinedProducts.forEach(function (product) {
+      // Check if ribbon image exists before adding it to the slide
+      const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
 
-//       const slide = `
-//   <div class="swiper-slide">
-//     <a href="productdetails.html?id=${product.id}">
-//       <div class="product-card">
-//         ${ribbonImage}  <!-- Only adds ribbon if available -->
-//         <div class="card-img-container">
-//           <img
-//             src="${product.images.product_image}"
-//             alt="${product.product_name}"
-//             class="product-image"
-//           />
-//         </div>
-//         <div class="card-content">
-//           <div class="card-product-name">
-//             <h4 class="product-type">${product.product_type}</h4>
-//             <p class="product-name">${product.product_name}</p>
-//           </div>
-//           <div class="card-arrow">
-//             <i class="ph-bold ph-caret-right"></i>
-//           </div>
-//         </div>
-//       </div>
-//     </a>
-//   </div>
-// `;
-//       slides += slide;
-//     });
+      const slide = `
+  <div class="swiper-slide">
+    <a href="productdetails.html?id=${product.id}">
+      <div class="product-card">
+        ${ribbonImage}  <!-- Only adds ribbon if available -->
+        <div class="card-img-container">
+          <img
+            src="${product.images.product_image}"
+            alt="${product.product_name}"
+            class="product-image"
+          />
+        </div>
+        <div class="card-content">
+          <div class="card-product-name">
+            <h4 class="product-type">${product.product_type}</h4>
+            <p class="product-name">${product.product_name}</p>
+          </div>
+          <div class="card-arrow">
+            <i class="ph-bold ph-caret-right"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+`;
+      slides += slide;
+    });
 
-//     // Append the slides to the specific Swiper wrapper inside #whisky-products
-//     $("#whisky-products .swiper-wrapper").html(slides);
-//   }).fail(function () {
-//     console.error("Error loading JSON file.");
-//   });
-// });
+    // Append the slides to the specific Swiper wrapper inside #whisky-products
+    $("#whisky-products .swiper-wrapper").html(slides);
+  }).fail(function () {
+    console.error("Error loading JSON file.");
+  });
+});
 
 
 // tequila products //
-// $(document).ready(function () {
-//   // Fetch the JSON file from the "products" folder
-//   $.getJSON("/products/products.json", function (data) {
-//     // Access both tequila and new arrivals product data
-//     const tequila = data.products.tequila;
-//     const newArrivals = data.products["new-arrivals"];
+$(document).ready(function () {
+  // Fetch the JSON file from the "products" folder
+  $.getJSON("/products/products.json", function (data) {
+    // Access both tequila and new arrivals product data
+    const tequila = data.products.tequila;
+    const newArrivals = data.products["new-arrivals"];
 
-//     // Combine both tequila and new-arrivals into a single array
-//     const combinedProducts = tequila.concat(newArrivals.filter(function (newArrival) {
-//       // Only include new arrival products with a type matching tequila products
-//       return tequila.some(function (tequilaProduct) {
-//         return tequilaProduct.product_type === newArrival.product_type;
-//       });
-//     }));
+    // Combine both tequila and new-arrivals into a single array
+    const combinedProducts = tequila.concat(newArrivals.filter(function (newArrival) {
+      // Only include new arrival products with a type matching tequila products
+      return tequila.some(function (tequilaProduct) {
+        return tequilaProduct.product_type === newArrival.product_type;
+      });
+    }));
 
-//     // Loop through the combined array and construct a slide for each product
-//     let slides = '';
-//     combinedProducts.forEach(function (product) {
-//       // Check if ribbon image exists before adding it to the slide
-//       const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
+    // Loop through the combined array and construct a slide for each product
+    let slides = '';
+    combinedProducts.forEach(function (product) {
+      // Check if ribbon image exists before adding it to the slide
+      const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
 
-//       const slide = `
-//   <div class="swiper-slide">
-//     <a href="productdetails.html?id=${product.id}">
-//       <div class="product-card">
-//         ${ribbonImage}  <!-- Only adds ribbon if available -->
-//         <div class="card-img-container">
-//           <img
-//             src="${product.images.product_image}"
-//             alt="${product.product_name}"
-//             class="product-image"
-//           />
-//         </div>
-//         <div class="card-content">
-//           <div class="card-product-name">
-//             <h4 class="product-type">${product.product_type}</h4>
-//             <p class="product-name">${product.product_name}</p>
-//           </div>
-//           <div class="card-arrow">
-//             <i class="ph-bold ph-caret-right"></i>
-//           </div>
-//         </div>
-//       </div>
-//     </a>
-//   </div>
-// `;
-//       slides += slide;
-//     });
+      const slide = `
+  <div class="swiper-slide">
+    <a href="productdetails.html?id=${product.id}">
+      <div class="product-card">
+        ${ribbonImage}  <!-- Only adds ribbon if available -->
+        <div class="card-img-container">
+          <img
+            src="${product.images.product_image}"
+            alt="${product.product_name}"
+            class="product-image"
+          />
+        </div>
+        <div class="card-content">
+          <div class="card-product-name">
+            <h4 class="product-type">${product.product_type}</h4>
+            <p class="product-name">${product.product_name}</p>
+          </div>
+          <div class="card-arrow">
+            <i class="ph-bold ph-caret-right"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+`;
+      slides += slide;
+    });
 
-//     // Append the slides to the specific Swiper wrapper inside #tequila-products
-//     $("#tequila-products .swiper-wrapper").html(slides);
-//   }).fail(function () {
-//     console.error("Error loading JSON file.");
-//   });
-// });
+    // Append the slides to the specific Swiper wrapper inside #tequila-products
+    $("#tequila-products .swiper-wrapper").html(slides);
+  }).fail(function () {
+    console.error("Error loading JSON file.");
+  });
+});
 
 // sotol products //
-// $(document).ready(function () {
-//   // Fetch the JSON file from the "products" folder
-//   $.getJSON("/products/products.json", function (data) {
-//     // Access both sotol and new arrivals product data
-//     const sotol = data.products.sotol;
-//     const newArrivals = data.products["new-arrivals"];
+$(document).ready(function () {
+  // Fetch the JSON file from the "products" folder
+  $.getJSON("/products/products.json", function (data) {
+    // Access both sotol and new arrivals product data
+    const sotol = data.products.sotol;
+    const newArrivals = data.products["new-arrivals"];
 
-//     // Combine both sotol and new-arrivals into a single array
-//     const combinedProducts = sotol.concat(newArrivals.filter(function (newArrival) {
-//       // Only include new arrival products with a type matching sotol products
-//       return sotol.some(function (sotolProduct) {
-//         return sotolProduct.product_type === newArrival.product_type;
-//       });
-//     }));
+    // Combine both sotol and new-arrivals into a single array
+    const combinedProducts = sotol.concat(newArrivals.filter(function (newArrival) {
+      // Only include new arrival products with a type matching sotol products
+      return sotol.some(function (sotolProduct) {
+        return sotolProduct.product_type === newArrival.product_type;
+      });
+    }));
 
-//     // Loop through the combined array and construct a slide for each product
-//     let slides = '';
-//     combinedProducts.forEach(function (product) {
-//       // Check if ribbon image exists before adding it to the slide
-//       const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
+    // Loop through the combined array and construct a slide for each product
+    let slides = '';
+    combinedProducts.forEach(function (product) {
+      // Check if ribbon image exists before adding it to the slide
+      const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
 
-//       const slide = `
-//   <div class="swiper-slide">
-//     <a href="productdetails.html?id=${product.id}">
-//       <div class="product-card">
-//         ${ribbonImage}  <!-- Only adds ribbon if available -->
-//         <div class="card-img-container">
-//           <img
-//             src="${product.images.product_image}"
-//             alt="${product.product_name}"
-//             class="product-image"
-//           />
-//         </div>
-//         <div class="card-content">
-//           <div class="card-product-name">
-//             <h4 class="product-type">${product.product_type}</h4>
-//             <p class="product-name">${product.product_name}</p>
-//           </div>
-//           <div class="card-arrow">
-//             <i class="ph-bold ph-caret-right"></i>
-//           </div>
-//         </div>
-//       </div>
-//     </a>
-//   </div>
-// `;
-//       slides += slide;
-//     });
+      const slide = `
+  <div class="swiper-slide">
+    <a href="productdetails.html?id=${product.id}">
+      <div class="product-card">
+        ${ribbonImage}  <!-- Only adds ribbon if available -->
+        <div class="card-img-container">
+          <img
+            src="${product.images.product_image}"
+            alt="${product.product_name}"
+            class="product-image"
+          />
+        </div>
+        <div class="card-content">
+          <div class="card-product-name">
+            <h4 class="product-type">${product.product_type}</h4>
+            <p class="product-name">${product.product_name}</p>
+          </div>
+          <div class="card-arrow">
+            <i class="ph-bold ph-caret-right"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+`;
+      slides += slide;
+    });
 
-//     // Append the slides to the specific Swiper wrapper inside #sotol-products
-//     $("#sotol-products .swiper-wrapper").html(slides);
-//   }).fail(function () {
-//     console.error("Error loading JSON file.");
-//   });
-// });
+    // Append the slides to the specific Swiper wrapper inside #sotol-products
+    $("#sotol-products .swiper-wrapper").html(slides);
+  }).fail(function () {
+    console.error("Error loading JSON file.");
+  });
+});
 
 
 // gin products //
-// $(document).ready(function () {
-//   // Fetch the JSON file from the "products" folder
-//   $.getJSON("/products/products.json", function (data) {
-//     // Access both gin and new arrivals product data
-//     const gin = data.products.gin;
-//     const newArrivals = data.products["new-arrivals"];
+$(document).ready(function () {
+  // Fetch the JSON file from the "products" folder
+  $.getJSON("/products/products.json", function (data) {
+    // Access both gin and new arrivals product data
+    const gin = data.products.gin;
+    const newArrivals = data.products["new-arrivals"];
 
-//     // Combine both gin and new-arrivals into a single array
-//     const combinedProducts = gin.concat(newArrivals.filter(function (newArrival) {
-//       // Only include new arrival products with a type matching gin products
-//       return gin.some(function (ginProduct) {
-//         return ginProduct.product_type === newArrival.product_type;
-//       });
-//     }));
+    // Combine both gin and new-arrivals into a single array
+    const combinedProducts = gin.concat(newArrivals.filter(function (newArrival) {
+      // Only include new arrival products with a type matching gin products
+      return gin.some(function (ginProduct) {
+        return ginProduct.product_type === newArrival.product_type;
+      });
+    }));
 
-//     // Loop through the combined array and construct a slide for each product
-//     let slides = '';
-//     combinedProducts.forEach(function (product) {
-//       // Check if ribbon image exists before adding it to the slide
-//       const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
+    // Loop through the combined array and construct a slide for each product
+    let slides = '';
+    combinedProducts.forEach(function (product) {
+      // Check if ribbon image exists before adding it to the slide
+      const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
 
-//       const slide = `
-//   <div class="swiper-slide">
-//     <a href="productdetails.html?id=${product.id}">
-//       <div class="product-card">
-//         ${ribbonImage}  <!-- Only adds ribbon if available -->
-//         <div class="card-img-container">
-//           <img
-//             src="${product.images.product_image}"
-//             alt="${product.product_name}"
-//             class="product-image"
-//           />
-//         </div>
-//         <div class="card-content">
-//           <div class="card-product-name">
-//             <h4 class="product-type">${product.product_type}</h4>
-//             <p class="product-name">${product.product_name}</p>
-//           </div>
-//           <div class="card-arrow">
-//             <i class="ph-bold ph-caret-right"></i>
-//           </div>
-//         </div>
-//       </div>
-//     </a>
-//   </div>
-// `;
-//       slides += slide;
-//     });
+      const slide = `
+  <div class="swiper-slide">
+    <a href="productdetails.html?id=${product.id}">
+      <div class="product-card">
+        ${ribbonImage}  <!-- Only adds ribbon if available -->
+        <div class="card-img-container">
+          <img
+            src="${product.images.product_image}"
+            alt="${product.product_name}"
+            class="product-image"
+          />
+        </div>
+        <div class="card-content">
+          <div class="card-product-name">
+            <h4 class="product-type">${product.product_type}</h4>
+            <p class="product-name">${product.product_name}</p>
+          </div>
+          <div class="card-arrow">
+            <i class="ph-bold ph-caret-right"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+`;
+      slides += slide;
+    });
 
-//     // Append the slides to the specific Swiper wrapper inside #gin-products
-//     $("#gin-products .swiper-wrapper").html(slides);
-//   }).fail(function () {
-//     console.error("Error loading JSON file.");
-//   });
-// });
+    // Append the slides to the specific Swiper wrapper inside #gin-products
+    $("#gin-products .swiper-wrapper").html(slides);
+  }).fail(function () {
+    console.error("Error loading JSON file.");
+  });
+});
 
 // beer //
-// $(document).ready(function () {
-//   // Fetch the JSON file from the "products" folder
-//   $.getJSON("/products/products.json", function (data) {
-//     // Access both beer and new arrivals product data
-//     const beer = data.products.beer;
-//     const newArrivals = data.products["new-arrivals"];
+$(document).ready(function () {
+  // Fetch the JSON file from the "products" folder
+  $.getJSON("/products/products.json", function (data) {
+    // Access both beer and new arrivals product data
+    const beer = data.products.beer;
+    const newArrivals = data.products["new-arrivals"];
 
-//     // Combine both beer and new-arrivals into a single array
-//     const combinedProducts = beer.concat(newArrivals.filter(function (newArrival) {
-//       // Only include new arrival products with a type matching beer products
-//       return beer.some(function (beerProduct) {
-//         return beerProduct.product_type === newArrival.product_type;
-//       });
-//     }));
+    // Combine both beer and new-arrivals into a single array
+    const combinedProducts = beer.concat(newArrivals.filter(function (newArrival) {
+      // Only include new arrival products with a type matching beer products
+      return beer.some(function (beerProduct) {
+        return beerProduct.product_type === newArrival.product_type;
+      });
+    }));
 
-//     // Loop through the combined array and construct a slide for each product
-//     let slides = '';
-//     combinedProducts.forEach(function (product) {
-//       // Check if ribbon image exists before adding it to the slide
-//       const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
+    // Loop through the combined array and construct a slide for each product
+    let slides = '';
+    combinedProducts.forEach(function (product) {
+      // Check if ribbon image exists before adding it to the slide
+      const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
 
-//       const slide = `
-//   <div class="swiper-slide">
-//     <a href="productdetails.html?id=${product.id}">
-//       <div class="product-card">
-//         ${ribbonImage}  <!-- Only adds ribbon if available -->
-//         <div class="card-img-container">
-//           <img
-//             src="${product.images.product_image}"
-//             alt="${product.product_name}"
-//             class="product-image"
-//           />
-//         </div>
-//         <div class="card-content">
-//           <div class="card-product-name">
-//             <h4 class="product-type">${product.product_type}</h4>
-//             <p class="product-name">${product.product_name}</p>
-//           </div>
-//           <div class="card-arrow">
-//             <i class="ph-bold ph-caret-right"></i>
-//           </div>
-//         </div>
-//       </div>
-//     </a>
-//   </div>
-// `;
-//       slides += slide;
-//     });
+      const slide = `
+  <div class="swiper-slide">
+    <a href="productdetails.html?id=${product.id}">
+      <div class="product-card">
+        ${ribbonImage}  <!-- Only adds ribbon if available -->
+        <div class="card-img-container">
+          <img
+            src="${product.images.product_image}"
+            alt="${product.product_name}"
+            class="product-image"
+          />
+        </div>
+        <div class="card-content">
+          <div class="card-product-name">
+            <h4 class="product-type">${product.product_type}</h4>
+            <p class="product-name">${product.product_name}</p>
+          </div>
+          <div class="card-arrow">
+            <i class="ph-bold ph-caret-right"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+`;
+      slides += slide;
+    });
 
-//     // Append the slides to the specific Swiper wrapper inside #beer-products
-//     $("#beer-products .swiper-wrapper").html(slides);
-//   }).fail(function () {
-//     console.error("Error loading JSON file.");
-//   });
-// });
+    // Append the slides to the specific Swiper wrapper inside #beer-products
+    $("#beer-products .swiper-wrapper").html(slides);
+  }).fail(function () {
+    console.error("Error loading JSON file.");
+  });
+});
 
 
 // Fetch product details //
@@ -887,15 +886,15 @@ $(document).ready(function() {
 
 
 // prevent user to go back on search page //
-$(document).ready(function() {
-  // Set a flag in sessionStorage indicating that the user is on the search result page
-  sessionStorage.setItem('visitedSearchResult', 'true');
+// $(document).ready(function() {
+//   // Set a flag in sessionStorage indicating that the user is on the search result page
+//   sessionStorage.setItem('visitedSearchResult', 'true');
 
-  // When the user leaves the searchresult.html page, clear the flag
-  $(window).on('beforeunload', function() {
-    sessionStorage.removeItem('visitedSearchResult'); // Remove the visited flag when leaving the page
-  });
-});
+//   // When the user leaves the searchresult.html page, clear the flag
+//   $(window).on('beforeunload', function() {
+//     sessionStorage.removeItem('visitedSearchResult'); // Remove the visited flag when leaving the page
+//   });
+// });
 
 
 $(document).ready(function() {
@@ -1013,104 +1012,104 @@ $(document).ready(function() {
 });
 
 
-// $(document).ready(function() {
-//   // Get the search query from the URL
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const query = urlParams.get('query').toLowerCase();
+$(document).ready(function() {
+  // Get the search query from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('query').toLowerCase();
 
-//   // Fetch the JSON file and extract product data
-//   $.getJSON('/products/products.json', function(data) {
-//     const filteredProducts = [];
+  // Fetch the JSON file and extract product data
+  $.getJSON('/products/products.json', function(data) {
+    const filteredProducts = [];
 
-//     // Loop through the data and filter products based on the search query
-//     $.each(data.products, function(category, items) {
-//       $.each(items, function(index, item) {
-//         const productName = item.product_name.toLowerCase();
-//         const productType = item.product_type.toLowerCase();
+    // Loop through the data and filter products based on the search query
+    $.each(data.products, function(category, items) {
+      $.each(items, function(index, item) {
+        const productName = item.product_name.toLowerCase();
+        const productType = item.product_type.toLowerCase();
 
-//         // Check if either product name or product type matches the query
-//         if (productName.includes(query) || productType.includes(query)) {
-//           filteredProducts.push(item);
-//         }
-//       });
-//     });
+        // Check if either product name or product type matches the query
+        if (productName.includes(query) || productType.includes(query)) {
+          filteredProducts.push(item);
+        }
+      });
+    });
 
-//     const productsPerPage = 6;
-//     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+    const productsPerPage = 6;
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-//     // Display the filtered products for the first page
-//     function displayProducts(page) {
-//       const startIndex = (page - 1) * productsPerPage;
-//       const endIndex = page * productsPerPage;
-//       const productsToShow = filteredProducts.slice(startIndex, endIndex);
+    // Display the filtered products for the first page
+    function displayProducts(page) {
+      const startIndex = (page - 1) * productsPerPage;
+      const endIndex = page * productsPerPage;
+      const productsToShow = filteredProducts.slice(startIndex, endIndex);
 
-//       // Clear the current list
-//       $('.search-products-list .row').html('');
+      // Clear the current list
+      $('.search-products-list .row').html('');
 
-//       // Loop through and display the products for the current page
-//       $.each(productsToShow, function(index, product) {
-//         let ribbonHTML = '';
-//         if (product.ribbon_image && product.ribbon_image !== '') {
-//           ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
-//         }
+      // Loop through and display the products for the current page
+      $.each(productsToShow, function(index, product) {
+        let ribbonHTML = '';
+        if (product.ribbon_image && product.ribbon_image !== '') {
+          ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
+        }
 
-//         const productCard = `
-//           <div class="col-4">
-//             <a href="productdetails.html?id=${product.id}">
-//               <div class="product-card">
-//                 ${ribbonHTML} <!-- Only include the ribbon if it exists -->
-//                 <div class="card-img-container">
-//                   <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
-//                 </div>
-//                 <div class="card-content">
-//                   <div class="card-product-name">
-//                     <h4 class="product-type">${product.product_type}</h4>
-//                     <p class="product-name">${product.product_name}</p>
-//                   </div>
-//                   <div class="card-arrow">
-//                     <i class="ph-bold ph-caret-right"></i>
-//                   </div>
-//                 </div>
-//               </div>
-//             </a>
-//           </div>
-//         `;
+        const productCard = `
+          <div class="col-4">
+            <a href="productdetails.html?id=${product.id}">
+              <div class="product-card">
+                ${ribbonHTML} <!-- Only include the ribbon if it exists -->
+                <div class="card-img-container">
+                  <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
+                </div>
+                <div class="card-content">
+                  <div class="card-product-name">
+                    <h4 class="product-type">${product.product_type}</h4>
+                    <p class="product-name">${product.product_name}</p>
+                  </div>
+                  <div class="card-arrow">
+                    <i class="ph-bold ph-caret-right"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        `;
 
-//         $('.search-products-list .row').append(productCard);
-//       });
-//     }
+        $('.search-products-list .row').append(productCard);
+      });
+    }
 
-//     // Pagination logic
-//     function createPagination() {
-//       if (totalPages > 1) {
-//         let paginationHTML = '<div class="pagination">';
+    // Pagination logic
+    function createPagination() {
+      if (totalPages > 1) {
+        let paginationHTML = '<div class="pagination">';
         
-//         for (let i = 1; i <= totalPages; i++) {
-//           paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
-//         }
+        for (let i = 1; i <= totalPages; i++) {
+          paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
+        }
         
-//         paginationHTML += '</div>';
-//         $('.pagination-container').html(paginationHTML);
+        paginationHTML += '</div>';
+        $('.pagination-container').html(paginationHTML);
 
-//         // Handle page link click
-//         $('.page-link').on('click', function(event) {
-//           event.preventDefault();
-//           const page = $(this).data('page');
-//           displayProducts(page);
-//         });
-//       }
-//     }
+        // Handle page link click
+        $('.page-link').on('click', function(event) {
+          event.preventDefault();
+          const page = $(this).data('page');
+          displayProducts(page);
+        });
+      }
+    }
 
-//     // Display products and pagination
-//     if (filteredProducts.length > 0) {
-//       displayProducts(1); // Show first page of products
-//       createPagination();  // Create pagination links
-//     } else {
-//       // Show a message if no products are found
-//       $('.search-products-list .row').html('<p>No products found matching your search.</p>');
-//     }
-//   });
-// });
+    // Display products and pagination
+    if (filteredProducts.length > 0) {
+      displayProducts(1); // Show first page of products
+      createPagination();  // Create pagination links
+    } else {
+      // Show a message if no products are found
+      $('.search-products-list .row').html('<p>No products found matching your search.</p>');
+    }
+  });
+});
 
 
 // search bar for on searchresult page //
@@ -1186,78 +1185,7 @@ $(document).ready(function() {
 //   setupSearchBar('searchbar-2', '/products/products.json', 'suggestions');
 // });
 
-$(document).ready(function() {
-  function setupSearchBar(searchBarId, jsonFilePath, suggestionsClass) {
-    let productsArray = [];
 
-    // Fetch the JSON file and extract product types and product names
-    $.getJSON(jsonFilePath, function(data) {
-      $.each(data.products, function(category, items) {
-        $.each(items, function(index, item) {
-          productsArray.push(item.product_type.toLowerCase());
-          productsArray.push(item.product_name.toLowerCase());
-        });
-      });
-    });
-
-    // Check if there's a search query in the URL (for search results page)
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryParam = urlParams.get('query');
-    if (queryParam) {
-      $(`#${searchBarId} #search-input`).val(decodeURIComponent(queryParam)); // Set the input value to the query
-    }
-
-    // Search input event handler
-    $(`#${searchBarId} #search-input`).on('input', function() {
-      const query = $(this).val().toLowerCase();
-      $(`#${searchBarId} .${suggestionsClass}`).empty(); // Clear previous suggestions
-
-      if (query.length > 0) {
-        const filteredSuggestions = [...new Set(productsArray.filter(function(item) {
-          return item.includes(query);
-        }))];
-
-        $.each(filteredSuggestions, function(index, suggestion) {
-          const suggestionElement = $('<div>')
-            .addClass('suggestion-item')
-            .text(suggestion)
-            .on('click', function() {
-              // Set the clicked suggestion as the value of the input
-              $(`#${searchBarId} #search-input`).val(suggestion);
-              $(`#${searchBarId} .${suggestionsClass}`).empty();
-              window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion);
-            });
-
-          $(`#${searchBarId} .${suggestionsClass}`).append(suggestionElement);
-        });
-      }
-    });
-
-    // Handle the Enter key to trigger search
-    $(`#${searchBarId} #search-input`).on('keypress', function(e) {
-      const query = $(this).val().toLowerCase();
-      if (e.which === 13) {
-        if (query.length > 0) {
-          window.location.href = 'searchresult.html?query=' + encodeURIComponent(query);
-        }
-        e.preventDefault();
-      }
-    });
-
-    // Clear the input when the user leaves the page
-    $(window).on('beforeunload', function() {
-      $(`#${searchBarId} #search-input`).val('');
-    });
-
-    // Reset input on page load if no query parameter
-    if (!queryParam) {
-      $(`#${searchBarId} #search-input`).val('');
-    }
-  }
-
-  // Initialize the search bar
-  setupSearchBar('searchbar-2', '/products/products.json', 'suggestions');
-});
 
 
 
