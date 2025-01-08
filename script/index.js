@@ -4,7 +4,7 @@ $(window).on('load', function () {
   // Add a delay before hiding the loader
   setTimeout(function () {
     $('#loader').fadeOut('slow'); // Smoothly hide the loader
-  }, 1000); // Delay of 2000ms (2 seconds)
+  }, 500); // Delay of 2000ms (2 seconds)
 });
 
 $(document).ready(function () {
@@ -51,14 +51,14 @@ $(document).ready(function () {
   //Home page //
   const triggerAnimations = () => {
     gsap.from(".animation-1", {
-      delay:1.5,
+      delay:0.8,
       duration: 0.8,
       y: 100,
       opacity: 0,
       stagger:0.1,
     });
     gsap.from(".header1-container", {
-      delay:1.5,
+      delay:0.8,
       duration: 0.8,
       y: -100,
       opacity: 0,
