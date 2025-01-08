@@ -1,0 +1,784 @@
+{
+  "products": {
+    "new-arrivals": [
+      {
+        "id": "whisky_new_1",
+        "product_type": "Whisky",
+        "product_name": "Kereru Reserve 5YO Blended Scotch Whisky",
+        "description": {
+          "summary": "-",
+          "palate": " -"
+        },
+        "details": {
+          "country_of_origin": "Scotland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": ""
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": ""
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": ""
+          },
+          "aftertaste": {
+            "title": "Aftertaste",
+            "description": ""
+          }
+        },
+        "images": {
+          "product_image": "./images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg",
+          "ribbon": "../images/ribbon.png"
+        }
+      },
+      {
+        "id": "whisky_new_2",
+        "product_type": "Whiskey",
+        "product_name": "Kereru Classic Blended Irish Whiskey",
+        "description": {
+          "summary": "Kereru Classic Blended Irish Whiskey is a harmonious fusion of premium grains and hand-selected malts, meticulously distilled and matured in American oak casks. Its golden hue reflects its rich Irish heritage, while the aroma entices with mild, delicate notes of citrus, green tomato, and toasted oak.",
+          "palate": "On the palate, this masterful blend delivers a smooth, mellow experience with the signature crispness of traditional Irish whiskey. A soft, sweet vanilla undertone beautifully balances the flavors, leading to a lingering finish of velvety oakiness. Elegant and refined, this whiskey is a true celebration of craftsmanship and tradition."
+        },
+        "details": {
+          "country_of_origin": "Ireland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Kereru Classic Blended Irish Whiskey’s golden hue radiates warmth and depth, a testament to its meticulous maturation in select American oak casks. This rich, inviting color mirrors the smooth, velvety elegance of its crafted character."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The mild and soft aroma of Kereru Classic Blended Irish Whiskey blends delicate notes of citrus, green tomato, and toasted oak. This gentle bouquet creates a refined and inviting scent, capturing the essence of its smooth and crafted character."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "Kereru Classic Blended Irish Whiskey offers a mellow, smooth taste with a classic crispness of Irish whiskey, balanced by a subtle sweetness of vanilla. Each sip reveals layers of flavor that unfold on the palate with elegance."
+          },
+          "aftertaste": {
+            "title": "Aftertaste",
+            "description": "The aftertaste of Kereru Classic Blended Irish Whiskey lingers with a soft, velvety oakiness, enhanced by delicate notes of sweet vanilla. This harmonious finish leaves a lasting impression of smooth sophistication."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg",
+          "ribbon": "../images/ribbon.png"
+        }
+      }
+    ],
+
+    "whisky": [
+      {
+        "id": "whisky_1",
+        "product_type": "Whisky",
+        "product_name": "Warbler Reserve Blended Scotch Whisky",
+        "description": {
+          "summary": "This exceptional whisky blend combines the finest grain and malt whiskies sourced from across Scotland. Carefully crafted using a selection of high-quality malt whiskies from the renowned Speyside and Highland regions, it delivers rich, complex flavors. The blend is expertly balanced with premium grain whisky from the Lowlands, celebrated for its smoothness and subtlety. This harmonious combination results in a whisky that offers a refined taste, showcasing the best of Scotland's whisky-making regions.",
+          "palate": "Whether sipped neat, on the rocks, or in a cocktail, this blend delivers a superior whisky experience with depth and character. Each sip reflects centuries of Scottish tradition, where craftsmanship and heritage unite to produce a truly exceptional drink. Ideal for connoisseurs and newcomers alike, it represents the pinnacle of Scottish whisky blending."
+        },
+        "details": {
+          "country_of_origin": "Scotland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "A radiant golden hue with stunning brilliance, reflecting exceptional clarity that captivates the eye, evoking a sense of warmth, elegance, and the purity of fine craftsmanship in every detail."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "A captivating bouquet of clean, crisp scents enriched by the comforting warmth of sweet vanilla, creating a harmonious blend that evokes both freshness and a soft, creamy sophistication."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "A smooth and mellow profile that gently caresses the palate, enriched with a delightful sweetness. Layers of complex richness unfold, revealing a harmonious depth of flavor that lingers, leaving a warm and satisfying impression."
+          },
+          "aftertaste": {
+            "title": "Aftertaste",
+            "description": "A refreshing, clean finish that graces the palate with its smoothness, while a gentle, lingering sweetness remains, leaving a soft, memorable impression that invites you to savor its elegance long after each sip."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "whisky_2",
+        "product_type": "Whisky",
+        "product_name": "Kereru Classic 5YO Blended Scotch Whisky",
+        "description": {
+          "summary": "Kereru Classic 5-Year-Old Blended Scotch Whisky is a masterful blend of the finest grains and meticulously selected malts, each chosen for its superior quality and depth of flavor. Distilled in Scotland and aged for no less than five years in premium American oak casks, this whisky embodies craftsmanship and tradition. The maturation process imparts refined character, delivering a soft aroma with gentle oak and subtle spice on the nose.",
+          "palate": "On the palate, Kereru Classic offers a light and fresh experience, beautifully balanced with notes of vanilla sweetness and delicate fruits. The finish is luxuriously smooth and mellow, leaving a lingering impression of sweet oak that delights the senses with every sip."
+        },
+        "details": {
+          "country_of_origin": "Scotland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Kereru Classic 5-Year-Old Whisky presents a golden amber hue, reflecting its maturation in premium American oak casks. Its clarity and richness visually suggest a refined, smooth, and well-aged spirit."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The aroma offers a delicate, inviting experience with gentle oak notes that evoke warmth, complemented by subtle hints of spice. Together, they create a soft, balanced sensation that soothes the senses."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "The taste is light and refreshing, unfolding with a smooth vanilla sweetness that gently caresses the palate. Subtle hints of delicate fruit notes add depth, creating a beautifully balanced and satisfying profile."
+          },
+          "aftertaste": {
+            "title": "Aftertaste",
+            "description": "The aftertaste is mellow and lingering, leaving a satisfying impression of sweet oak that gently fades. Its smooth, refined finish enhances the experience, offering warmth and a delicate, lasting sweetness."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      }
+    ],
+
+    "tequila": [
+      {
+        "id": "tequila_1",
+        "product_type": "tequila",
+        "product_name": "Kereru Classic White Tequila 100% agave ",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "38%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_2",
+        "product_type": "tequila",
+        "product_name": "Kereru Classic Reposado Tequila 100% agave ",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_3",
+        "product_type": "tequila",
+        "product_name": "Kereru Classic Anejo Tequila 100% agave ",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "38%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_5",
+        "product_type": "tequila",
+        "product_name": "Kereru Classic Cristalino Tequila 100% agave ",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_5",
+        "product_type": "tequila",
+        "product_name": "Kereru Classic Tequila 100% agave Extra-anejo ",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_6",
+        "product_type": "tequila",
+        "product_name": "Warbler Reserve Tequila 100% agave blanco handcrafted ",
+        "description": {
+          "summary": "WARBLER RESERVE tequila is made with the supreme quality ripe agaves of the Tequilana Weber blue variety. These agaves are slowly cooked for 36 hours in a masonry oven. The sugary juice of the cooked agaves is extracted under a new system, which not only extracts the sugars but also the necessary solids, allowing the aromatic and gustatory components to be generated during fermentation with native yeasts. This gives WARBLER RESERVE 100% agave blanco tequila its unique characteristics.",
+          "palate": "The distillation process is carried out by women trained in our company to perform this task with a slow, patient approach, paying careful attention to every detail as delicately as the hands that do it. WARBLER RESERVE 100% agave blanco tequila is produced under strict quality control to ensure that each batch meets both physicochemical and organoleptic quality specifications. The entire process is personally supervised by Tequila Master Mr. Jorge Martínez Cano, who, with his more than 35 years of experience in the tequila industry, ensures the highest quality products on the international market."
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Very bright transparent colorless liquid that when shaking the glass generates a large number of sufficiently thick tears that fall slowly. This reflects the quality and good character of WARBLER 100% agave blanco tequila."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "WARBLER white 100% agave tequila offers citrus and herbal aromas with a floral tendency, which as the glass is shaken give way to fruity, sweet aromas with an interesting intensity that do not disappear from the product. It is a very complex product due to its aromatic evolution."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "It is a tequila that tastes like the aromas already described. Quite soft, slightly sweet, very pleasant on the palate, it does not hurt the mouth or throat. The completeness of this product is manifested in the changes it has in the mouth, since, with each sip, you can feel the evolution that evokes incomparable quality and complexity."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_7",
+        "product_type": "tequila",
+        "product_name": "Warbler Reserve Tequila 100% agave Reposado handcrafted ",
+        "description": {
+          "summary": "WARBLER RESERVE REPOSADO tequila is made from white tequila that is deposited in American white oak and French white oak barrels for a period of at least Six months, in which the temperature and humidity conditions are strictly maintained so that at the end of maturation of tequila, obtain the characteristic aromas and flavors of this highest quality product.",
+          "palate": "100% agave reposado tequila is produced under strict quality control that guarantees that each batch meets both physicochemical and organoleptic quality specifications. The entire process is personally supervised by the expert Tequila Master Mr. Jorge Martínez Cano, who, with his more than 35 years of experience in the tequila industry, manages to obtain the highest quality products on the international market."
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Very bright transparent straw-colored liquid that when shaking the glass generates many sufficiently thick tears that fall slowly due to the natural essential oils of the agave and the barrels. This reflects the quality and good character of WARBLER 100% agave reposado tequila."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "WARBLER Reserve Reposado 100% agave tequila offers woody aromas, where subtle notes of vanilla, chocolate and nuts prevail, all of them obtained from the well-crafted wood of the barrels where this tequila is matured. All its aromas are very soft, inviting you to taste this very complex, high-quality product."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "It is a tequila that tastes like the aromas already described. Very smooth, it offers a very pleasant sweetness to the palate due to its maturation in the barrels, it does not hurt the mouth or the throat. The finish is very long, delicious on the palate. The completeness of this product is manifested in the changes it has in the mouth, since, with each sip, you feel the evolution that evokes incomparable quality and complexity, as it begins with vanilla and chocolate and ends with very pleasant dried fruits."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_8",
+        "product_type": "tequila",
+        "product_name": "Warbler Reserve Tequila 100% agave anejo handcrafted",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "38%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "tequila_8",
+        "product_type": "tequila",
+        "product_name": "Warbler Reserve Tequila 100% agave Extra-Anejo handcrafted",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "38%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      }
+    ],
+    "sotol": [
+      {
+        "id": "sotol_1",
+        "product_type": "sotol",
+        "product_name": "Warbler Reserve blanco handcrafted 100% sotol",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "30%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "sotol_2",
+        "product_type": "sotol",
+        "product_name": "Warbler Reserve reposado handcrafted 100% sotol",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "30%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "sotol_3",
+        "product_type": "sotol",
+        "product_name": "Warbler Reserve anejo handcrafted 100% sotol",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "30%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      }
+    ],
+    "gin": [
+      {
+        "id": "gin_1",
+        "product_type": "gin",
+        "product_name": "Warbler Irish coastal gin",
+        "description": {
+          "summary": "Warbler Irish Coastal Gin is a premium handcrafted spirit, distilled dry from the finest grain and infused with unique Irish botanicals. This exceptional gin features laminaria digitata, a type of kelp seaweed, along with hand-harvested fuchsia and honeysuckle flowers. These carefully selected ingredients perfectly complement the traditional juniper and citrus base, showcasing a blend of coastal and floral flavors.",
+          "palate": "Crafted with care in Ireland, Warbler Irish Coastal Gin offers a refined, cool, and refreshing profile. It is ideal for pairing with tonic or other mixers and is best served over ice. This gin embodies the essence of coastal flavors, delivering a superior drinking experience."
+        },
+        "details": {
+          "country_of_origin": "Ireland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "The crystal-clear liquid of Warbler Irish Coastal Gin has a sleek, pristine appearance, reflecting its high-quality craftsmanship. Its clarity enhances its visual appeal, making it an inviting and sophisticated choice for any gin lover."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "Warbler Irish Coastal Gin offers a refreshing blend of herbal and floral notes, complemented by a subtle marine brininess. Its profile is enhanced with hints of juniper and citrus, creating a crisp and invigorating taste."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "gin_2",
+        "product_type": "gin",
+        "product_name": "Warbler Monaghan Gin",
+        "description": {
+          "summary": "Warbler Monaghan Gin offers a clean, crisp, and creamy profile with vibrant flavors and aromas. It combines a unique blend of juniper, black tea, and cucumber, resulting in a refreshing, earthy depth. Enhanced by the delicate infusion of rose vapor, this gin delivers a balanced and sophisticated taste that is both invigorating and smooth. Whether enjoyed neat or over ice, with your favorite tonic or mixer, Warbler Monaghan Gin presents a luxurious drinking experience that is perfect for any occasion.",
+          "palate": "The gin’s clear, shimmering appearance with a subtle hint of rose color adds to its visual appeal, making it a beautiful addition to any cocktail or on its own. The infusion of rose vapor not only enhances the flavor but also gives the gin a delicate floral note, elevating its overall experience."
+        },
+        "details": {
+          "country_of_origin": "Ireland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Warbler Monaghan Gin clear, shimmering appearance is enhanced by a subtle hint of rose color, giving it a delicate and luxurious look. This visual quality adds an elegant touch to any drink, making it visually captivating and sophisticated."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "The bold earthiness of juniper and black tea is balanced by the refreshing, crisp touch of cucumber, creating a harmonious depth. The rose infusion adds a delicate floral sweetness, enhancing the gin’s complexity and offering a luxurious, nuanced flavor profile."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "gin_3",
+        "product_type": "gin",
+        "product_name": "Warbler Handcrafted pink gin",
+        "description": {
+          "summary": "Warbler Handcrafted Pink Gin is a luxurious blend of vibrant ruby grapefruit zest and the finest berry botanicals, delivering a creamy and full-bodied texture that tantalizes the taste buds. Distilled with precision, this gin captures the essence of fresh citrus and delicate floral notes, creating a refreshing yet complex profile that lingers on the palate.",
+          "palate": "Serve it over ice with your favorite tonic or mixer to enhance its lively character, making it the perfect choice for those seeking a sophisticated, vibrant, and utterly delightful gin experience."
+        },
+        "details": {
+          "country_of_origin": "Ireland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Warbler Handcrafted Pink Gin features a captivating vibrant ruby color, infused with the zesty vibrancy of ruby grapefruit and rich berry botanicals. The visually striking hue reflects the refreshing and inviting nature of the gin."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "The gin’s creamy, full-bodied texture delivers a lively burst of grapefruit zest, complemented by delicate floral notes and a subtle sweetness. Each sip is a harmonious blend of freshness and complexity."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "gin_4",
+        "product_type": "gin",
+        "product_name": "Warbler Pineapple irish gin",
+        "description": {
+          "summary": "Warbler Pineapple Irish Gin is a fresh and vibrant spirit that embodies the essence of summer with its bold, tropical character. The gin opens with classic juniper notes, which seamlessly transition into a burst of fresh pineapple and zesty tropical flavors. This infusion provides a creamy and full-bodied mouthfeel, making it an inviting choice for any cocktail. Whether served over ice or mixed with your favorite tonic, this gin promises a refreshing and balanced drinking experience, perfect for sunny days and relaxed evenings.",
+          "palate": "For the ultimate refreshing experience, enjoy Warbler Pineapple Irish Gin over ice with your preferred mixer. The bright, fruity notes meld beautifully with the classic gin elements, creating a well-rounded and invigorating drink. Its smooth texture and vibrant flavors make it an ideal choice for summer sipping, delivering a delightful twist to your favorite gin cocktails."
+        },
+        "details": {
+          "country_of_origin": "Ireland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Warbler Monaghan Gin clear, shimmering appearance is enhanced by a subtle hint of rose color, giving it a delicate and luxurious look. This visual quality adds an elegant touch to any drink, making it visually captivating and sophisticated."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "The taste of Warbler Pineapple Irish Gin features a classic juniper backbone upfront, complemented by vibrant pineapple and tropical notes that deliver a fruity sweetness. The creamy and full-bodied mouthfeel adds a smooth, luxurious finish, making each sip refreshing and indulgent."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "gin_5",
+        "product_type": "gin",
+        "product_name": "Warbler Passionfruit & mango gin",
+        "description": {
+          "summary": "Warbler Passionfruit & Mango Gin offers a refreshing and vibrant experience, with classic juniper and gin notes upfront. The initial sip reveals a crisp and zesty character, balanced by sweet passionfruit and tropical mango flavors that linger smoothly on the palate. This unique combination creates a harmonious and refreshing finish, making it perfect for serving over ice with your favorite tonic or mixer.",
+          "palate": "Whether enjoyed on its own or mixed in a cocktail, Warbler Passionfruit & Mango Gin brings a burst of vibrant fruitiness to any occasion, elevating your drink to a new level of enjoyment."
+        },
+        "details": {
+          "country_of_origin": "Ireland",
+          "alcohol_volume": "40%",
+          "pack_size": "750mlx12 Btls"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Warbler Passionfruit & Mango Gin boasts a captivating visual presence that enhances its appeal. The gin is typically clear, allowing its vibrant infusion process to shine through, giving it a slight golden hue that catches the light beautifully. When served over ice, the drink maintains a clean, shimmering appearance that not only looks refreshing but also highlights the crisp clarity of the gin. Its smooth and light viscosity ensures that the ice gently disperses its vivid hues, creating an inviting and ethereal visual display. The presentation of the gin is equally alluring, often presented in a sleek and stylish bottle that showcases its vibrant fruit infusion. The subtle hints of passionfruit and mango in the bottle design not only draw the eye but also hint at the tropical flavors within, promising a refreshing and vibrant drinking experience."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "Warbler Passionfruit & Mango Gin offers a dynamic tasting experience with a balanced and complex profile. The initial notes are bright and crisp, dominated by classic juniper and botanical flavors that define the gin. This crispness is complemented by a vibrant burst of passionfruit and mango in the mid-palate, creating a smooth transition from the dryness of gin to the sweet, tropical notes. These fruity elements provide a refreshing burst that lingers gracefully on the palate, enhancing the overall drinking experience. The finish is well-rounded and lingering, offering a harmonious blend of fruit sweetness and a subtle botanical warmth. This balance ensures that each sip is not only enjoyable but also complex, making Warbler Passionfruit & Mango Gin both refreshing and sophisticated. It combines the dryness of traditional gin with the sweetness of ripe fruits, creating a delightful contrast that elevates the drink to a new level of flavor sophistication."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      }
+    ],
+    "beer": [
+      {
+        "id": "beer_1",
+        "product_type": "beer",
+        "product_name": "Warbler Strong Beer",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Ukraine",
+          "alcohol_volume": "Abv 8%",
+          "pack_size": "500mlx24 Cans"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "beer_2",
+        "product_type": "beer",
+        "product_name": "Warbler Large Beer",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Ukraine",
+          "alcohol_volume": "Abv 4.8%",
+          "pack_size": "500mlx24 Cans"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      },
+      {
+        "id": "beer_2",
+        "product_type": "beer",
+        "product_name": "Warbler Wheat Beer",
+        "description": {
+          "summary": "-",
+          "palate": "-"
+        },
+        "details": {
+          "country_of_origin": "Ukraine",
+          "alcohol_volume": "Abv 4.8%",
+          "pack_size": "500mlx24 Cans"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "-"
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "-"
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "-"
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg"
+        }
+      }
+    ]
+  }
+}

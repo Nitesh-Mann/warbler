@@ -1,0 +1,131 @@
+/*section1*/
+.product-page-section1 {
+  height: 86vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-section1-content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 4em;
+}
+
+.product-section1-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-section1-content h2 {
+  font-family: var(--neu);
+  font-size: 92px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--color2);
+}
+
+.product-section1-content h2 span {
+  font-family: var(--kaushan);
+}
+
+.product-section1-content p {
+  font-family: var(--neu);
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: var(--color2);
+  padding: 0em 3em;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/*products header section-2*/
+
+.product-menu-header-wrapper {
+  border-bottom: 1px solid var(--color1);
+  padding: 2em 0em;
+  background-color: var(--color2);
+}
+
+.product-menu-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-header-content-1 h4 {
+  font-family: var(--neu);
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.product-header-content-2 ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+}
+
+.product-header-content-2 ul li {
+  font-family: var(--neu);
+  font-weight: 500;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.product-header-content-2 ul li:hover {
+  color: var(--color3);
+  cursor: pointer;
+}
+
+.product-page-section3 {
+  margin-bottom: 4em;
+}
+
+.product-1-content .headings {
+  margin-bottom: 2.5em;
+}
+
+.product-1-content .headings p {
+  font-size: 18px;
+  width: 40%;
+  line-height: 30px;
+}
+
+.product-1-content {
+  padding: 3em 0em;
+}
+
+.product-1-wrapper {
+  border-bottom: 2px solid var(--color5);
+}
+
+#beer {
+  border-bottom: none;
+}

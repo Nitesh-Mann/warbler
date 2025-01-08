@@ -1,0 +1,462 @@
+.section-1 {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.section1-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.main-heading-container {
+  height: fit-content;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-img {
+  height: fit-content;
+  overflow: hidden;
+}
+
+.section1-content-container img {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 2em;
+}
+
+.section1-content-container p {
+  font-family: var(--neu);
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--color2);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.section1-content-container h1 {
+  font-family: var(--neu);
+  font-weight: 500;
+  font-size: 66px;
+  color: var(--color2);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.section1-content-container h1 span {
+  font-style: italic;
+  font-family: var(--kaushan);
+}
+
+.animated-arrow {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+}
+
+.animated-arrow iframe {
+  width: 85px;
+  height: 85px;
+}
+
+/*--section2*/
+.section-2 {
+  padding: 4em 0em;
+}
+
+/*section3*/
+
+.section-3 {
+  padding-bottom: 4em;
+}
+
+.section-3 .swiper-slide {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-card-2 {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  cursor: pointer;
+  transition: ease 0.5s;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-img-container-2 {
+  height: 100%;
+  width: 100%;
+}
+
+.card-img-container-2 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* filter: blur(6px); */
+}
+
+.card-content-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-image: fill 0 linear-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  height: 60%;
+}
+
+.card-content-2 {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+}
+
+.card-product-name-2 h4 {
+  font-family: var(--neu);
+  font-weight: 600;
+  color: var(--color2);
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.card-product-name-2 p {
+  font-family: var(--neu);
+  font-weight: 300;
+  color: var(--color2);
+  font-size: 20px;
+}
+
+.card-arrow-2 i {
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--color2);
+}
+
+.card-arrow-2 {
+  transition: 0.5s;
+}
+
+.product-card-2:hover {
+  transform: translateY(-8px);
+}
+
+.product-card-2:hover .card-arrow-2 {
+  /* transform: scale(1.2); */
+  rotate: -50deg;
+}
+
+/*----------section-4*--------------*/
+
+.section-4-wrapper-1 {
+  padding: 2em 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.section-4-content-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 4em 1.2em;
+  border-top: 1px solid var(--color5);
+  border-bottom: 1px solid var(--color5);
+}
+
+.bird-logo-section-4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: var(--color2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bird-logo-section-4 img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.section-4-content-1 h2 {
+  font-family: var(--neu);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 62px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.section-4-content-1 h2 span {
+  font-family: var(--kaushan);
+  color: var(--color3);
+}
+
+.section-4-content-2 p {
+  font-family: var(--neu);
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  color: var(--color6);
+  padding: 2em 5em;
+  margin-bottom: 1.5em;
+}
+
+.section-4-wrapper-2 {
+  background-image: url("../images/home-bg-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+/*-----------section-5-------*/
+
+.section-5-wrapper-1 {
+  background-image: url("../images/home-bg-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+.section-5-wrapper-2 {
+  display: flex;
+  align-items: center;
+  padding: 2em 6em;
+}
+
+.section-5-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color5);
+  padding: 20px 0px;
+}
+
+.section-5-head h4 {
+  font-family: var(--kaushan);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 18px;
+  position: relative;
+}
+
+.section-5-head h4::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -250%;
+  width: 180px;
+  height: 1px;
+  background-color: var(--color5);
+  transform: translateY(-50%);
+}
+
+.section-5-head h4::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -250%;
+  width: 180px;
+  height: 1px;
+  background-color: var(--color5);
+  transform: translateY(-50%);
+}
+
+.section-5-head h3 {
+  font-family: var(--neu);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+}
+
+.section-5 h3 span {
+  font-family: var(--kaushan);
+}
+.section-5-content p {
+  font-family: var(--neu);
+  font-size: 18px;
+  text-align: center;
+  padding: 0em 1em;
+  line-height: 34px;
+  font-weight: 400;
+}
+
+/*--------section-6-------*/
+.section-6 {
+  background-image: url("../images/home-bg-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 110vh;
+  background-attachment: fixed;
+}
+
+.section-6-content-container {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.section-6-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background-color: var(--color2);
+  padding: 3em 2em;
+}
+
+.section-6-content h5 {
+  font-family: var(--neu);
+  font-size: 40px;
+  line-height: 54px;
+}
+
+.section-6-content h5 span {
+  font-family: var(--kaushan);
+  font-size: 48px;
+}
+
+.section-6-content p {
+  font-family: var(--neu);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0em 1em;
+}
+
+/*---------section-7-------*/
+
+.testimonialsSwiper {
+  height: 95vh;
+  --swiper-navigation-sides-offset: 80px;
+}
+
+.testimonialsSwiper .swiper-pagination {
+  bottom: 100px !important;
+}
+
+.testimonialsSwiper .swiper-pagination-bullet {
+  background-color: var(--color5);
+  opacity: 0.6;
+  width: 12px;
+  height: 12px;
+  transition: ease 0.8s;
+}
+
+.testimonialsSwiper .swiper-pagination-bullet:hover {
+  transform: scale(1.2);
+}
+
+.testimonialsSwiper .swiper-pagination-bullet-active {
+  background-color: var(--color3);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.slide-content-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-content p {
+  font-family: var(--neu);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 42px;
+  text-align: center;
+}
+
+.rating-name img {
+  width: 100%;
+  height: 40px;
+}
+
+.rating-name p {
+  font-family: var(--neu);
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.testimonialsSwiper .swiper-button-prev:after,
+.testimonialsSwiper .swiper-button-next:after {
+  color: var(--color3);
+}
+
+.testimonialsSwiper .swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.2);
+  transition: ease 0.5s;
+}
