@@ -830,33 +830,15 @@ $(document).ready(function() {
 
 
 // prevent user to go back on search page //
-// $(document).ready(function() {
-//   // Set a flag in sessionStorage indicating that the user is on the search result page
-//   sessionStorage.setItem('visitedSearchResult', 'true');
-
-//   // When the user leaves the searchresult.html page, clear the flag
-//   $(window).on('beforeunload', function() {
-//     sessionStorage.removeItem('visitedSearchResult'); // Remove the visited flag when leaving the page
-//   });
-// });
-
-
 $(document).ready(function() {
-  // Check if the user has visited the search result page previously
-  if (sessionStorage.getItem('visitedSearchResult')) {
-    // Reload the page to ensure it loads fresh content
-    location.reload(); // This will reload the current page
-  }
-
-  // Set a flag in sessionStorage indicating the user has visited the search page
+  // Set a flag in sessionStorage indicating that the user is on the search result page
   sessionStorage.setItem('visitedSearchResult', 'true');
-  
-  // When the user leaves the page, clear the flag
+
+  // When the user leaves the searchresult.html page, clear the flag
   $(window).on('beforeunload', function() {
-    sessionStorage.removeItem('visitedSearchResult'); // Remove the flag when leaving
+    sessionStorage.removeItem('visitedSearchResult'); // Remove the visited flag when leaving the page
   });
 });
-
 
 
 $(document).ready(function() {
