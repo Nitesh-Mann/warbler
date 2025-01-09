@@ -26,14 +26,14 @@ $(document).ready(function () {
       'google_translate_element'
     );
   
-    // Ensure the English option is selected by default
-    setTimeout(function () {
-      var select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = 'en'; // Set the value to English
-        select.dispatchEvent(new Event('change')); // Trigger the change event
-      }
-    }, 0); // Adjust delay if needed
+    // // Ensure the English option is selected by default
+    // setTimeout(function () {
+    //   var select = document.querySelector('.goog-te-combo');
+    //   if (select) {
+    //     select.value = 'en'; // Set the value to English
+    //     select.dispatchEvent(new Event('change')); // Trigger the change event
+    //   }
+    // }, 100); // Adjust delay if needed
   });
 
 
