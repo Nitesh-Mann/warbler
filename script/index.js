@@ -1,16 +1,14 @@
 
 // loader//
 
-window.addEventListener('load', function () {
-  // Add a delay before hiding the loader
-  setTimeout(function () {
-    document.getElementById('loader').style.display = 'none'; // Smoothly hide the loader
-  }, 100); // Delay of 100ms
+window.addEventListener('load', function() {
+  const loader = document.getElementById('loader');
+  loader.hidden = true; // Hide loader once page is fully loaded
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Ensure the loader is visible while the page is loading
-  document.getElementById('loader').style.display = 'block';
+window.addEventListener('beforeunload', function() {
+  const loader = document.getElementById('loader');
+  loader.hidden = false; // Show loader on page unload (reload or navigate)
 });
 
 
@@ -1132,78 +1130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// search bar for on searchresult page //
-// $(document).ready(function() {
-//   function setupSearchBar(searchBarId, jsonFilePath, suggestionsClass) {
-//     let productsArray = [];
-
-//     // Fetch the JSON file and extract product types and product names
-//     $.getJSON(jsonFilePath, function(data) {
-//       $.each(data.products, function(category, items) {
-//         $.each(items, function(index, item) {
-//           productsArray.push(item.product_type.toLowerCase());
-//           productsArray.push(item.product_name.toLowerCase());
-//         });
-//       });
-//     });
-
-//     // Check if there's a search query in the URL (for search results page)
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const queryParam = urlParams.get('query');
-//     if (queryParam) {
-//       $(`#${searchBarId} #search-input`).val(decodeURIComponent(queryParam)); // Set the input value to the query
-//     }
-
-//     // Search input event handler
-//     $(`#${searchBarId} #search-input`).on('input', function() {
-//       const query = $(this).val().toLowerCase();
-//       $(`#${searchBarId} .${suggestionsClass}`).empty(); // Clear previous suggestions
-
-//       if (query.length > 0) {
-//         const filteredSuggestions = [...new Set(productsArray.filter(function(item) {
-//           return item.includes(query);
-//         }))];
-
-//         $.each(filteredSuggestions, function(index, suggestion) {
-//           const suggestionElement = $('<div>')
-//             .addClass('suggestion-item')
-//             .text(suggestion)
-//             .on('click', function() {
-//               // Set the clicked suggestion as the value of the input
-//               $(`#${searchBarId} #search-input`).val(suggestion);
-//               $(`#${searchBarId} .${suggestionsClass}`).empty();
-//               window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion);
-//             });
-
-//           $(`#${searchBarId} .${suggestionsClass}`).append(suggestionElement);
-//         });
-//       }
-//     });
-
-//     // Handle the Enter key to trigger search
-//     $(`#${searchBarId} #search-input`).on('keypress', function(e) {
-//       if (e.which === 13) {
-//         const query = $(this).val().toLowerCase();
-//         if (query.length > 0 && productsArray.includes(query)) {
-//           // Navigate to the search results page and keep the search term in the input field
-//           window.location.href = 'searchresult.html?query=' + encodeURIComponent(query);
-//         } else {
-//           // If no match is found, keep the input field value as is
-//           console.log('No matching product found.');
-//         }
-//         e.preventDefault();
-//       }
-//     });
-
-//     // Clear the input when the user leaves the page
-//     $(window).on('beforeunload', function() {
-//       $(`#${searchBarId} #search-input`).val('');
-//     });
-//   }
-
-//   // Initialize the search bar
-//   setupSearchBar('searchbar-2', '/products/products.json', 'suggestions');
-// });
 
 
 
