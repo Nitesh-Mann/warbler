@@ -20,20 +20,20 @@ $(document).ready(function () {
 $(document).ready(function () {
     new google.translate.TranslateElement(
       {
-        // pageLanguage: 'en', // Set default language to English
+        pageLanguage: 'en', // Set default language to English
         includedLanguages: 'en,es,de,ru,fr' // Specify the languages to be included
       },
       'google_translate_element'
     );
   
     // Ensure the English option is selected by default
-    setTimeout(function () {
-      var select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = 'en'; // Set the value to English
-        select.dispatchEvent(new Event('change')); // Trigger the change event
-      }
-    }, 100); // Adjust delay if needed
+    // setTimeout(function () {
+    //   var select = document.querySelector('.goog-te-combo');
+    //   if (select) {
+    //     select.value = 'en'; // Set the value to English
+    //     select.dispatchEvent(new Event('change')); // Trigger the change event
+    //   }
+    // }, 100); // Adjust delay if needed
   });
 
 
