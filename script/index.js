@@ -11,23 +11,16 @@ window.addEventListener('beforeunload', function() {
   loader.hidden = false; // Show loader on page unload (reload or navigate)
 });
 
+// This will reload the page when the user navigates back to this page
+window.onpopstate = function(event) {
+  window.location.reload();
+};
 
+// Optionally, you can also handle the page load event to ensure the page is fresh when it's first loaded
 window.onload = function() {
-    // Store the start time of page load
-    const startTime = Date.now();
-
-    // Set a threshold for page load time (1 second)
-    const threshold = 1000; // 1 second in milliseconds
-
-    // Check if page load time exceeds the threshold
-    setTimeout(function() {
-        const loadTime = Date.now() - startTime;
-
-        // If page load takes longer than 1 second, refresh the page
-        if (loadTime > threshold) {
-            location.reload();
-        }
-    }, 100); // Check the load time after 100 ms to give enough time for the page to load
+  if (performance.navigation.type === 1) {
+    window.location.reload();
+  }
 };
 
 
