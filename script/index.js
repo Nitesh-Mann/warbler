@@ -920,112 +920,112 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // search products display//
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the search query from the URL, and ensure it's safe
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('query') ? urlParams.get('query').toLowerCase() : '';
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Get the search query from the URL, and ensure it's safe
+//   const urlParams = new URLSearchParams(window.location.search);
+//   const query = urlParams.get('query') ? urlParams.get('query').toLowerCase() : '';
 
-  // Fetch the JSON file and extract product data
-  fetch('/products/products.json')
-    .then((response) => response.json())
-    .then((data) => {
-      const filteredProducts = [];
+//   // Fetch the JSON file and extract product data
+//   fetch('/products/products.json')
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const filteredProducts = [];
 
-      // Loop through the data and filter products based on the search query
-      Object.values(data.products).forEach((items) => {
-        items.forEach((item) => {
-          const productName = item.product_name ? item.product_name.toLowerCase() : '';
-          const productType = item.product_type ? item.product_type.toLowerCase() : '';
+//       // Loop through the data and filter products based on the search query
+//       Object.values(data.products).forEach((items) => {
+//         items.forEach((item) => {
+//           const productName = item.product_name ? item.product_name.toLowerCase() : '';
+//           const productType = item.product_type ? item.product_type.toLowerCase() : '';
 
-          // Check if either product name or product type matches the query
-          if (productName.includes(query) || productType.includes(query)) {
-            filteredProducts.push(item);
-          }
-        });
-      });
+//           // Check if either product name or product type matches the query
+//           if (productName.includes(query) || productType.includes(query)) {
+//             filteredProducts.push(item);
+//           }
+//         });
+//       });
 
-      const productsPerPage = 6;
-      const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+//       const productsPerPage = 6;
+//       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-      // Display the filtered products for the current page
-      function displayProducts(page) {
-        const startIndex = (page - 1) * productsPerPage;
-        const endIndex = page * productsPerPage;
-        const productsToShow = filteredProducts.slice(startIndex, endIndex);
+//       // Display the filtered products for the current page
+//       function displayProducts(page) {
+//         const startIndex = (page - 1) * productsPerPage;
+//         const endIndex = page * productsPerPage;
+//         const productsToShow = filteredProducts.slice(startIndex, endIndex);
 
-        // Clear the current list
-        document.querySelector('.search-products-list .row').innerHTML = '';
+//         // Clear the current list
+//         document.querySelector('.search-products-list .row').innerHTML = '';
 
-        // Loop through and display the products for the current page
-        productsToShow.forEach((product) => {
-          let ribbonHTML = '';
-          if (product.ribbon_image && product.ribbon_image !== '') {
-            ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
-          }
+//         // Loop through and display the products for the current page
+//         productsToShow.forEach((product) => {
+//           let ribbonHTML = '';
+//           if (product.ribbon_image && product.ribbon_image !== '') {
+//             ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
+//           }
 
-          const productCard = `
-            <div class="col-4">
-              <a href="productdetails.html?id=${product.id}">
-                <div class="product-card">
-                  ${ribbonHTML} <!-- Only include the ribbon if it exists -->
-                  <div class="card-img-container">
-                    <img src="${product.image || './images/bottle-sample.png'}" alt="product image" class="product-image" />
-                  </div>
-                  <div class="card-content">
-                    <div class="card-product-name">
-                      <h4 class="product-type">${product.product_type}</h4>
-                      <p class="product-name">${product.product_name}</p>
-                    </div>
-                    <div class="card-arrow">
-                      <i class="ph-bold ph-caret-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          `;
+//           const productCard = `
+//             <div class="col-4">
+//               <a href="productdetails.html?id=${product.id}">
+//                 <div class="product-card">
+//                   ${ribbonHTML} <!-- Only include the ribbon if it exists -->
+//                   <div class="card-img-container">
+//                     <img src="${product.image || './images/bottle-sample.png'}" alt="product image" class="product-image" />
+//                   </div>
+//                   <div class="card-content">
+//                     <div class="card-product-name">
+//                       <h4 class="product-type">${product.product_type}</h4>
+//                       <p class="product-name">${product.product_name}</p>
+//                     </div>
+//                     <div class="card-arrow">
+//                       <i class="ph-bold ph-caret-right"></i>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </a>
+//             </div>
+//           `;
 
-          document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
-        });
-      }
+//           document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
+//         });
+//       }
 
-      // Pagination logic
-      function createPagination() {
-        if (totalPages > 1) {
-          let paginationHTML = '<div class="pagination">';
+//       // Pagination logic
+//       function createPagination() {
+//         if (totalPages > 1) {
+//           let paginationHTML = '<div class="pagination">';
 
-          // Create page links
-          for (let i = 1; i <= totalPages; i++) {
-            paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
-          }
+//           // Create page links
+//           for (let i = 1; i <= totalPages; i++) {
+//             paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
+//           }
 
-          paginationHTML += '</div>';
-          document.querySelector('.pagination-container').innerHTML = paginationHTML;
+//           paginationHTML += '</div>';
+//           document.querySelector('.pagination-container').innerHTML = paginationHTML;
 
-          // Handle page link click
-          document.querySelectorAll('.page-link').forEach((pageLink) => {
-            pageLink.addEventListener('click', function (event) {
-              event.preventDefault();
-              const page = pageLink.getAttribute('data-page');
-              displayProducts(page);
-            });
-          });
-        }
-      }
+//           // Handle page link click
+//           document.querySelectorAll('.page-link').forEach((pageLink) => {
+//             pageLink.addEventListener('click', function (event) {
+//               event.preventDefault();
+//               const page = pageLink.getAttribute('data-page');
+//               displayProducts(page);
+//             });
+//           });
+//         }
+//       }
 
-      // Display products and pagination
-      if (filteredProducts.length > 0) {
-        displayProducts(1); // Show first page of products
-        createPagination();  // Create pagination links
-      } else {
-        // Show a message if no products are found
-        document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
-      }
-    })
-    .catch(() => {
-      console.error("Error loading JSON file.");
-    });
-});
+//       // Display products and pagination
+//       if (filteredProducts.length > 0) {
+//         displayProducts(1); // Show first page of products
+//         createPagination();  // Create pagination links
+//       } else {
+//         // Show a message if no products are found
+//         document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
+//       }
+//     })
+//     .catch(() => {
+//       console.error("Error loading JSON file.");
+//     });
+// });
 
 
 
