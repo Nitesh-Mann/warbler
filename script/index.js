@@ -16,12 +16,7 @@ window.onpopstate = function(event) {
   window.location.reload();
 };
 
-// Optionally, you can also handle the page load event to ensure the page is fresh when it's first loaded
-window.onload = function() {
-  if (performance.navigation.type === 1) {
-    window.location.reload();
-  }
-};
+
 
 
 
