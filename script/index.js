@@ -275,866 +275,866 @@ const swiper = new Swiper('.productSwiper', {
   
   
 
-// ----------products fetch dynamically------- //
+// // ----------products fetch dynamically------- //
 
-// new arrivals products //
+// // new arrivals products //
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file from the "products" folder
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Access the new-arrivals product data
-      const newArrivals = data.products["new-arrivals"];
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Fetch the JSON file from the "products" folder
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // Access the new-arrivals product data
+//       const newArrivals = data.products["new-arrivals"];
 
-      // Loop through the new-arrivals array and construct a slide for each product
-      let slides = "";
-      newArrivals.forEach(function (product) {
-        const slide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                <div class="ribbon">
-                  <img src="${product.images.ribbon}" />
-                </div>
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image}"
-                    alt="${product.product_name}"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-        slides += slide;
-      });
+//       // Loop through the new-arrivals array and construct a slide for each product
+//       let slides = "";
+//       newArrivals.forEach(function (product) {
+//         const slide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 <div class="ribbon">
+//                   <img src="${product.images.ribbon}" />
+//                 </div>
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image}"
+//                     alt="${product.product_name}"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+//         slides += slide;
+//       });
 
-      // Append the slides to the specific Swiper wrapper inside #new-arrivals-products
-      const swiperWrapper = document.querySelector("#new-arrivals-products .swiper-wrapper");
-      swiperWrapper.innerHTML = slides;
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
-
-
-//whisky products //
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file from the "products" folder
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Access both whisky and new arrivals product data
-      const whisky = data.products.whisky;
-      const newArrivals = data.products["new-arrivals"];
-
-      // Combine both whisky and new-arrivals into a single array
-      const combinedProducts = whisky.concat(
-        newArrivals.filter((newArrival) =>
-          whisky.some((whiskyProduct) => whiskyProduct.product_type === newArrival.product_type)
-        )
-      );
-
-      // Loop through the combined array and construct a slide for each product
-      let slides = "";
-      combinedProducts.forEach((product) => {
-        // Check if ribbon image exists before adding it to the slide
-        const ribbonImage = product.images.ribbon
-          ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
-          : "";
-
-        const slide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                ${ribbonImage} <!-- Only adds ribbon if available -->
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image}"
-                    alt="${product.product_name}"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-        slides += slide;
-      });
-
-      // Append the slides to the specific Swiper wrapper inside #whisky-products
-      const swiperWrapper = document.querySelector("#whisky-products .swiper-wrapper");
-      swiperWrapper.innerHTML = slides;
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
+//       // Append the slides to the specific Swiper wrapper inside #new-arrivals-products
+//       const swiperWrapper = document.querySelector("#new-arrivals-products .swiper-wrapper");
+//       swiperWrapper.innerHTML = slides;
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
 
 
+// //whisky products //
 
-// tequila products //
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file from the "products" folder
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Access both tequila and new arrivals product data
-      const tequila = data.products.tequila;
-      const newArrivals = data.products["new-arrivals"];
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Fetch the JSON file from the "products" folder
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // Access both whisky and new arrivals product data
+//       const whisky = data.products.whisky;
+//       const newArrivals = data.products["new-arrivals"];
 
-      // Combine both tequila and new-arrivals into a single array
-      const combinedProducts = tequila.concat(
-        newArrivals.filter((newArrival) =>
-          tequila.some((tequilaProduct) => tequilaProduct.product_type === newArrival.product_type)
-        )
-      );
+//       // Combine both whisky and new-arrivals into a single array
+//       const combinedProducts = whisky.concat(
+//         newArrivals.filter((newArrival) =>
+//           whisky.some((whiskyProduct) => whiskyProduct.product_type === newArrival.product_type)
+//         )
+//       );
 
-      // Loop through the combined array and construct a slide for each product
-      let slides = "";
-      combinedProducts.forEach((product) => {
-        // Check if ribbon image exists before adding it to the slide
-        const ribbonImage = product.images.ribbon
-          ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
-          : "";
+//       // Loop through the combined array and construct a slide for each product
+//       let slides = "";
+//       combinedProducts.forEach((product) => {
+//         // Check if ribbon image exists before adding it to the slide
+//         const ribbonImage = product.images.ribbon
+//           ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
+//           : "";
 
-        const slide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                ${ribbonImage} <!-- Only adds ribbon if available -->
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image}"
-                    alt="${product.product_name}"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-        slides += slide;
-      });
+//         const slide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonImage} <!-- Only adds ribbon if available -->
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image}"
+//                     alt="${product.product_name}"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+//         slides += slide;
+//       });
 
-      // Append the slides to the specific Swiper wrapper inside #tequila-products
-      const swiperWrapper = document.querySelector("#tequila-products .swiper-wrapper");
-      swiperWrapper.innerHTML = slides;
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
-
-
-// sotol products //
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file from the "products" folder
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Access both sotol and new arrivals product data
-      const sotol = data.products.sotol;
-      const newArrivals = data.products["new-arrivals"];
-
-      // Combine both sotol and new-arrivals into a single array
-      const combinedProducts = sotol.concat(
-        newArrivals.filter((newArrival) =>
-          sotol.some((sotolProduct) => sotolProduct.product_type === newArrival.product_type)
-        )
-      );
-
-      // Loop through the combined array and construct a slide for each product
-      let slides = "";
-      combinedProducts.forEach((product) => {
-        // Check if ribbon image exists before adding it to the slide
-        const ribbonImage = product.images.ribbon
-          ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
-          : "";
-
-        const slide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                ${ribbonImage} <!-- Only adds ribbon if available -->
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image}"
-                    alt="${product.product_name}"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-        slides += slide;
-      });
-
-      // Append the slides to the specific Swiper wrapper inside #sotol-products
-      const swiperWrapper = document.querySelector("#sotol-products .swiper-wrapper");
-      swiperWrapper.innerHTML = slides;
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
-
-
-// gin products //
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file from the "products" folder
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Access both gin and new arrivals product data
-      const gin = data.products.gin;
-      const newArrivals = data.products["new-arrivals"];
-
-      // Combine both gin and new-arrivals into a single array
-      const combinedProducts = gin.concat(
-        newArrivals.filter((newArrival) =>
-          gin.some((ginProduct) => ginProduct.product_type === newArrival.product_type)
-        )
-      );
-
-      // Loop through the combined array and construct a slide for each product
-      let slides = "";
-      combinedProducts.forEach((product) => {
-        // Check if ribbon image exists before adding it to the slide
-        const ribbonImage = product.images.ribbon
-          ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
-          : "";
-
-        const slide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                ${ribbonImage} <!-- Only adds ribbon if available -->
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image}"
-                    alt="${product.product_name}"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-        slides += slide;
-      });
-
-      // Append the slides to the specific Swiper wrapper inside #gin-products
-      const swiperWrapper = document.querySelector("#gin-products .swiper-wrapper");
-      swiperWrapper.innerHTML = slides;
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
-
-
-// beer //
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file from the "products" folder
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Access both beer and new arrivals product data
-      const beer = data.products.beer;
-      const newArrivals = data.products["new-arrivals"];
-
-      // Combine both beer and new-arrivals into a single array
-      const combinedProducts = beer.concat(
-        newArrivals.filter((newArrival) =>
-          beer.some((beerProduct) => beerProduct.product_type === newArrival.product_type)
-        )
-      );
-
-      // Loop through the combined array and construct a slide for each product
-      let slides = "";
-      combinedProducts.forEach((product) => {
-        // Check if ribbon image exists before adding it to the slide
-        const ribbonImage = product.images.ribbon
-          ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
-          : "";
-
-        const slide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                ${ribbonImage} <!-- Only adds ribbon if available -->
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image}"
-                    alt="${product.product_name}"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-        slides += slide;
-      });
-
-      // Append the slides to the specific Swiper wrapper inside #beer-products
-      const swiperWrapper = document.querySelector("#beer-products .swiper-wrapper");
-      swiperWrapper.innerHTML = slides;
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
+//       // Append the slides to the specific Swiper wrapper inside #whisky-products
+//       const swiperWrapper = document.querySelector("#whisky-products .swiper-wrapper");
+//       swiperWrapper.innerHTML = slides;
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
 
 
 
-// Fetch product details //
+// // tequila products //
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Fetch the JSON file from the "products" folder
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // Access both tequila and new arrivals product data
+//       const tequila = data.products.tequila;
+//       const newArrivals = data.products["new-arrivals"];
 
-document.addEventListener("DOMContentLoaded", function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get("id");
+//       // Combine both tequila and new-arrivals into a single array
+//       const combinedProducts = tequila.concat(
+//         newArrivals.filter((newArrival) =>
+//           tequila.some((tequilaProduct) => tequilaProduct.product_type === newArrival.product_type)
+//         )
+//       );
 
-  if (productId) {
-    fetch("/products/products.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error loading JSON file.");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // Flatten the product list across all categories (whisky, new arrivals, tequila, etc.)
-        const allProducts = [];
+//       // Loop through the combined array and construct a slide for each product
+//       let slides = "";
+//       combinedProducts.forEach((product) => {
+//         // Check if ribbon image exists before adding it to the slide
+//         const ribbonImage = product.images.ribbon
+//           ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
+//           : "";
+
+//         const slide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonImage} <!-- Only adds ribbon if available -->
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image}"
+//                     alt="${product.product_name}"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+//         slides += slide;
+//       });
+
+//       // Append the slides to the specific Swiper wrapper inside #tequila-products
+//       const swiperWrapper = document.querySelector("#tequila-products .swiper-wrapper");
+//       swiperWrapper.innerHTML = slides;
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
+
+
+// // sotol products //
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Fetch the JSON file from the "products" folder
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // Access both sotol and new arrivals product data
+//       const sotol = data.products.sotol;
+//       const newArrivals = data.products["new-arrivals"];
+
+//       // Combine both sotol and new-arrivals into a single array
+//       const combinedProducts = sotol.concat(
+//         newArrivals.filter((newArrival) =>
+//           sotol.some((sotolProduct) => sotolProduct.product_type === newArrival.product_type)
+//         )
+//       );
+
+//       // Loop through the combined array and construct a slide for each product
+//       let slides = "";
+//       combinedProducts.forEach((product) => {
+//         // Check if ribbon image exists before adding it to the slide
+//         const ribbonImage = product.images.ribbon
+//           ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
+//           : "";
+
+//         const slide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonImage} <!-- Only adds ribbon if available -->
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image}"
+//                     alt="${product.product_name}"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+//         slides += slide;
+//       });
+
+//       // Append the slides to the specific Swiper wrapper inside #sotol-products
+//       const swiperWrapper = document.querySelector("#sotol-products .swiper-wrapper");
+//       swiperWrapper.innerHTML = slides;
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
+
+
+// // gin products //
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Fetch the JSON file from the "products" folder
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // Access both gin and new arrivals product data
+//       const gin = data.products.gin;
+//       const newArrivals = data.products["new-arrivals"];
+
+//       // Combine both gin and new-arrivals into a single array
+//       const combinedProducts = gin.concat(
+//         newArrivals.filter((newArrival) =>
+//           gin.some((ginProduct) => ginProduct.product_type === newArrival.product_type)
+//         )
+//       );
+
+//       // Loop through the combined array and construct a slide for each product
+//       let slides = "";
+//       combinedProducts.forEach((product) => {
+//         // Check if ribbon image exists before adding it to the slide
+//         const ribbonImage = product.images.ribbon
+//           ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
+//           : "";
+
+//         const slide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonImage} <!-- Only adds ribbon if available -->
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image}"
+//                     alt="${product.product_name}"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+//         slides += slide;
+//       });
+
+//       // Append the slides to the specific Swiper wrapper inside #gin-products
+//       const swiperWrapper = document.querySelector("#gin-products .swiper-wrapper");
+//       swiperWrapper.innerHTML = slides;
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
+
+
+// // beer //
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Fetch the JSON file from the "products" folder
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // Access both beer and new arrivals product data
+//       const beer = data.products.beer;
+//       const newArrivals = data.products["new-arrivals"];
+
+//       // Combine both beer and new-arrivals into a single array
+//       const combinedProducts = beer.concat(
+//         newArrivals.filter((newArrival) =>
+//           beer.some((beerProduct) => beerProduct.product_type === newArrival.product_type)
+//         )
+//       );
+
+//       // Loop through the combined array and construct a slide for each product
+//       let slides = "";
+//       combinedProducts.forEach((product) => {
+//         // Check if ribbon image exists before adding it to the slide
+//         const ribbonImage = product.images.ribbon
+//           ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>`
+//           : "";
+
+//         const slide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonImage} <!-- Only adds ribbon if available -->
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image}"
+//                     alt="${product.product_name}"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
+//                   </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
+//                   </div>
+//                 </div>
+//               </div>
+//             </a>
+//           </div>
+//         `;
+//         slides += slide;
+//       });
+
+//       // Append the slides to the specific Swiper wrapper inside #beer-products
+//       const swiperWrapper = document.querySelector("#beer-products .swiper-wrapper");
+//       swiperWrapper.innerHTML = slides;
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
+
+
+
+// // Fetch product details //
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const urlParams = new URLSearchParams(window.location.search);
+//   const productId = urlParams.get("id");
+
+//   if (productId) {
+//     fetch("/products/products.json")
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Error loading JSON file.");
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         // Flatten the product list across all categories (whisky, new arrivals, tequila, etc.)
+//         const allProducts = [];
         
-        // Loop through each category (e.g., whisky, new-arrivals, tequila)
-        Object.keys(data.products).forEach(function (category) {
-          allProducts.push(...data.products[category]);
-        });
+//         // Loop through each category (e.g., whisky, new-arrivals, tequila)
+//         Object.keys(data.products).forEach(function (category) {
+//           allProducts.push(...data.products[category]);
+//         });
 
-        // Find the product by id
-        const product = allProducts.find(function (product) {
-          return product.id === productId;
-        });
+//         // Find the product by id
+//         const product = allProducts.find(function (product) {
+//           return product.id === productId;
+//         });
 
-        if (product) {
-          // Populate product details if they exist
-          if (product.product_type) document.getElementById("product-type").textContent = product.product_type;
-          else document.getElementById("product-type").parentElement.style.display = 'none'; // Hide the container if product_type is missing
+//         if (product) {
+//           // Populate product details if they exist
+//           if (product.product_type) document.getElementById("product-type").textContent = product.product_type;
+//           else document.getElementById("product-type").parentElement.style.display = 'none'; // Hide the container if product_type is missing
 
-          if (product.product_name) document.getElementById("product-name").textContent = product.product_name;
-          else document.getElementById("product-name").parentElement.style.display = 'none'; // Hide the container if product_name is missing
+//           if (product.product_name) document.getElementById("product-name").textContent = product.product_name;
+//           else document.getElementById("product-name").parentElement.style.display = 'none'; // Hide the container if product_name is missing
 
-          if (product.description.summary) document.getElementById("description-1").textContent = product.description.summary;
-          else document.getElementById("description-1").parentElement.style.display = 'none'; // Hide the container if description.summary is missing
+//           if (product.description.summary) document.getElementById("description-1").textContent = product.description.summary;
+//           else document.getElementById("description-1").parentElement.style.display = 'none'; // Hide the container if description.summary is missing
 
-          if (product.description.palate) document.getElementById("description-2").textContent = product.description.palate;
-          else document.getElementById("description-2").parentElement.style.display = 'none'; // Hide the container if description.palate is missing
+//           if (product.description.palate) document.getElementById("description-2").textContent = product.description.palate;
+//           else document.getElementById("description-2").parentElement.style.display = 'none'; // Hide the container if description.palate is missing
 
-          if (product.details.country_of_origin) document.getElementById("country-name").textContent = product.details.country_of_origin;
-          else document.getElementById("country-name").parentElement.style.display = 'none'; // Hide the container if country_of_origin is missing
+//           if (product.details.country_of_origin) document.getElementById("country-name").textContent = product.details.country_of_origin;
+//           else document.getElementById("country-name").parentElement.style.display = 'none'; // Hide the container if country_of_origin is missing
 
-          if (product.details.alcohol_volume) document.getElementById("alcohol-vol").textContent = product.details.alcohol_volume;
-          else document.getElementById("alcohol-vol").parentElement.style.display = 'none'; // Hide the container if alcohol_volume is missing
+//           if (product.details.alcohol_volume) document.getElementById("alcohol-vol").textContent = product.details.alcohol_volume;
+//           else document.getElementById("alcohol-vol").parentElement.style.display = 'none'; // Hide the container if alcohol_volume is missing
 
-          if (product.details.pack_size) document.getElementById("pack-size").textContent = product.details.pack_size;
-          else document.getElementById("pack-size").parentElement.style.display = 'none'; // Hide the container if pack_size is missing
+//           if (product.details.pack_size) document.getElementById("pack-size").textContent = product.details.pack_size;
+//           else document.getElementById("pack-size").parentElement.style.display = 'none'; // Hide the container if pack_size is missing
 
-          if (product.characteristics.visual && product.characteristics.visual.title) {
-            document.getElementById("visual-title").textContent = product.characteristics.visual.title;
-            document.getElementById("visual").textContent = product.characteristics.visual.description;
-          } else {
-            document.getElementById("visual-title").parentElement.style.display = 'none'; // Hide the container if visual characteristic is missing
-          }
+//           if (product.characteristics.visual && product.characteristics.visual.title) {
+//             document.getElementById("visual-title").textContent = product.characteristics.visual.title;
+//             document.getElementById("visual").textContent = product.characteristics.visual.description;
+//           } else {
+//             document.getElementById("visual-title").parentElement.style.display = 'none'; // Hide the container if visual characteristic is missing
+//           }
 
-          if (product.characteristics.aromatic && product.characteristics.aromatic.title) {
-            document.getElementById("aromatic-title").textContent = product.characteristics.aromatic.title;
-            document.getElementById("aromatic").textContent = product.characteristics.aromatic.description;
-          } else {
-            document.getElementById("aromatic-title").parentElement.style.display = 'none'; // Hide the container if aromatic characteristic is missing
-          }
+//           if (product.characteristics.aromatic && product.characteristics.aromatic.title) {
+//             document.getElementById("aromatic-title").textContent = product.characteristics.aromatic.title;
+//             document.getElementById("aromatic").textContent = product.characteristics.aromatic.description;
+//           } else {
+//             document.getElementById("aromatic-title").parentElement.style.display = 'none'; // Hide the container if aromatic characteristic is missing
+//           }
 
-          if (product.characteristics.taste && product.characteristics.taste.title) {
-            document.getElementById("taste-title").textContent = product.characteristics.taste.title;
-            document.getElementById("taste").textContent = product.characteristics.taste.description;
-          } else {
-            document.getElementById("taste-title").parentElement.style.display = 'none'; // Hide the container if taste characteristic is missing
-          }
+//           if (product.characteristics.taste && product.characteristics.taste.title) {
+//             document.getElementById("taste-title").textContent = product.characteristics.taste.title;
+//             document.getElementById("taste").textContent = product.characteristics.taste.description;
+//           } else {
+//             document.getElementById("taste-title").parentElement.style.display = 'none'; // Hide the container if taste characteristic is missing
+//           }
 
-          if (product.characteristics.aftertaste && product.characteristics.aftertaste.title) {
-            document.getElementById("aftertaste-title").textContent = product.characteristics.aftertaste.title;
-            document.getElementById("aftertaste").textContent = product.characteristics.aftertaste.description;
-          } else {
-            document.getElementById("aftertaste-title").parentElement.style.display = 'none'; // Hide the container if aftertaste characteristic is missing
-          }
+//           if (product.characteristics.aftertaste && product.characteristics.aftertaste.title) {
+//             document.getElementById("aftertaste-title").textContent = product.characteristics.aftertaste.title;
+//             document.getElementById("aftertaste").textContent = product.characteristics.aftertaste.description;
+//           } else {
+//             document.getElementById("aftertaste-title").parentElement.style.display = 'none'; // Hide the container if aftertaste characteristic is missing
+//           }
 
-          if (product.images.product_image) document.getElementById("product-image").setAttribute("src", product.images.product_image);
-          else document.getElementById("product-image").parentElement.style.display = 'none'; // Hide the container if product_image is missing
+//           if (product.images.product_image) document.getElementById("product-image").setAttribute("src", product.images.product_image);
+//           else document.getElementById("product-image").parentElement.style.display = 'none'; // Hide the container if product_image is missing
 
-          if (product.images.background_image) document.getElementById("background-image").setAttribute("src", product.images.background_image);
-          else document.getElementById("background-image").parentElement.style.display = 'none'; // Hide the container if background_image is missing
-        } else {
-          console.error("Product not found.");
-        }
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
-  } else {
-    console.error("Product ID is missing in the URL.");
-  }
-});
-
-
-
-// fetch new products every time on product detail page //
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Load products data
-  fetch("/products/products.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error loading JSON file.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const allProducts = [];
-
-      // Loop through each category and flatten the product list
-      Object.keys(data.products).forEach(function (category) {
-        allProducts.push(...data.products[category]);
-      });
-
-      // Shuffle the products array and select 6 random products
-      function getRandomProducts(products, num) {
-        const shuffled = products.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, num);
-      }
-
-      const randomProducts = getRandomProducts(allProducts, 6);
-
-      // Clear any existing slides before adding new ones
-      const productSliderWrapper = document.getElementById("product-slider-wrapper");
-      productSliderWrapper.innerHTML = '';
-
-      // Loop through random products and populate the slider
-      randomProducts.forEach(function (product) {
-        // Conditionally render the ribbon image if it exists
-        const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
-
-        const productSlide = `
-          <div class="swiper-slide">
-            <a href="productdetails.html?id=${product.id}">
-              <div class="product-card">
-                ${ribbonImage} <!-- Conditionally added ribbon image -->
-                <div class="card-img-container">
-                  <img
-                    src="${product.images.product_image || './images/bottle-sample.png'}"
-                    alt="Product Image"
-                    class="product-image"
-                  />
-                </div>
-                <div class="card-content">
-                  <div class="card-product-name">
-                    <h4 class="product-type">${product.product_type}</h4>
-                    <p class="product-name">${product.product_name}</p>
-                  </div>
-                  <div class="card-arrow">
-                    <i class="ph-bold ph-caret-right"></i>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        `;
-
-        // Append product slide to the swiper-wrapper
-        productSliderWrapper.innerHTML += productSlide;
-      });
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-});
+//           if (product.images.background_image) document.getElementById("background-image").setAttribute("src", product.images.background_image);
+//           else document.getElementById("background-image").parentElement.style.display = 'none'; // Hide the container if background_image is missing
+//         } else {
+//           console.error("Product not found.");
+//         }
+//       })
+//       .catch((error) => {
+//         console.error(error.message);
+//       });
+//   } else {
+//     console.error("Product ID is missing in the URL.");
+//   }
+// });
 
 
 
-//search bar //
-document.addEventListener("DOMContentLoaded", function () {
-  let productsArray = [];
-
-  // Fetch the JSON file and extract product types and product names
-  fetch('/products/products.json')
-    .then((response) => response.json())
-    .then((data) => {
-      // Extracting keywords from 'product_type' and 'product_name' fields
-      Object.values(data.products).forEach((items) => {
-        items.forEach((item) => {
-          productsArray.push(item.product_type.toLowerCase());
-          productsArray.push(item.product_name.toLowerCase());
-        });
-      });
-    });
-
-  // Search input event handler
-  const searchInput = document.getElementById('search-input');
-  searchInput.addEventListener('input', function () {
-    const query = searchInput.value.toLowerCase();
-    const suggestionsDiv = document.querySelector('.suggestions');
-    suggestionsDiv.innerHTML = ''; // Clear previous suggestions
-
-    if (query.length > 0) {
-      // Create a Set to remove duplicate suggestions
-      const filteredSuggestions = [...new Set(productsArray.filter(function (item) {
-        return item.includes(query);
-      }))];
-
-      // Loop through the filtered suggestions and append to suggestions div
-      filteredSuggestions.forEach(function (suggestion) {
-        const suggestionElement = document.createElement('div');
-        suggestionElement.classList.add('suggestion-item');
-        suggestionElement.textContent = suggestion;
-        suggestionElement.addEventListener('click', function () {
-          searchInput.value = suggestion;
-          suggestionsDiv.innerHTML = ''; // Clear suggestions after selection
-          window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion); // Redirect to search results page
-        });
-
-        suggestionsDiv.appendChild(suggestionElement);
-      });
-    }
-  });
-
-  // Handle the Enter key to trigger search
-  searchInput.addEventListener('keypress', function (e) {
-    if (e.which === 13) { // Enter key
-      const query = searchInput.value.toLowerCase();
-      if (query.length > 0 && productsArray.includes(query)) {
-        window.location.href = 'searchresult.html?query=' + encodeURIComponent(query); // Redirect to search results page
-        searchInput.value = ''; // Clear the search input after redirect
-      } else {
-        // Handle cases where the query doesn't match any suggestion
-        console.log('No matching product found.');
-      }
-      e.preventDefault(); // Prevent default form submission
-    }
-  });
-
-  // Clear the input when the user leaves the page
-  window.addEventListener('beforeunload', function () {
-    searchInput.value = ''; // Clear the input field before leaving
-  });
-});
-
-
-
-// search products display//
+// // fetch new products every time on product detail page //
 
 // document.addEventListener("DOMContentLoaded", function () {
-//   // Get the search query from the URL, and ensure it's safe
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const query = urlParams.get('query') ? urlParams.get('query').toLowerCase() : '';
-
-//   // Fetch the JSON file and extract product data
-//   fetch('/products/products.json')
-//     .then((response) => response.json())
+//   // Load products data
+//   fetch("/products/products.json")
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Error loading JSON file.");
+//       }
+//       return response.json();
+//     })
 //     .then((data) => {
-//       const filteredProducts = [];
+//       const allProducts = [];
 
-//       // Loop through the data and filter products based on the search query
-//       Object.values(data.products).forEach((items) => {
-//         items.forEach((item) => {
-//           const productName = item.product_name ? item.product_name.toLowerCase() : '';
-//           const productType = item.product_type ? item.product_type.toLowerCase() : '';
-
-//           // Check if either product name or product type matches the query
-//           if (productName.includes(query) || productType.includes(query)) {
-//             filteredProducts.push(item);
-//           }
-//         });
+//       // Loop through each category and flatten the product list
+//       Object.keys(data.products).forEach(function (category) {
+//         allProducts.push(...data.products[category]);
 //       });
 
-//       const productsPerPage = 6;
-//       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+//       // Shuffle the products array and select 6 random products
+//       function getRandomProducts(products, num) {
+//         const shuffled = products.sort(() => 0.5 - Math.random());
+//         return shuffled.slice(0, num);
+//       }
 
-//       // Display the filtered products for the current page
-//       function displayProducts(page) {
-//         const startIndex = (page - 1) * productsPerPage;
-//         const endIndex = page * productsPerPage;
-//         const productsToShow = filteredProducts.slice(startIndex, endIndex);
+//       const randomProducts = getRandomProducts(allProducts, 6);
 
-//         // Clear the current list
-//         document.querySelector('.search-products-list .row').innerHTML = '';
+//       // Clear any existing slides before adding new ones
+//       const productSliderWrapper = document.getElementById("product-slider-wrapper");
+//       productSliderWrapper.innerHTML = '';
 
-//         // Loop through and display the products for the current page
-//         productsToShow.forEach((product) => {
-//           let ribbonHTML = '';
-//           if (product.ribbon_image && product.ribbon_image !== '') {
-//             ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
-//           }
+//       // Loop through random products and populate the slider
+//       randomProducts.forEach(function (product) {
+//         // Conditionally render the ribbon image if it exists
+//         const ribbonImage = product.images.ribbon ? `<div class="ribbon"><img src="${product.images.ribbon}" /></div>` : '';
 
-//           const productCard = `
-//             <div class="col-4">
-//               <a href="productdetails.html?id=${product.id}">
-//                 <div class="product-card">
-//                   ${ribbonHTML} <!-- Only include the ribbon if it exists -->
-//                   <div class="card-img-container">
-//                     <img src="${product.image || './images/bottle-sample.png'}" alt="product image" class="product-image" />
+//         const productSlide = `
+//           <div class="swiper-slide">
+//             <a href="productdetails.html?id=${product.id}">
+//               <div class="product-card">
+//                 ${ribbonImage} <!-- Conditionally added ribbon image -->
+//                 <div class="card-img-container">
+//                   <img
+//                     src="${product.images.product_image || './images/bottle-sample.png'}"
+//                     alt="Product Image"
+//                     class="product-image"
+//                   />
+//                 </div>
+//                 <div class="card-content">
+//                   <div class="card-product-name">
+//                     <h4 class="product-type">${product.product_type}</h4>
+//                     <p class="product-name">${product.product_name}</p>
 //                   </div>
-//                   <div class="card-content">
-//                     <div class="card-product-name">
-//                       <h4 class="product-type">${product.product_type}</h4>
-//                       <p class="product-name">${product.product_name}</p>
-//                     </div>
-//                     <div class="card-arrow">
-//                       <i class="ph-bold ph-caret-right"></i>
-//                     </div>
+//                   <div class="card-arrow">
+//                     <i class="ph-bold ph-caret-right"></i>
 //                   </div>
 //                 </div>
-//               </a>
-//             </div>
-//           `;
+//               </div>
+//             </a>
+//           </div>
+//         `;
 
-//           document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
-//         });
-//       }
-
-//       // Pagination logic
-//       function createPagination() {
-//         if (totalPages > 1) {
-//           let paginationHTML = '<div class="pagination">';
-
-//           // Create page links
-//           for (let i = 1; i <= totalPages; i++) {
-//             paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
-//           }
-
-//           paginationHTML += '</div>';
-//           document.querySelector('.pagination-container').innerHTML = paginationHTML;
-
-//           // Handle page link click
-//           document.querySelectorAll('.page-link').forEach((pageLink) => {
-//             pageLink.addEventListener('click', function (event) {
-//               event.preventDefault();
-//               const page = pageLink.getAttribute('data-page');
-//               displayProducts(page);
-//             });
-//           });
-//         }
-//       }
-
-//       // Display products and pagination
-//       if (filteredProducts.length > 0) {
-//         displayProducts(1); // Show first page of products
-//         createPagination();  // Create pagination links
-//       } else {
-//         // Show a message if no products are found
-//         document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
-//       }
+//         // Append product slide to the swiper-wrapper
+//         productSliderWrapper.innerHTML += productSlide;
+//       });
 //     })
-//     .catch(() => {
-//       console.error("Error loading JSON file.");
+//     .catch((error) => {
+//       console.error(error.message);
 //     });
 // });
 
 
 
+// //search bar //
 // document.addEventListener("DOMContentLoaded", function () {
-//   // Get the search query from the URL
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const query = urlParams.get('query').toLowerCase();
+//   let productsArray = [];
 
-//   // Fetch the JSON file and extract product data
+//   // Fetch the JSON file and extract product types and product names
 //   fetch('/products/products.json')
 //     .then((response) => response.json())
 //     .then((data) => {
-//       const filteredProducts = [];
-
-//       // Loop through the data and filter products based on the search query
+//       // Extracting keywords from 'product_type' and 'product_name' fields
 //       Object.values(data.products).forEach((items) => {
 //         items.forEach((item) => {
-//           const productName = item.product_name.toLowerCase();
-//           const productType = item.product_type.toLowerCase();
-
-//           // Check if either product name or product type matches the query
-//           if (productName.includes(query) || productType.includes(query)) {
-//             filteredProducts.push(item);
-//           }
+//           productsArray.push(item.product_type.toLowerCase());
+//           productsArray.push(item.product_name.toLowerCase());
 //         });
 //       });
-
-//       const productsPerPage = 6;
-//       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-
-//       // Display the filtered products for the first page
-//       function displayProducts(page) {
-//         const startIndex = (page - 1) * productsPerPage;
-//         const endIndex = page * productsPerPage;
-//         const productsToShow = filteredProducts.slice(startIndex, endIndex);
-
-//         // Clear the current list
-//         document.querySelector('.search-products-list .row').innerHTML = '';
-
-//         // Loop through and display the products for the current page
-//         productsToShow.forEach((product) => {
-//           let ribbonHTML = '';
-//           if (product.ribbon_image && product.ribbon_image !== '') {
-//             ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
-//           }
-
-//           const productCard = `
-//             <div class="col-4">
-//               <a href="productdetails.html?id=${product.id}">
-//                 <div class="product-card">
-//                   ${ribbonHTML} <!-- Only include the ribbon if it exists -->
-//                   <div class="card-img-container">
-//                     <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
-//                   </div>
-//                   <div class="card-content">
-//                     <div class="card-product-name">
-//                       <h4 class="product-type">${product.product_type}</h4>
-//                       <p class="product-name">${product.product_name}</p>
-//                     </div>
-//                     <div class="card-arrow">
-//                       <i class="ph-bold ph-caret-right"></i>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </a>
-//             </div>
-//           `;
-
-//           document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
-//         });
-//       }
-
-//       // Pagination logic
-//       function createPagination() {
-//         if (totalPages > 1) {
-//           let paginationHTML = '<div class="pagination">';
-
-//           // Create page links
-//           for (let i = 1; i <= totalPages; i++) {
-//             paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
-//           }
-
-//           paginationHTML += '</div>';
-//           document.querySelector('.pagination-container').innerHTML = paginationHTML;
-
-//           // Handle page link click
-//           document.querySelectorAll('.page-link').forEach((pageLink) => {
-//             pageLink.addEventListener('click', function (event) {
-//               event.preventDefault();
-//               const page = pageLink.getAttribute('data-page');
-//               displayProducts(page);
-//             });
-//           });
-//         }
-//       }
-
-//       // Display products and pagination
-//       if (filteredProducts.length > 0) {
-//         displayProducts(1); // Show first page of products
-//         createPagination();  // Create pagination links
-//       } else {
-//         // Show a message if no products are found
-//         document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
-//       }
-//     })
-//     .catch(() => {
-//       console.error("Error loading JSON file.");
 //     });
+
+//   // Search input event handler
+//   const searchInput = document.getElementById('search-input');
+//   searchInput.addEventListener('input', function () {
+//     const query = searchInput.value.toLowerCase();
+//     const suggestionsDiv = document.querySelector('.suggestions');
+//     suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+
+//     if (query.length > 0) {
+//       // Create a Set to remove duplicate suggestions
+//       const filteredSuggestions = [...new Set(productsArray.filter(function (item) {
+//         return item.includes(query);
+//       }))];
+
+//       // Loop through the filtered suggestions and append to suggestions div
+//       filteredSuggestions.forEach(function (suggestion) {
+//         const suggestionElement = document.createElement('div');
+//         suggestionElement.classList.add('suggestion-item');
+//         suggestionElement.textContent = suggestion;
+//         suggestionElement.addEventListener('click', function () {
+//           searchInput.value = suggestion;
+//           suggestionsDiv.innerHTML = ''; // Clear suggestions after selection
+//           window.location.href = 'searchresult.html?query=' + encodeURIComponent(suggestion); // Redirect to search results page
+//         });
+
+//         suggestionsDiv.appendChild(suggestionElement);
+//       });
+//     }
+//   });
+
+//   // Handle the Enter key to trigger search
+//   searchInput.addEventListener('keypress', function (e) {
+//     if (e.which === 13) { // Enter key
+//       const query = searchInput.value.toLowerCase();
+//       if (query.length > 0 && productsArray.includes(query)) {
+//         window.location.href = 'searchresult.html?query=' + encodeURIComponent(query); // Redirect to search results page
+//         searchInput.value = ''; // Clear the search input after redirect
+//       } else {
+//         // Handle cases where the query doesn't match any suggestion
+//         console.log('No matching product found.');
+//       }
+//       e.preventDefault(); // Prevent default form submission
+//     }
+//   });
+
+//   // Clear the input when the user leaves the page
+//   window.addEventListener('beforeunload', function () {
+//     searchInput.value = ''; // Clear the input field before leaving
+//   });
 // });
+
+
+
+// // search products display//
+
+// // document.addEventListener("DOMContentLoaded", function () {
+// //   // Get the search query from the URL, and ensure it's safe
+// //   const urlParams = new URLSearchParams(window.location.search);
+// //   const query = urlParams.get('query') ? urlParams.get('query').toLowerCase() : '';
+
+// //   // Fetch the JSON file and extract product data
+// //   fetch('/products/products.json')
+// //     .then((response) => response.json())
+// //     .then((data) => {
+// //       const filteredProducts = [];
+
+// //       // Loop through the data and filter products based on the search query
+// //       Object.values(data.products).forEach((items) => {
+// //         items.forEach((item) => {
+// //           const productName = item.product_name ? item.product_name.toLowerCase() : '';
+// //           const productType = item.product_type ? item.product_type.toLowerCase() : '';
+
+// //           // Check if either product name or product type matches the query
+// //           if (productName.includes(query) || productType.includes(query)) {
+// //             filteredProducts.push(item);
+// //           }
+// //         });
+// //       });
+
+// //       const productsPerPage = 6;
+// //       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+// //       // Display the filtered products for the current page
+// //       function displayProducts(page) {
+// //         const startIndex = (page - 1) * productsPerPage;
+// //         const endIndex = page * productsPerPage;
+// //         const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+// //         // Clear the current list
+// //         document.querySelector('.search-products-list .row').innerHTML = '';
+
+// //         // Loop through and display the products for the current page
+// //         productsToShow.forEach((product) => {
+// //           let ribbonHTML = '';
+// //           if (product.ribbon_image && product.ribbon_image !== '') {
+// //             ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
+// //           }
+
+// //           const productCard = `
+// //             <div class="col-4">
+// //               <a href="productdetails.html?id=${product.id}">
+// //                 <div class="product-card">
+// //                   ${ribbonHTML} <!-- Only include the ribbon if it exists -->
+// //                   <div class="card-img-container">
+// //                     <img src="${product.image || './images/bottle-sample.png'}" alt="product image" class="product-image" />
+// //                   </div>
+// //                   <div class="card-content">
+// //                     <div class="card-product-name">
+// //                       <h4 class="product-type">${product.product_type}</h4>
+// //                       <p class="product-name">${product.product_name}</p>
+// //                     </div>
+// //                     <div class="card-arrow">
+// //                       <i class="ph-bold ph-caret-right"></i>
+// //                     </div>
+// //                   </div>
+// //                 </div>
+// //               </a>
+// //             </div>
+// //           `;
+
+// //           document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
+// //         });
+// //       }
+
+// //       // Pagination logic
+// //       function createPagination() {
+// //         if (totalPages > 1) {
+// //           let paginationHTML = '<div class="pagination">';
+
+// //           // Create page links
+// //           for (let i = 1; i <= totalPages; i++) {
+// //             paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
+// //           }
+
+// //           paginationHTML += '</div>';
+// //           document.querySelector('.pagination-container').innerHTML = paginationHTML;
+
+// //           // Handle page link click
+// //           document.querySelectorAll('.page-link').forEach((pageLink) => {
+// //             pageLink.addEventListener('click', function (event) {
+// //               event.preventDefault();
+// //               const page = pageLink.getAttribute('data-page');
+// //               displayProducts(page);
+// //             });
+// //           });
+// //         }
+// //       }
+
+// //       // Display products and pagination
+// //       if (filteredProducts.length > 0) {
+// //         displayProducts(1); // Show first page of products
+// //         createPagination();  // Create pagination links
+// //       } else {
+// //         // Show a message if no products are found
+// //         document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
+// //       }
+// //     })
+// //     .catch(() => {
+// //       console.error("Error loading JSON file.");
+// //     });
+// // });
+
+
+
+// // document.addEventListener("DOMContentLoaded", function () {
+// //   // Get the search query from the URL
+// //   const urlParams = new URLSearchParams(window.location.search);
+// //   const query = urlParams.get('query').toLowerCase();
+
+// //   // Fetch the JSON file and extract product data
+// //   fetch('/products/products.json')
+// //     .then((response) => response.json())
+// //     .then((data) => {
+// //       const filteredProducts = [];
+
+// //       // Loop through the data and filter products based on the search query
+// //       Object.values(data.products).forEach((items) => {
+// //         items.forEach((item) => {
+// //           const productName = item.product_name.toLowerCase();
+// //           const productType = item.product_type.toLowerCase();
+
+// //           // Check if either product name or product type matches the query
+// //           if (productName.includes(query) || productType.includes(query)) {
+// //             filteredProducts.push(item);
+// //           }
+// //         });
+// //       });
+
+// //       const productsPerPage = 6;
+// //       const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+// //       // Display the filtered products for the first page
+// //       function displayProducts(page) {
+// //         const startIndex = (page - 1) * productsPerPage;
+// //         const endIndex = page * productsPerPage;
+// //         const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+// //         // Clear the current list
+// //         document.querySelector('.search-products-list .row').innerHTML = '';
+
+// //         // Loop through and display the products for the current page
+// //         productsToShow.forEach((product) => {
+// //           let ribbonHTML = '';
+// //           if (product.ribbon_image && product.ribbon_image !== '') {
+// //             ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
+// //           }
+
+// //           const productCard = `
+// //             <div class="col-4">
+// //               <a href="productdetails.html?id=${product.id}">
+// //                 <div class="product-card">
+// //                   ${ribbonHTML} <!-- Only include the ribbon if it exists -->
+// //                   <div class="card-img-container">
+// //                     <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
+// //                   </div>
+// //                   <div class="card-content">
+// //                     <div class="card-product-name">
+// //                       <h4 class="product-type">${product.product_type}</h4>
+// //                       <p class="product-name">${product.product_name}</p>
+// //                     </div>
+// //                     <div class="card-arrow">
+// //                       <i class="ph-bold ph-caret-right"></i>
+// //                     </div>
+// //                   </div>
+// //                 </div>
+// //               </a>
+// //             </div>
+// //           `;
+
+// //           document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
+// //         });
+// //       }
+
+// //       // Pagination logic
+// //       function createPagination() {
+// //         if (totalPages > 1) {
+// //           let paginationHTML = '<div class="pagination">';
+
+// //           // Create page links
+// //           for (let i = 1; i <= totalPages; i++) {
+// //             paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
+// //           }
+
+// //           paginationHTML += '</div>';
+// //           document.querySelector('.pagination-container').innerHTML = paginationHTML;
+
+// //           // Handle page link click
+// //           document.querySelectorAll('.page-link').forEach((pageLink) => {
+// //             pageLink.addEventListener('click', function (event) {
+// //               event.preventDefault();
+// //               const page = pageLink.getAttribute('data-page');
+// //               displayProducts(page);
+// //             });
+// //           });
+// //         }
+// //       }
+
+// //       // Display products and pagination
+// //       if (filteredProducts.length > 0) {
+// //         displayProducts(1); // Show first page of products
+// //         createPagination();  // Create pagination links
+// //       } else {
+// //         // Show a message if no products are found
+// //         document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
+// //       }
+// //     })
+// //     .catch(() => {
+// //       console.error("Error loading JSON file.");
+// //     });
+// // });
 
 
 
