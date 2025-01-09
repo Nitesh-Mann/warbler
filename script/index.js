@@ -12,6 +12,26 @@ window.addEventListener('beforeunload', function() {
 });
 
 
+window.onload = function() {
+    // Store the start time of page load
+    const startTime = Date.now();
+
+    // Set a threshold for page load time (1 second)
+    const threshold = 1000; // 1 second in milliseconds
+
+    // Check if page load time exceeds the threshold
+    setTimeout(function() {
+        const loadTime = Date.now() - startTime;
+
+        // If page load takes longer than 1 second, refresh the page
+        if (loadTime > threshold) {
+            location.reload();
+        }
+    }, 100); // Check the load time after 100 ms to give enough time for the page to load
+};
+
+
+
 // google translate //
 
 document.addEventListener("DOMContentLoaded", function () {
