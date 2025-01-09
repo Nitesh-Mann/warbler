@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 (function() {
- 
+ console.log("script")
   if (!sessionStorage.getItem('reloaded')) {
     sessionStorage.setItem('reloaded', 'true');
     console.log("Reloading the page...");  // Debugging log to confirm reload is triggered
