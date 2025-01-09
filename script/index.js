@@ -27,6 +27,29 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 });
 
+(function() {
+ 
+  if (!sessionStorage.getItem('reloaded')) {
+    sessionStorage.setItem('reloaded', 'true');
+    console.log("Reloading the page...");  // Debugging log to confirm reload is triggered
+
+   
+    setTimeout(function() {
+      location.reload(); // This triggers the reload
+    }, 100); // Delay to ensure the page is fully loaded
+  } else {
+    sessionStorage.removeItem('reloaded');
+  }
+
+  history.pushState(null, null, location.href);
+
+  window.onpopstate = function() {
+    console.log("Back button detected. Reloading...");
+
+    location.reload();
+  };
+})();
+
 
 
 // age-gate//
