@@ -1,16 +1,6 @@
 
 // loader//
 
-// window.addEventListener('load', function() {
-//   const loader = document.getElementById('loader');
-//   loader.hidden = true; // Hide loader once page is fully loaded
-// });
-
-// window.addEventListener('beforeunload', function() {
-//   const loader = document.getElementById('loader');
-//   loader.hidden = false; // Show loader on page unload (reload or navigate)
-// });
-
 window.addEventListener('load', function() {
   const loader = document.getElementById('loader');
   setTimeout(() => {
@@ -25,7 +15,6 @@ window.addEventListener('beforeunload', function() {
     // Optional: Add additional logic here if needed
   }, 500); // Delay to simulate loader being active
 });
-
 
 
 
@@ -155,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // header //
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const menuBar = document.querySelector(".menu-bar");
     const closeButton = document.querySelector(".ph-x");
     const headerWrapper = document.querySelector(".header-2-wrapper");
@@ -181,10 +170,10 @@ document.addEventListener("DOMContentLoaded", function () {
       headerWrapper.classList.remove("show-header-2");
       toggleBodyScroll(false);
     });
-  });
+});
   
   // search bar show and hide  //
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Ensure search-wrapper is hidden on initial load
     const searchWrapper = document.querySelector(".search-wrapper");
     const searchBtn = document.querySelector(".search-btn");
@@ -220,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchContainer.addEventListener("click", function (event) {
       event.stopPropagation();
     });
-  });
+});
   
 //product swiper //
 
@@ -256,11 +245,11 @@ const swiper = new Swiper('.productSwiper', {
         spaceBetween: 30, // Consistent spacing
       },
     },
-  });
+});
 
-  //testimonisl swipper//
+//testimonisl swipper//
   
-  const Testswiper = new Swiper(".testimonialsSwiper", {
+const Testswiper = new Swiper(".testimonialsSwiper", {
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -274,10 +263,10 @@ const swiper = new Swiper('.productSwiper', {
       delay: 5000,
       disableOnInteraction: false,
     },
-  });
+});
 
   // scroll to top //
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Check the window's scroll position on page load and toggle the scale of the "to-top" button
     toggleToTopButton();
   
@@ -298,7 +287,7 @@ const swiper = new Swiper('.productSwiper', {
         toTopButton.style.transform = "scale(1)";
       }
     }
-  });
+});
   
   
 
@@ -877,6 +866,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// search bars functions //
+
+// fetch what user have search in input //
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the search query from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('query') ? urlParams.get('query') : '';
+
+  // Set the query in the second search bar
+  const searchInput2 = document.getElementById('search-input-2');
+  if (searchInput2) {
+    searchInput2.value = query;
+  }
+
+  // You can continue with your existing logic for displaying products based on the query...
+});
+
+
 
 //search bar //
 document.addEventListener("DOMContentLoaded", function () {
@@ -944,7 +952,6 @@ document.addEventListener("DOMContentLoaded", function () {
     searchInput.value = ''; // Clear the input field before leaving
   });
 });
-
 
 
 // search products display//
@@ -1057,113 +1064,203 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//search bar -2 //
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the search query from the URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('query').toLowerCase();
+  let productsArray = [];
+  let currentPage = 1;
+  const productsPerPage = 6; // Show 6 products per page
 
-  // Fetch the JSON file and extract product data
+  // Fetch the JSON file and extract product types and product names
   fetch('/products/products.json')
     .then((response) => response.json())
     .then((data) => {
-      const filteredProducts = [];
-
-      // Loop through the data and filter products based on the search query
+      // Extracting keywords from 'product_type' and 'product_name' fields
       Object.values(data.products).forEach((items) => {
         items.forEach((item) => {
-          const productName = item.product_name.toLowerCase();
-          const productType = item.product_type.toLowerCase();
-
-          // Check if either product name or product type matches the query
-          if (productName.includes(query) || productType.includes(query)) {
-            filteredProducts.push(item);
-          }
+          productsArray.push(item.product_type.toLowerCase());
+          productsArray.push(item.product_name.toLowerCase());
         });
       });
-
-      const productsPerPage = 6;
-      const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-
-      // Display the filtered products for the first page
-      function displayProducts(page) {
-        const startIndex = (page - 1) * productsPerPage;
-        const endIndex = page * productsPerPage;
-        const productsToShow = filteredProducts.slice(startIndex, endIndex);
-
-        // Clear the current list
-        document.querySelector('.search-products-list .row').innerHTML = '';
-
-        // Loop through and display the products for the current page
-        productsToShow.forEach((product) => {
-          let ribbonHTML = '';
-          if (product.ribbon_image && product.ribbon_image !== '') {
-            ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
-          }
-
-          const productCard = `
-            <div class="col-4">
-              <a href="productdetails.html?id=${product.id}">
-                <div class="product-card">
-                  ${ribbonHTML} <!-- Only include the ribbon if it exists -->
-                  <div class="card-img-container">
-                    <img src="./images/bottle-sample.png" alt="bottle" class="product-image" />
-                  </div>
-                  <div class="card-content">
-                    <div class="card-product-name">
-                      <h4 class="product-type">${product.product_type}</h4>
-                      <p class="product-name">${product.product_name}</p>
-                    </div>
-                    <div class="card-arrow">
-                      <i class="ph-bold ph-caret-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          `;
-
-          document.querySelector('.search-products-list .row').insertAdjacentHTML('beforeend', productCard);
-        });
-      }
-
-      // Pagination logic
-      function createPagination() {
-        if (totalPages > 1) {
-          let paginationHTML = '<div class="pagination">';
-
-          // Create page links
-          for (let i = 1; i <= totalPages; i++) {
-            paginationHTML += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
-          }
-
-          paginationHTML += '</div>';
-          document.querySelector('.pagination-container').innerHTML = paginationHTML;
-
-          // Handle page link click
-          document.querySelectorAll('.page-link').forEach((pageLink) => {
-            pageLink.addEventListener('click', function (event) {
-              event.preventDefault();
-              const page = pageLink.getAttribute('data-page');
-              displayProducts(page);
-            });
-          });
-        }
-      }
-
-      // Display products and pagination
-      if (filteredProducts.length > 0) {
-        displayProducts(1); // Show first page of products
-        createPagination();  // Create pagination links
-      } else {
-        // Show a message if no products are found
-        document.querySelector('.search-products-list .row').innerHTML = '<p>No products found matching your search.</p>';
-      }
-    })
-    .catch(() => {
-      console.error("Error loading JSON file.");
     });
+
+  // Search input event handler for searchbar-2
+  const searchInput2 = document.getElementById('search-input-2');
+  searchInput2.addEventListener('input', function () {
+    const query = searchInput2.value.toLowerCase();
+    const suggestionsDiv = document.querySelector('#searchbar-2 .suggestions');
+    suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+
+    if (query.length > 0) {
+      // Create a Set to remove duplicate suggestions
+      const filteredSuggestions = [...new Set(productsArray.filter(function (item) {
+        return item.includes(query);
+      }))];
+
+      // Loop through the filtered suggestions and append to suggestions div
+      filteredSuggestions.forEach(function (suggestion) {
+        const suggestionElement = document.createElement('div');
+        suggestionElement.classList.add('suggestion-item');
+        suggestionElement.textContent = suggestion;
+        suggestionElement.addEventListener('click', function () {
+          searchInput2.value = suggestion;
+          suggestionsDiv.innerHTML = ''; // Clear suggestions after selection
+          renderProducts(suggestion); // Render products on the same page
+        });
+
+        suggestionsDiv.appendChild(suggestionElement);
+      });
+    }
+  });
+
+  // Handle the Enter key to trigger search for searchbar-2
+  searchInput2.addEventListener('keypress', function (e) {
+    if (e.which === 13) { // Enter key
+      const query = searchInput2.value.toLowerCase();
+      if (query.length > 0 && productsArray.includes(query)) {
+        renderProducts(query); // Render products on the same page
+        searchInput2.value = ''; // Clear the search input after render
+      } else {
+        // Handle cases where the query doesn't match any suggestion
+        console.log('No matching product found.');
+      }
+      e.preventDefault(); // Prevent default form submission
+    }
+  });
+
+  // Function to render the filtered products on the same page
+  function renderProducts(query) {
+    fetch('/products/products.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const filteredProducts = [];
+
+        // Loop through the data and filter products based on the search query
+        Object.values(data.products).forEach((items) => {
+          items.forEach((item) => {
+            const productName = item.product_name ? item.product_name.toLowerCase() : '';
+            const productType = item.product_type ? item.product_type.toLowerCase() : '';
+
+            // Check if either product name or product type matches the query
+            if (productName.includes(query) || productType.includes(query)) {
+              filteredProducts.push(item);
+            }
+          });
+        });
+
+        // Clear the current list of products
+        const productList = document.querySelector('.search-products-list .row');
+        productList.innerHTML = '';
+
+        // Pagination logic
+        const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+        // Get products for the current page
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const paginatedProducts = filteredProducts.slice(startIndex, startIndex + productsPerPage);
+
+        // Display the filtered products on the same page
+        if (paginatedProducts.length > 0) {
+          paginatedProducts.forEach((product) => {
+            let ribbonHTML = '';
+            if (product.ribbon_image && product.ribbon_image !== '') {
+              ribbonHTML = `<div class="ribbon"><img src="${product.ribbon_image}" /></div>`;
+            }
+
+            const productCard = `
+              <div class="col-4">
+                <a href="productdetails.html?id=${product.id}">
+                  <div class="product-card">
+                    ${ribbonHTML} <!-- Only include the ribbon if it exists -->
+                    <div class="card-img-container">
+                      <img src="${product.image || './images/bottle-sample.png'}" alt="product image" class="product-image" />
+                    </div>
+                    <div class="card-content">
+                      <div class="card-product-name">
+                        <h4 class="product-type">${product.product_type}</h4>
+                        <p class="product-name">${product.product_name}</p>
+                      </div>
+                      <div class="card-arrow">
+                        <i class="ph-bold ph-caret-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            `;
+
+            productList.insertAdjacentHTML('beforeend', productCard);
+          });
+        } else {
+          // If no products found, display a message
+          productList.innerHTML = '<p>No products found matching your search.</p>';
+        }
+
+        // Render pagination buttons (only numbers) in the pagination container
+        renderPagination(totalPages);
+      })
+      .catch((error) => {
+        console.error("Error loading JSON file:", error);
+      });
+  }
+
+  // Function to render only page number buttons inside the pagination-container
+  function renderPagination(totalPages) {
+    const paginationDiv = document.querySelector('.pagination-container'); // Use pagination-container class
+    paginationDiv.innerHTML = ''; // Clear existing pagination
+
+    if (totalPages > 1) {
+      // Create the Bootstrap pagination component
+      const paginationList = document.createElement('ul');
+      paginationList.classList.add('pagination', 'justify-content-center');
+
+      // Loop through the total number of pages and create page number buttons
+      for (let i = 1; i <= totalPages; i++) {
+        const pageItem = document.createElement('li');
+        pageItem.classList.add('page-item');
+        const pageButton = document.createElement('a');
+        pageButton.classList.add('page-link');
+        pageButton.textContent = i;
+        pageButton.addEventListener('click', function () {
+          currentPage = i;
+          renderProducts(searchInput2.value.toLowerCase());
+        });
+        
+        // Disable the current page
+        if (i === currentPage) {
+          pageItem.classList.add('active');
+        }
+
+        pageItem.appendChild(pageButton);
+        paginationList.appendChild(pageItem);
+      }
+
+      // Append the pagination list to the pagination container
+      paginationDiv.appendChild(paginationList);
+    }
+  }
+
+  // // Clear the input when the user leaves the page
+  // window.addEventListener('beforeunload', function () {
+  //   searchInput2.value = ''; // Clear the input field before leaving
+  // });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.search-bar {
+.search-input-container .search-bar {
   border: 1px solid var(--color2);
   border-radius: 50px;
 }
@@ -52,6 +52,10 @@
   border: none;
   font-family: var(--neu);
   text-transform: capitalize;
+}
+
+.search-input-container .suggestions {
+  z-index: 28;
 }
 
 .search-input-container input::placeholder {
