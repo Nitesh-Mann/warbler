@@ -222,10 +222,10 @@ const swiper = new Swiper('.productSwiper', {
       nextEl: '.swiper-button-next', // Selector for the next button
       prevEl: '.swiper-button-prev', // Selector for the previous button
     },
-    autoplay: {
-      delay: 6000, // Delay between transitions in milliseconds
-      disableOnInteraction: true, // Keeps autoplay running after user interaction
-    },
+    // autoplay: {
+    //   delay: 6000, // Delay between transitions in milliseconds
+    //   disableOnInteraction: true, // Keeps autoplay running after user interaction
+    // },
   
     breakpoints: {
       575: {
@@ -246,6 +246,82 @@ const swiper = new Swiper('.productSwiper', {
       },
     },
 });
+
+
+//news swiper//
+const newsSwiper = new Swiper('.newsSwiper', {
+  loop: false, // Enables infinite loop
+  slidesPerView: 1, // Default number of slides per view
+  spaceBetween: 10, // Default space between slides
+  navigation: {
+    nextEl: '.news-next', // Selector for the next button
+    prevEl: '.news-prev', // Selector for the previous button
+  },
+  // autoplay: {
+  //   delay: 6000, // Delay between transitions in milliseconds
+  //   disableOnInteraction: true, // Keeps autoplay running after user interaction
+  // },
+
+  breakpoints: {
+    575: {
+      slidesPerView: 1, // 1 slide visible for smaller screens
+      spaceBetween: 20, // Increased spacing for smaller screens
+    },
+    751: {
+      slidesPerView: 1.5, // 1.5 slides visible for medium screens
+      spaceBetween: 20, // Adjusted spacing
+    },
+    991: {
+      slidesPerView: 2, // 2.5 slides visible for larger screens
+      spaceBetween: 20, // More spacing for larger screens
+    },
+    1206: {
+      slidesPerView: 3, // 3 slides visible for extra-large screens
+      spaceBetween: 30, // Consistent spacing
+    },
+  },
+});
+
+// story swiper//
+const eventSwiper = new Swiper('.eventSwiper', {
+  loop: false, // Enables infinite loop
+  slidesPerView: 1, // Default number of slides per view
+  spaceBetween: 10, // Default space between slides
+  navigation: {
+    nextEl: '.event-next', // Selector for the next button
+    prevEl: '.event-prev', // Selector for the previous button
+  },
+  // autoplay: {
+  //   delay: 6000, // Delay between transitions in milliseconds
+  //   disableOnInteraction: true, // Keeps autoplay running after user interaction
+  // },
+
+  breakpoints: {
+    575: {
+      slidesPerView: 1, // 1 slide visible for smaller screens
+      spaceBetween: 20, // Increased spacing for smaller screens
+    },
+    751: {
+      slidesPerView: 1.5, // 1.5 slides visible for medium screens
+      spaceBetween: 20, // Adjusted spacing
+    },
+    991: {
+      slidesPerView: 2, // 2.5 slides visible for larger screens
+      spaceBetween: 20, // More spacing for larger screens
+    },
+    1206: {
+      slidesPerView: 3, // 3 slides visible for extra-large screens
+      spaceBetween: 30, // Consistent spacing
+    },
+  },
+});
+
+
+
+
+
+
+
 
 //testimonisl swipper//
   
@@ -363,16 +439,17 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      // Access both whisky and new arrivals product data
-      const whisky = data.products.whisky;
-      const newArrivals = data.products["new-arrivals"];
+      // Access whisky and new arrivals product data
+      const whisky = data.products.whisky || [];
+      const newArrivals = data.products["new-arrivals"] || [];
 
-      // Combine both whisky and new-arrivals into a single array
-      const combinedProducts = whisky.concat(
-        newArrivals.filter((newArrival) =>
-          whisky.some((whiskyProduct) => whiskyProduct.product_type === newArrival.product_type)
-        )
+      // If whisky is empty, fetch from new-arrivals where product type is "whisky" or "whiskey"
+      const whiskyFromNewArrivals = newArrivals.filter(
+        (product) => product.product_type.toLowerCase() === "whisky" || product.product_type.toLowerCase() === "whiskey"
       );
+
+      // Combine whisky and relevant new-arrivals products
+      const combinedProducts = whisky.concat(whiskyFromNewArrivals);
 
       // Loop through the combined array and construct a slide for each product
       let slides = "";
@@ -421,6 +498,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // // tequila products //
+
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch the JSON file from the "products" folder
   fetch("/products/products.json")
@@ -431,16 +509,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      // Access both tequila and new arrivals product data
+      // Access tequila and new arrivals product data
       const tequila = data.products.tequila;
       const newArrivals = data.products["new-arrivals"];
 
-      // Combine both tequila and new-arrivals into a single array
-      const combinedProducts = tequila.concat(
-        newArrivals.filter((newArrival) =>
-          tequila.some((tequilaProduct) => tequilaProduct.product_type === newArrival.product_type)
-        )
-      );
+      // If tequila is empty, filter new-arrivals for tequila products; otherwise, combine both
+      const combinedProducts = tequila.length === 0
+        ? newArrivals.filter((newArrival) => newArrival.product_type === "tequila")
+        : tequila.concat(
+            newArrivals.filter((newArrival) =>
+              tequila.some(
+                (tequilaProduct) => tequilaProduct.product_type === newArrival.product_type
+              )
+            )
+          );
 
       // Loop through the combined array and construct a slide for each product
       let slides = "";
@@ -488,7 +570,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 // // sotol products //
+
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch the JSON file from the "products" folder
   fetch("/products/products.json")
@@ -499,16 +583,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      // Access both sotol and new arrivals product data
+      // Access sotol and new arrivals product data
       const sotol = data.products.sotol;
       const newArrivals = data.products["new-arrivals"];
 
-      // Combine both sotol and new-arrivals into a single array
-      const combinedProducts = sotol.concat(
-        newArrivals.filter((newArrival) =>
-          sotol.some((sotolProduct) => sotolProduct.product_type === newArrival.product_type)
-        )
-      );
+      // If sotol is empty, filter new-arrivals for sotol products; otherwise, combine both
+      const combinedProducts = sotol.length === 0
+        ? newArrivals.filter((newArrival) => newArrival.product_type === "sotol")
+        : sotol.concat(
+            newArrivals.filter((newArrival) =>
+              sotol.some(
+                (sotolProduct) => sotolProduct.product_type === newArrival.product_type
+              )
+            )
+          );
 
       // Loop through the combined array and construct a slide for each product
       let slides = "";
@@ -556,6 +644,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 // // gin products //
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch the JSON file from the "products" folder
@@ -567,16 +656,17 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      // Access both gin and new arrivals product data
-      const gin = data.products.gin;
-      const newArrivals = data.products["new-arrivals"];
+      // Access gin and new arrivals product data
+      const gin = data.products.gin || [];
+      const newArrivals = data.products["new-arrivals"] || [];
 
-      // Combine both gin and new-arrivals into a single array
-      const combinedProducts = gin.concat(
-        newArrivals.filter((newArrival) =>
-          gin.some((ginProduct) => ginProduct.product_type === newArrival.product_type)
-        )
+      // If gin is empty, fetch from new-arrivals where product type is "gin"
+      const ginFromNewArrivals = newArrivals.filter(
+        (product) => product.product_type.toLowerCase() === "gin"
       );
+
+      // Combine gin and relevant new-arrivals products
+      const combinedProducts = gin.concat(ginFromNewArrivals);
 
       // Loop through the combined array and construct a slide for each product
       let slides = "";
@@ -624,6 +714,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 // // beer //
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch the JSON file from the "products" folder
@@ -635,16 +726,17 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      // Access both beer and new arrivals product data
-      const beer = data.products.beer;
-      const newArrivals = data.products["new-arrivals"];
+      // Access beer and new arrivals product data
+      const beer = data.products.beer || [];
+      const newArrivals = data.products["new-arrivals"] || [];
 
-      // Combine both beer and new-arrivals into a single array
-      const combinedProducts = beer.concat(
-        newArrivals.filter((newArrival) =>
-          beer.some((beerProduct) => beerProduct.product_type === newArrival.product_type)
-        )
+      // If beer is empty, fetch from new-arrivals where product type is "beer"
+      const beerFromNewArrivals = newArrivals.filter(
+        (product) => product.product_type.toLowerCase() === "beer"
       );
+
+      // Combine beer and relevant new-arrivals products
+      const combinedProducts = beer.concat(beerFromNewArrivals);
 
       // Loop through the combined array and construct a slide for each product
       let slides = "";
@@ -690,6 +782,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error(error.message);
     });
 });
+
 
 
 
@@ -955,7 +1048,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // search products display//
-
 document.addEventListener("DOMContentLoaded", function () {
   // Get the search query from the URL, and ensure it's safe
   const urlParams = new URLSearchParams(window.location.search);
@@ -1071,6 +1163,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentPage = 1;
   const productsPerPage = 6; // Show 6 products per page
 
+  // Show loader while loading
+  const loader = document.getElementById('loader');
+  loader.hidden = false;
+
   // Fetch the JSON file and extract product types and product names
   fetch('/products/products.json')
     .then((response) => response.json())
@@ -1082,6 +1178,11 @@ document.addEventListener("DOMContentLoaded", function () {
           productsArray.push(item.product_name.toLowerCase());
         });
       });
+
+      // Hide loader after products are loaded (setTimeout for 1 sec delay)
+      setTimeout(() => {
+        loader.hidden = true;
+      }, 1000); // Delay of 1000ms (1 second)
     });
 
   // Search input event handler for searchbar-2
@@ -1130,6 +1231,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to render the filtered products on the same page
   function renderProducts(query) {
+    // Show loader while fetching products
+    loader.hidden = false;
+
     fetch('/products/products.json')
       .then((response) => response.json())
       .then((data) => {
@@ -1198,13 +1302,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Render pagination buttons (only numbers) in the pagination container
         renderPagination(totalPages);
+
+        // Hide the loader after products are loaded
+        setTimeout(() => {
+          loader.hidden = true;
+        }, 1000); // Hide after 1 second delay
       })
       .catch((error) => {
         console.error("Error loading JSON file:", error);
+        loader.hidden = true; // Hide loader if error occurs
       });
   }
 
-  // Function to render only page number buttons inside the pagination-container
+  // Function to render pagination separately
   function renderPagination(totalPages) {
     const paginationDiv = document.querySelector('.pagination-container'); // Use pagination-container class
     paginationDiv.innerHTML = ''; // Clear existing pagination
@@ -1225,7 +1335,7 @@ document.addEventListener("DOMContentLoaded", function () {
           currentPage = i;
           renderProducts(searchInput2.value.toLowerCase());
         });
-        
+
         // Disable the current page
         if (i === currentPage) {
           pageItem.classList.add('active');
@@ -1239,15 +1349,134 @@ document.addEventListener("DOMContentLoaded", function () {
       paginationDiv.appendChild(paginationList);
     }
   }
-
-  // // Clear the input when the user leaves the page
-  // window.addEventListener('beforeunload', function () {
-  //   searchInput2.value = ''; // Clear the input field before leaving
-  // });
 });
 
 
 
+/// news and events functions //
+
+// Fetching JSON data from the products/updates.json file
+// fetch('products/updates.json')
+//   .then(response => response.json())
+//   .then(data => {
+//     // Loop through the array of news items
+//     data.news.forEach(news => {
+//       addNewsSlide(news); // Call function to create a slide for each news item
+//     });
+//   })
+//   .catch(error => console.error('Error fetching JSON:', error));
+
+// // Function to generate the swiper slide dynamically for each news item
+// function addNewsSlide(news) {
+//   const swiperWrapper = document.getElementById('newswiperwrapper');
+
+//   const slideHTML = `
+//     <div class="swiper-slide">
+//       <div class="news-card">
+//         <a href="#!" class="news-title">
+//           ${news['news-title']}
+//         </a>
+//         <p class="news-para">
+//           ${news.content[0]} <!-- First paragraph from content -->
+//         </p>
+//         <p class="news-date">
+//           ${news['news-date'].date} <span>|</span>
+//           <span class="news-day">${news['news-date'].day}</span>
+//         </p>
+//       </div>
+//     </div>
+//   `;
+
+//   swiperWrapper.innerHTML += slideHTML; // Add the new slide to the swiper wrapper
+// }
+
+// Fetching JSON data from the products/updates.json file
+fetch('products/updates.json')
+  .then(response => response.json())
+  .then(data => {
+    // Loop through the array of news items
+    data.news.forEach(news => {
+      addNewsSlide(news); // Call function to create a slide for each news item
+    });
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
+
+// Function to generate the swiper slide dynamically for each news item
+function addNewsSlide(news) {
+  const swiperWrapper = document.getElementById('newswiperwrapper');
+
+  // Assuming each news item has a unique 'id' or 'slug' for the article
+  const newsLink = `articles.html?newsId=${news.id}`; // or use another identifier if necessary
+
+  const slideHTML = `
+    <div class="swiper-slide">
+      <div class="news-card">
+        <a href="${newsLink}" class="news-title">
+          ${news['news-title']}
+        </a>
+        <p class="news-para">
+          ${news.content[0]} <!-- First paragraph from content -->
+        </p>
+        <p class="news-date">
+          ${news['news-date'].date} <span>|</span>
+          <span class="news-day">${news['news-date'].day}</span>
+        </p>
+      </div>
+    </div>
+  `;
+
+  swiperWrapper.innerHTML += slideHTML; // Add the new slide to the swiper wrapper
+}
+
+
+
+
+
+
+
+// event section //
+
+
+// Fetching data from products/updates.json
+fetch('products/updates.json')  // Replace with the actual path to your JSON file
+  .then(response => response.json())
+  .then(data => {
+    // Loop through the events items
+    data.events.forEach(eventItem => {
+      addEventSlide(eventItem);  // Call function to add each event slide
+    });
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
+
+// Function to create event slide
+function addEventSlide(event) {
+  const swiperWrapper = document.getElementById('eventswiperwrapper');
+
+  // Assuming each event has a unique 'eventId' to link to the full article
+  const eventLink = `articles.html?eventId=${event.id}`; // URL for redirection
+
+  const slideHTML = `
+    <div class="swiper-slide">
+      <div class="event-card">
+        <div class="event-image">
+          <img src="${event['event-image']}" alt="Event Image" />
+        </div>
+        <a href="${eventLink}" class="event-title">
+          ${event['event-title']}
+        </a>
+        <p class="event-para">
+          ${event['event-content'].join(' ')} <!-- Join all content paragraphs into a single block -->
+        </p>
+        <p class="event-date">
+          ${event['event-date'].date} <span>|</span>
+          <span class="event-day">${event['event-date'].day}</span>
+        </p>
+      </div>
+    </div>
+  `;
+
+  swiperWrapper.innerHTML += slideHTML; // Append the new slide to the swiper wrapper
+}
 
 
 
@@ -1260,8 +1489,218 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// Get the newsId from the URL query string
+// const urlParams = new URLSearchParams(window.location.search);
+// const newsId = urlParams.get('newsId');
+
+// // Check if newsId is provided
+// if (newsId) {
+//   // Fetch the JSON data containing articles
+//   fetch('products/updates.json')
+//     .then(response => response.json())
+//     .then(data => {
+//       // Find the article with the matching newsId
+//       const article = data.news.find(news => news.id === newsId);
+
+//       // If the article is found, update the page with its data
+//       if (article) {
+//         // Update article title and date
+//         document.querySelector('.new-title').textContent = article['news-title'];
+//         document.querySelector('.news-date').innerHTML = `${article['news-date'].date} <span>|</span> <span class="news-day">${article['news-date'].day}</span>`;
+
+//         // Update article image (if present)
+//         const newsImage = document.querySelector('.news-image img');
+//         if (article.image) { // Assuming 'image' property contains the image URL
+//           newsImage.src = article.image;
+//         }
+
+//         // Update article content
+//         const newsContent = document.querySelector('.news-content');
+//         // Clear existing content if any
+//         newsContent.innerHTML = '';
+
+//         // Loop through each paragraph in the content array and add it as a <p> tag
+//         article.content.forEach(paragraph => {
+//           const paragraphElement = document.createElement('p');
+//           paragraphElement.textContent = paragraph;
+//           newsContent.appendChild(paragraphElement);
+//         });
+//       } else {
+//         console.error('Article not found');
+//       }
+//     })
+//     .catch(error => console.error('Error fetching article data:', error));
+// } else {
+//   console.error('No newsId provided in the URL');
+// }
+
+// Get the 'newsId' or 'eventId' from the URL query string
+// const urlParams = new URLSearchParams(window.location.search);
+// const newsId = urlParams.get('newsId');
+// const eventId = urlParams.get('eventId');
+
+// // Function to update page with news data
+// function updateNewsPage(news) {
+//   // Update article title and date
+//   document.querySelector('.new-title').textContent = news['news-title'];
+//   document.querySelector('.news-date').innerHTML = `${news['news-date'].date} <span>|</span> <span class="news-day">${news['news-date'].day}</span>`;
+
+//   // Update article image (if present)
+//   const newsImage = document.querySelector('.news-image img');
+//   if (news.image) { // Assuming 'image' property contains the image URL
+//     newsImage.src = news.image;
+//   }
+
+//   // Update article content
+//   const newsContent = document.querySelector('.news-content');
+//   newsContent.innerHTML = ''; // Clear existing content
+
+//   news.content.forEach(paragraph => {
+//     const paragraphElement = document.createElement('p');
+//     paragraphElement.textContent = paragraph;
+//     newsContent.appendChild(paragraphElement);
+//   });
+// }
+
+// // Function to update page with event data
+// function updateEventPage(event) {
+//   // Update event title and date
+//   document.querySelector('.new-title').textContent = event['event-title'];
+//   document.querySelector('.news-date').innerHTML = `${event['event-date'].date} <span>|</span> <span class="news-day">${event['event-date'].day}</span>`;
+
+//   // Update event image (if present)
+//   const eventImage = document.querySelector('.news-image img');
+//   if (event['event-image']) { // Assuming 'event-image' property contains the image URL
+//     eventImage.src = event['event-image'];
+//   }
+
+//   // Update event content
+//   const eventContent = document.querySelector('.news-content');
+//   eventContent.innerHTML = ''; // Clear existing content
+
+//   event['event-content'].forEach(paragraph => {
+//     const paragraphElement = document.createElement('p');
+//     paragraphElement.textContent = paragraph;
+//     eventContent.appendChild(paragraphElement);
+//   });
+// }
+
+// // Check if 'newsId' or 'eventId' is provided and fetch data
+// if (newsId) {
+//   // Fetch news data
+//   fetch('products/updates.json')
+//     .then(response => response.json())
+//     .then(data => {
+//       const article = data.news.find(news => news.id === newsId);
+//       if (article) {
+//         updateNewsPage(article); // Call function to update the page with news data
+//       } else {
+//         console.error('News article not found');
+//       }
+//     })
+//     .catch(error => console.error('Error fetching news data:', error));
+// } else if (eventId) {
+//   // Fetch event data
+//   fetch('products/updates.json')
+//     .then(response => response.json())
+//     .then(data => {
+//       const event = data.events.find(event => event.id === eventId);
+//       if (event) {
+//         updateEventPage(event); // Call function to update the page with event data
+//       } else {
+//         console.error('Event not found');
+//       }
+//     })
+//     .catch(error => console.error('Error fetching event data:', error));
+// } else {
+//   console.error('No newsId or eventId provided in the URL');
+// }
 
 
+
+// Get the 'newsId' or 'eventId' from the URL query string
+const urlParams = new URLSearchParams(window.location.search);
+const newsId = urlParams.get('newsId');
+const eventId = urlParams.get('eventId');
+
+// Function to update page with news data
+function updateNewsPage(news) {
+  // Update article title and date
+  document.querySelector('.new-title').textContent = news['news-title'];
+  document.querySelector('.news-date').innerHTML = `${news['news-date'].date} <span>|</span> <span class="news-day">${news['news-date'].day}</span>`;
+
+  // Update article image (if present)
+  const newsImage = document.querySelector('.news-image img');
+  if (news.image) { // Assuming 'image' property contains the image URL
+    newsImage.src = news.image;
+  }
+
+  // Update article content
+  const newsContent = document.querySelector('.news-content');
+  newsContent.innerHTML = ''; // Clear existing content
+
+  // Wrap each paragraph in <p> tags
+  news.content.forEach(paragraph => {
+    const paragraphElement = document.createElement('p');
+    paragraphElement.textContent = paragraph;
+    newsContent.appendChild(paragraphElement);
+  });
+}
+
+// Function to update page with event data
+function updateEventPage(event) {
+  // Update event title and date
+  document.querySelector('.new-title').textContent = event['event-title'];
+  document.querySelector('.news-date').innerHTML = `${event['event-date'].date} <span>|</span> <span class="news-day">${event['event-date'].day}</span>`;
+
+  // Update event image (if present)
+  const eventImage = document.querySelector('.news-image img');
+  if (event['event-image']) { // Assuming 'event-image' property contains the image URL
+    eventImage.src = event['event-image'];
+  }
+
+  // Update event content
+  const eventContent = document.querySelector('.news-content');
+  eventContent.innerHTML = ''; // Clear existing content
+
+  // Wrap each paragraph in <p> tags
+  event['event-content'].forEach(paragraph => {
+    const paragraphElement = document.createElement('p');
+    paragraphElement.textContent = paragraph;
+    eventContent.appendChild(paragraphElement);
+  });
+}
+
+// Check if 'newsId' or 'eventId' is provided and fetch data
+if (newsId) {
+  // Fetch news data
+  fetch('products/updates.json')
+    .then(response => response.json())
+    .then(data => {
+      const article = data.news.find(news => news.id === newsId);
+      if (article) {
+        updateNewsPage(article); // Call function to update the page with news data
+      } else {
+        console.error('News article not found');
+      }
+    })
+    .catch(error => console.error('Error fetching news data:', error));
+} else if (eventId) {
+  // Fetch event data
+  fetch('products/updates.json')
+    .then(response => response.json())
+    .then(data => {
+      const event = data.events.find(event => event.id === eventId);
+      if (event) {
+        updateEventPage(event); // Call function to update the page with event data
+      } else {
+        console.error('Event not found');
+      }
+    })
+    .catch(error => console.error('Error fetching event data:', error));
+} else {
+  console.error('No newsId or eventId provided in the URL');
+}
 
 
 

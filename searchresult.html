@@ -456,6 +456,21 @@
       crossorigin="anonymous"
     ></script>
     <!--script-->
+    <script>
+      // Mark user has visited searchresult.html
+      sessionStorage.setItem("visitedSearchResult", "true");
+
+      // Logic to prevent going back to the searchresult.html page after visiting a new page
+      document
+        .getElementById("newLink")
+        .addEventListener("click", function (event) {
+          // Remove 'visitedSearchResult' from sessionStorage when a new page is visited
+          sessionStorage.removeItem("visitedSearchResult");
+
+          // Prevent going back to the searchresult.html page
+          history.replaceState(null, null, location.href);
+        });
+    </script>
     <script src="./script/index.js"></script>
   </body>
 </html>

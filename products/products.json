@@ -74,6 +74,108 @@
           "background_image": "../images/home-bg-2.jpg",
           "ribbon": "../images/ribbon.png"
         }
+      },
+      {
+        "id": "new_sotol_1",
+        "product_type": "sotol",
+        "product_name": "Warbler Reserve blanco handcrafted 100% sotol",
+        "description": {
+          "summary": "Warbler Reserve Blanco Handcrafted 100% Sotol is an artisanal spirit crafted from wild-harvested plants in the deserts, grasslands, and mountains of Chihuahua. Cooked in earth ovens, open-fermented, and distilled in copper pot stills, it offers a smooth, versatile profile, perfect for sipping or cocktails.",
+          "palate": "Crystal clear and colorless, the complex aroma blends green herbs, citrus, black pepper, eucalyptus, light smoke, and wood. Flavors of fresh honey, savory spice, and light anise create a velvety mouthfeel, finishing with warm, sweet tones and subtle smoke."
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "30%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Crystal Clear, Colorless"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Warbler Reserve Blanco Sotol is crystal clear and colorless. It has a smooth, polished appearance, showcasing its purity. The spirit's subtle complexity is reflected in its delicate yet vibrant presentation, with a clean, refined look that invites appreciation of its craftsmanship."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "Warbler Reserve Blanco Sotol presents a complex, multi-layered aroma. The initial scent reveals vibrant citrus and fresh green herbs, followed by the subtle spice of black pepper and eucalyptus. Light smoke and wood notes add depth, creating a balanced and intriguing fragrance profile."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "The taste of Warbler Reserve Blanco Sotol is smooth and well-rounded, offering a harmonious blend of fresh honey, savory spice, and a hint of light anise. Its soft, velvety mouthfeel enhances the experience, with a gentle spice that lingers, providing a refined and sophisticated flavor."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg",
+          "ribbon": "../images/ribbon.png"
+        }
+      },
+      {
+        "id": "new_sotol_2",
+        "product_type": "sotol",
+        "product_name": "Warbler Reserve reposado handcrafted 100% sotol",
+        "description": {
+          "summary": "Crafted from wild-harvested sotol plants in Chihuahua’s rugged landscapes, this artisan spirit is cooked in earth ovens, open-fermented, and distilled in copper pot stills. Aged over six months in red wine barrels, it boasts a golden hue and rich complexity.",
+          "palate": "The aroma reveals green herbs, wet earth, wood, and light smoke. On the palate, fresh honey, savory spice, cinnamon, and wood create a velvety mouthfeel. The finish is medium-length, warm, and sweet, with light smoke and earthy notes lingering on the back palate, making it perfect for sipping over ice."
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "30%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Golden Hue"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "The Warbler Reserve Reposado Sotol boasts a radiant golden hue, reflecting its time aged in red wine barrels. Its appearance is both rich and inviting, with a warm glow that hints at the depth of flavors within, making it visually as captivating as it is flavorful."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The aromatic profile of Warbler Reserve Reposado Sotol is an intricate blend of nature's essence. It opens with vibrant green herbs, followed by the earthy allure of wet soil. Subtle woody undertones and a whisper of light smoke complete the complex and inviting bouquet."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "On the palate, Warbler Reserve Reposado Sotol delivers a harmonious blend of flavors. Fresh honey brings a natural sweetness, balanced by savory spice and a touch of cinnamon. Subtle hints of wood enhance its complexity, while the soft, velvety mouthfeel elevates the tasting experience."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg",
+          "ribbon": "../images/ribbon.png"
+        }
+      },
+      {
+        "id": "new_sotol_3",
+        "product_type": "sotol",
+        "product_name": "Warbler Reserve anejo handcrafted 100% sotol",
+        "description": {
+          "summary": "Warbler Reserve Añejo is a masterfully crafted Sotol, made from wild-harvested Dasylirion plants sourced from the rugged deserts, grasslands, and mountains of Chihuahua. This artisanal spirit is cooked in traditional earth ovens, open-fermented, and distilled in copper pot stills, ensuring a genuine representation of its terroir. Aged for over 12 months in red wine barrels, it boasts a deep golden amber hue and an alluring aroma of wet earth, green herbs, wood, and a whisper of smoke.",
+          "palate": "The palate delights with fresh honey, cinnamon, and subtle red berries, balanced by wood and light smoke, offering a soft, velvety mouthfeel. The finish is warm, with medium length, leaving sweet tones and earthy, smoky hints on the back palate."
+        },
+        "details": {
+          "country_of_origin": "Mexico",
+          "alcohol_volume": "30%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Deep Gold and Ambar color"
+        },
+        "characteristics": {
+          "visual": {
+            "title": "Visual Characteristics",
+            "description": "Warbler Reserve Añejo boasts a deep golden amber hue, reflecting its rich aging process in red wine barrels. The appearance is matched by an aromatic bouquet of wet earth, green herbs, and light smoke, creating a visually and sensorially captivating handcrafted spirit."
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "Warbler Reserve Añejo offers a complex aromatic profile with notes of wet earth, green herbs, and wood, complemented by a touch of light smoke. These captivating aromas reflect its artisanal production process and the natural essence of the wild-harvested Dasylirion plants."
+          },
+          "taste": {
+            "title": "Taste Characteristics",
+            "description": "Warbler Reserve Añejo delivers a velvety mouthfeel with flavors of fresh honey and cinnamon, balanced by subtle red berries and a touch of wood. Light smoke enhances its complexity, creating a smooth and harmonious palate that reflects its artisanal craftsmanship and unique aging process."
+          }
+        },
+        "images": {
+          "product_image": "../images/bottle-sample.png",
+          "background_image": "../images/home-bg-2.jpg",
+          "ribbon": "../images/ribbon.png"
+        }
       }
     ],
 
@@ -442,104 +544,9 @@
         }
       }
     ],
-    "sotol": [
-      {
-        "id": "sotol_1",
-        "product_type": "sotol",
-        "product_name": "Warbler Reserve blanco handcrafted 100% sotol",
-        "description": {
-          "summary": "-",
-          "palate": "-"
-        },
-        "details": {
-          "country_of_origin": "Mexico",
-          "alcohol_volume": "30%",
-          "pack_size": "750mlx12 Btls"
-        },
-        "characteristics": {
-          "visual": {
-            "title": "Visual Characteristics",
-            "description": "-"
-          },
-          "aromatic": {
-            "title": "Aromatic Characteristics",
-            "description": "-"
-          },
-          "taste": {
-            "title": "Taste Characteristics",
-            "description": "-"
-          }
-        },
-        "images": {
-          "product_image": "../images/bottle-sample.png",
-          "background_image": "../images/home-bg-2.jpg"
-        }
-      },
-      {
-        "id": "sotol_2",
-        "product_type": "sotol",
-        "product_name": "Warbler Reserve reposado handcrafted 100% sotol",
-        "description": {
-          "summary": "-",
-          "palate": "-"
-        },
-        "details": {
-          "country_of_origin": "Mexico",
-          "alcohol_volume": "30%",
-          "pack_size": "750mlx12 Btls"
-        },
-        "characteristics": {
-          "visual": {
-            "title": "Visual Characteristics",
-            "description": "-"
-          },
-          "aromatic": {
-            "title": "Aromatic Characteristics",
-            "description": "-"
-          },
-          "taste": {
-            "title": "Taste Characteristics",
-            "description": "-"
-          }
-        },
-        "images": {
-          "product_image": "../images/bottle-sample.png",
-          "background_image": "../images/home-bg-2.jpg"
-        }
-      },
-      {
-        "id": "sotol_3",
-        "product_type": "sotol",
-        "product_name": "Warbler Reserve anejo handcrafted 100% sotol",
-        "description": {
-          "summary": "-",
-          "palate": "-"
-        },
-        "details": {
-          "country_of_origin": "Mexico",
-          "alcohol_volume": "30%",
-          "pack_size": "750mlx12 Btls"
-        },
-        "characteristics": {
-          "visual": {
-            "title": "Visual Characteristics",
-            "description": "-"
-          },
-          "aromatic": {
-            "title": "Aromatic Characteristics",
-            "description": "-"
-          },
-          "taste": {
-            "title": "Taste Characteristics",
-            "description": "-"
-          }
-        },
-        "images": {
-          "product_image": "../images/bottle-sample.png",
-          "background_image": "../images/home-bg-2.jpg"
-        }
-      }
-    ],
+
+    "sotol": [],
+
     "gin": [
       {
         "id": "gin_1",
@@ -682,6 +689,7 @@
         }
       }
     ],
+
     "beer": [
       {
         "id": "beer_1",

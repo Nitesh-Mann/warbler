@@ -698,7 +698,7 @@ body {
   --swiper-navigation-sides-offset: 60px;
 }
 
-.productSwiper .swiper-button-prev:after,
+.swiper-button-prev:after,
 .swiper-button-next:after {
   color: var(--color3);
   background-color: var(--color2);
@@ -707,7 +707,7 @@ body {
   font-weight: 700;
 }
 
-.productSwiper .swiper-button-prev:hover,
+.swiper-button-prev:hover,
 .swiper-button-next:hover {
   transform: scale(1.2);
   transition: ease 0.5s;
@@ -811,23 +811,34 @@ body {
   );
 }
 
+/*bg-layer*/
+.bg-layer {
+  background-image: url("../images/bg-layer.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 95vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -5;
+}
+
 /*footer*/
 /*----------footer--------*/
 
 .footer-bg {
-  background-image: url("../images/pr-banner.webp");
+  background-image: url("../images/footer-bg.jpg");
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px 20px 0px 0px;
-}
-
-.footer-wrapper {
-  padding: 4.5em 0em 2em 0em;
+  /* border-radius: 20px 20px 0px 0px; */
+  border-top: 1px solid var(--color5);
 }
 
 .footer-content {
@@ -885,7 +896,7 @@ body {
   text-transform: capitalize;
   text-align: center;
   color: var(--color1);
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
 }
 
 .quick-links ul {

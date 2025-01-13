@@ -76,3 +76,7 @@
 .search-input-container .suggestion-item:hover {
   color: var(--color2);
 }
+
+.pagination-container {
+  cursor: pointer;
+}
