@@ -12,7 +12,8 @@
         "details": {
           "country_of_origin": "Scotland",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Golden"
         },
         "characteristics": {
           "visual": {
@@ -49,7 +50,8 @@
         "details": {
           "country_of_origin": "Ireland",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Golden"
         },
         "characteristics": {
           "visual": {
@@ -191,7 +193,8 @@
         "details": {
           "country_of_origin": "Scotland",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Golden"
         },
         "characteristics": {
           "visual": {
@@ -227,7 +230,8 @@
         "details": {
           "country_of_origin": "Scotland",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Golden"
         },
         "characteristics": {
           "visual": {
@@ -362,7 +366,8 @@
         "details": {
           "country_of_origin": "Mexico",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "White"
         },
         "characteristics": {
           "visual": {
@@ -394,7 +399,8 @@
         "details": {
           "country_of_origin": "Mexico",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Dark golden"
         },
         "characteristics": {
           "visual": {
@@ -426,7 +432,8 @@
         "details": {
           "country_of_origin": "Mexico",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "White"
         },
         "characteristics": {
           "visual": {
@@ -458,7 +465,8 @@
         "details": {
           "country_of_origin": "Mexico",
           "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Golden"
         },
         "characteristics": {
           "visual": {
@@ -522,7 +530,8 @@
         "details": {
           "country_of_origin": "Mexico",
           "alcohol_volume": "38%",
-          "pack_size": "750mlx12 Btls"
+          "pack_size": "750mlx12 Btls",
+          "color": "Dark golden"
         },
         "characteristics": {
           "visual": {
@@ -553,22 +562,31 @@
         "product_type": "gin",
         "product_name": "Warbler Irish coastal gin",
         "description": {
-          "summary": "Warbler Irish Coastal Gin is a premium handcrafted spirit, distilled dry from the finest grain and infused with unique Irish botanicals. This exceptional gin features laminaria digitata, a type of kelp seaweed, along with hand-harvested fuchsia and honeysuckle flowers. These carefully selected ingredients perfectly complement the traditional juniper and citrus base, showcasing a blend of coastal and floral flavors.",
-          "palate": "Crafted with care in Ireland, Warbler Irish Coastal Gin offers a refined, cool, and refreshing profile. It is ideal for pairing with tonic or other mixers and is best served over ice. This gin embodies the essence of coastal flavors, delivering a superior drinking experience."
+          "summary": "Experience the essence of Ireland’s rugged coastline with our handcrafted Irish Coastal Gin, a testament to superior quality and artisanal craftsmanship. Distilled from premium grain alcohol, this gin is infused with the finest hand-harvested botanicals, including Laminaria digitata (kelp), fuchsia, and honeysuckle flowers, all sustainably sourced from Ireland’s pristine shores. The perfect harmony of traditional juniper and a vibrant citrus base creates a refreshing and distinctive flavor profile, evoking the crisp sea breeze and natural beauty of the Irish landscape.",
+          "palate": "Each bottle reflects a deep commitment to authenticity, sustainability, and tradition, capturing the spirit of Ireland in every sip. Whether savored neat or crafted into cocktails, this gin offers an unparalleled drinking experience that is both invigorating and memorable. The balance of botanicals and citrus notes ensures a clear, fresh taste that delights the senses, making it an ideal choice for those who appreciate refined, handcrafted spirits inspired by nature’s bounty."
         },
         "details": {
           "country_of_origin": "Ireland",
-          "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "alcohol_volume": " Abv 40%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Clear White"
         },
         "characteristics": {
           "visual": {
             "title": "Visual Characteristics",
             "description": "The crystal-clear liquid of Warbler Irish Coastal Gin has a sleek, pristine appearance, reflecting its high-quality craftsmanship. Its clarity enhances its visual appeal, making it an inviting and sophisticated choice for any gin lover."
           },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The aroma is a captivating blend that opens with the classic, crisp scent of juniper, beautifully complemented by a vibrant burst of zesty citrus. Delicate undertones of fresh coastal sea air add a refreshing, marine-inspired nuance, evoking the essence of Ireland’s rugged shores."
+          },
           "taste": {
             "title": "Taste Characteristics",
-            "description": "Warbler Irish Coastal Gin offers a refreshing blend of herbal and floral notes, complemented by a subtle marine brininess. Its profile is enhanced with hints of juniper and citrus, creating a crisp and invigorating taste."
+            "description": "A classic juniper-forward profile is uplifted by bright citrus notes of lemon and orange, delivering a refreshing sharpness. The finish unfolds softly with delicate floral hints, such as lavender or chamomile, creating a balanced, smooth, and elegant taste that lingers beautifully."
+          },
+          "serve": {
+            "title": "Serving Suggestions",
+            "description": "Serve chilled over ice, complemented by your favorite tonic or mixer for a refreshing experience."
           }
         },
         "images": {
@@ -581,22 +599,31 @@
         "product_type": "gin",
         "product_name": "Warbler Monaghan Gin",
         "description": {
-          "summary": "Warbler Monaghan Gin offers a clean, crisp, and creamy profile with vibrant flavors and aromas. It combines a unique blend of juniper, black tea, and cucumber, resulting in a refreshing, earthy depth. Enhanced by the delicate infusion of rose vapor, this gin delivers a balanced and sophisticated taste that is both invigorating and smooth. Whether enjoyed neat or over ice, with your favorite tonic or mixer, Warbler Monaghan Gin presents a luxurious drinking experience that is perfect for any occasion.",
-          "palate": "The gin’s clear, shimmering appearance with a subtle hint of rose color adds to its visual appeal, making it a beautiful addition to any cocktail or on its own. The infusion of rose vapor not only enhances the flavor but also gives the gin a delicate floral note, elevating its overall experience."
+          "summary": "Serve this exquisite blend chilled over ice, allowing the crisp, aromatic flavors to shine. The juniper's bold, piney character, enhanced by zesty citrus notes of lemon and orange, comes alive on the palate. When paired with your favorite tonic or mixer, the drink transforms into a refreshing experience that dances on your taste buds, delivering a perfect balance of bold and bright flavors.",
+          "palate": "Whether you prefer a classic gin and tonic or an adventurous citrus-infused soda, the combination offers a balanced, invigorating drink. The soft floral finish lingers delicately, rounding out the experience, making each sip smooth and delightful."
         },
         "details": {
           "country_of_origin": "Ireland",
-          "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "alcohol_volume": "Abv 40%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Clear"
         },
         "characteristics": {
           "visual": {
             "title": "Visual Characteristics",
             "description": "Warbler Monaghan Gin clear, shimmering appearance is enhanced by a subtle hint of rose color, giving it a delicate and luxurious look. This visual quality adds an elegant touch to any drink, making it visually captivating and sophisticated."
           },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The aroma is dominated by the crisp, earthy scent of juniper, which gives a bold, pine-like fragrance. Subtle hints of pear add a fruity sweetness, while cucumber contributes a fresh, clean note, balancing the intensity with a refreshing, vegetal undertone."
+          },
           "taste": {
             "title": "Taste Characteristics",
-            "description": "The bold earthiness of juniper and black tea is balanced by the refreshing, crisp touch of cucumber, creating a harmonious depth. The rose infusion adds a delicate floral sweetness, enhancing the gin’s complexity and offering a luxurious, nuanced flavor profile."
+            "description": "The flavor opens with the bold, slightly resinous taste of juniper, creating a pine-forward profile. This is complemented by the delicate astringency of black tea, the crisp freshness of cucumber, and the subtle sweetness of pear, creating a harmonious blend of earthy, refreshing, and slightly floral notes."
+          },
+          "serve": {
+            "title": "Serving Suggestions",
+            "description": "Enjoy neat for a pure experience, or over ice with tonic for a refreshing, balanced drink."
           }
         },
         "images": {
@@ -609,22 +636,31 @@
         "product_type": "gin",
         "product_name": "Warbler Handcrafted pink gin",
         "description": {
-          "summary": "Warbler Handcrafted Pink Gin is a luxurious blend of vibrant ruby grapefruit zest and the finest berry botanicals, delivering a creamy and full-bodied texture that tantalizes the taste buds. Distilled with precision, this gin captures the essence of fresh citrus and delicate floral notes, creating a refreshing yet complex profile that lingers on the palate.",
-          "palate": "Serve it over ice with your favorite tonic or mixer to enhance its lively character, making it the perfect choice for those seeking a sophisticated, vibrant, and utterly delightful gin experience."
+          "summary": "Warbler Handcrafted Pink Gin is a meticulously crafted spirit, made from high-quality grain alcohol and infused with aromatic juniper berries. This gin is carefully distilled with a selection of vibrant, punchy ruby grapefruit and premium berry botanicals, creating a harmonious balance of flavors.",
+          "palate": "The result is a gin that boasts a creamy, full-bodied texture, with a refreshing burst of citrus zest that tantalizes the palate. Its stunning pink hue makes it as visually appealing as it is flavorful, offering a lively and indulgent drinking experience that stands out in any cocktail or served neat over ice."
         },
         "details": {
           "country_of_origin": "Ireland",
-          "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "alcohol_volume": "Abv 40%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Vibrant Pink"
         },
         "characteristics": {
           "visual": {
             "title": "Visual Characteristics",
             "description": "Warbler Handcrafted Pink Gin features a captivating vibrant ruby color, infused with the zesty vibrancy of ruby grapefruit and rich berry botanicals. The visually striking hue reflects the refreshing and inviting nature of the gin."
           },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The gin’s aromatic profile is a vibrant blend of zesty citrus notes, with fresh grapefruit and a subtle hint of lemon, harmoniously balanced by the earthy, pine-like essence of juniper. This creates a crisp, invigorating fragrance that entices and refreshes the senses."
+          },
           "taste": {
             "title": "Taste Characteristics",
-            "description": "The gin’s creamy, full-bodied texture delivers a lively burst of grapefruit zest, complemented by delicate floral notes and a subtle sweetness. Each sip is a harmonious blend of freshness and complexity."
+            "description": "The taste of this gin is defined by the classic, bold flavor of juniper berries, offering a smooth, earthy base that’s both crisp and slightly piney. This is beautifully complemented by a tart citrus punch, where bright ruby grapefruit delivers a tangy, refreshing zest, creating a balanced and lively profile with a touch of sweetness. The interplay between the traditional juniper and vibrant citrus notes creates a sophisticated, well-rounded flavor experience that lingers on the palate."
+          },
+          "serve": {
+            "title": "Serving Suggestions",
+            "description": "Serve over ice with your favorite tonic or mixer for a refreshing, vibrant gin experience."
           }
         },
         "images": {
@@ -637,22 +673,31 @@
         "product_type": "gin",
         "product_name": "Warbler Pineapple irish gin",
         "description": {
-          "summary": "Warbler Pineapple Irish Gin is a fresh and vibrant spirit that embodies the essence of summer with its bold, tropical character. The gin opens with classic juniper notes, which seamlessly transition into a burst of fresh pineapple and zesty tropical flavors. This infusion provides a creamy and full-bodied mouthfeel, making it an inviting choice for any cocktail. Whether served over ice or mixed with your favorite tonic, this gin promises a refreshing and balanced drinking experience, perfect for sunny days and relaxed evenings.",
-          "palate": "For the ultimate refreshing experience, enjoy Warbler Pineapple Irish Gin over ice with your preferred mixer. The bright, fruity notes meld beautifully with the classic gin elements, creating a well-rounded and invigorating drink. Its smooth texture and vibrant flavors make it an ideal choice for summer sipping, delivering a delightful twist to your favorite gin cocktails."
+          "summary": "This handcrafted gin offers a fresh, vibrant experience with a bold, tropical character. The classic juniper flavor leads the way, providing a crisp, earthy foundation that is quickly complemented by the sweet, juicy essence of fresh pineapple. The tropical notes add a lively, sun-kissed quality.",
+          "palate": "The gin’s texture is creamy and full-bodied, giving each sip a smooth, indulgent feel. The hint of zest adds a refreshing touch, balancing the sweetness of the fruit with a lively, citrusy finish, making this gin a perfectly well-rounded, flavorful treat. Its tropical profile is both indulgent and refreshing, offering pure enjoyment."
         },
         "details": {
           "country_of_origin": "Ireland",
-          "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "alcohol_volume": "Abv 40%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Clear"
         },
         "characteristics": {
           "visual": {
             "title": "Visual Characteristics",
             "description": "Warbler Monaghan Gin clear, shimmering appearance is enhanced by a subtle hint of rose color, giving it a delicate and luxurious look. This visual quality adds an elegant touch to any drink, making it visually captivating and sophisticated."
           },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The aroma of this gin is a delightful blend of classic juniper, offering a crisp, earthy scent, followed by a fresh, punchy note of pineapple, bringing a tropical, vibrant fragrance to the nose."
+          },
           "taste": {
             "title": "Taste Characteristics",
-            "description": "The taste of Warbler Pineapple Irish Gin features a classic juniper backbone upfront, complemented by vibrant pineapple and tropical notes that deliver a fruity sweetness. The creamy and full-bodied mouthfeel adds a smooth, luxurious finish, making each sip refreshing and indulgent."
+            "description": "The taste begins with the traditional, bold flavor of juniper, offering a crisp, piney base. This is quickly enhanced by the juicy, sweet tang of pineapple, adding a tropical, vibrant twist that balances the earthy juniper with a refreshing, exotic sweetness."
+          },
+          "serve": {
+            "title": "Serving Suggestions",
+            "description": "Enjoy neat for a pure experience, or over ice with tonic for a refreshing, balanced drink."
           }
         },
         "images": {
@@ -665,22 +710,31 @@
         "product_type": "gin",
         "product_name": "Warbler Passionfruit & mango gin",
         "description": {
-          "summary": "Warbler Passionfruit & Mango Gin offers a refreshing and vibrant experience, with classic juniper and gin notes upfront. The initial sip reveals a crisp and zesty character, balanced by sweet passionfruit and tropical mango flavors that linger smoothly on the palate. This unique combination creates a harmonious and refreshing finish, making it perfect for serving over ice with your favorite tonic or mixer.",
-          "palate": "Whether enjoyed on its own or mixed in a cocktail, Warbler Passionfruit & Mango Gin brings a burst of vibrant fruitiness to any occasion, elevating your drink to a new level of enjoyment."
+          "summary": "Warbler Passionfruit & Mango Gin is a meticulously crafted spirit that captures the essence of tropical indulgence. Distilled with precision, it showcases vibrant passionfruit and mango notes that perfectly complement the classic juniper and gin flavors. The gin opens with crisp, botanical freshness, followed by a subtle sweetness that enhances the lively fruitiness.",
+          "palate": "The passionfruit adds a tangy depth, while the mango imparts a smooth, velvety richness. The finish is long-lasting, with a well-balanced blend of tropical sweetness and the herbal undertones of gin. The result is a refreshing, complex tasting experience that transports you to a sun-soaked paradise."
         },
         "details": {
           "country_of_origin": "Ireland",
-          "alcohol_volume": "40%",
-          "pack_size": "750mlx12 Btls"
+          "alcohol_volume": "Abv 40%",
+          "pack_size": "750mlx12 Btls",
+          "color": "Clear"
         },
         "characteristics": {
           "visual": {
             "title": "Visual Characteristics",
-            "description": "Warbler Passionfruit & Mango Gin boasts a captivating visual presence that enhances its appeal. The gin is typically clear, allowing its vibrant infusion process to shine through, giving it a slight golden hue that catches the light beautifully. When served over ice, the drink maintains a clean, shimmering appearance that not only looks refreshing but also highlights the crisp clarity of the gin. Its smooth and light viscosity ensures that the ice gently disperses its vivid hues, creating an inviting and ethereal visual display. The presentation of the gin is equally alluring, often presented in a sleek and stylish bottle that showcases its vibrant fruit infusion. The subtle hints of passionfruit and mango in the bottle design not only draw the eye but also hint at the tropical flavors within, promising a refreshing and vibrant drinking experience."
+            "description": "Warbler Passionfruit & Mango Gin boasts a captivating visual presence that enhances its appeal. The gin is typically clear, allowing its vibrant infusion process to shine through, giving it a slight golden hue that catches the light beautifully. When served over ice, the drink maintains a clean, shimmering appearance that not only looks refreshing but also highlights the crisp clarity of the gin. Its smooth and light viscosity ensures that the ice gently disperses its vivid hues, creating an inviting and ethereal visual display. "
+          },
+          "aromatic": {
+            "title": "Aromatic Characteristics",
+            "description": "The aromatic profile of this gin is a delightful fusion of classic juniper and vibrant tropical fruits. The juniper offers a crisp, pine-like fragrance, while the passionfruit introduces a tangy, floral sweetness. Mango adds a smooth, exotic richness, creating an inviting, complex bouquet."
           },
           "taste": {
             "title": "Taste Characteristics",
-            "description": "Warbler Passionfruit & Mango Gin offers a dynamic tasting experience with a balanced and complex profile. The initial notes are bright and crisp, dominated by classic juniper and botanical flavors that define the gin. This crispness is complemented by a vibrant burst of passionfruit and mango in the mid-palate, creating a smooth transition from the dryness of gin to the sweet, tropical notes. These fruity elements provide a refreshing burst that lingers gracefully on the palate, enhancing the overall drinking experience. The finish is well-rounded and lingering, offering a harmonious blend of fruit sweetness and a subtle botanical warmth. This balance ensures that each sip is not only enjoyable but also complex, making Warbler Passionfruit & Mango Gin both refreshing and sophisticated. It combines the dryness of traditional gin with the sweetness of ripe fruits, creating a delightful contrast that elevates the drink to a new level of flavor sophistication."
+            "description": "The taste is a harmonious blend of classic juniper, delivering crisp, herbal notes, paired with the sweet-tartness of passionfruit and the smooth, velvety richness of mango. The result is a refreshing, balanced, and tropical flavor experience."
+          },
+          "serve": {
+            "title": "Serving Suggestions",
+            "description": "Serve over ice, paired with your favorite tonic or mixer for a refreshing, tropical experience."
           }
         },
         "images": {
@@ -751,8 +805,8 @@
           }
         },
         "images": {
-          "product_image": "../images/bottle-sample.png",
-          "background_image": "../images/home-bg-2.jpg"
+          "product_image": "../images/beer/strong-beer.png",
+          "background_image": "../images/beer/strong-beer-2.png"
         }
       },
       {

@@ -8,13 +8,6 @@ window.addEventListener('load', function() {
   }, 1000); // Delay of 1000ms (1 second)
 });
 
-window.addEventListener('beforeunload', function() {
-  const loader = document.getElementById('loader');
-  loader.hidden = false; // Show loader immediately
-  setTimeout(() => {
-    // Optional: Add additional logic here if needed
-  }, 500); // Delay to simulate loader being active
-});
 
 
 
@@ -869,6 +862,14 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("aftertaste-title").parentElement.style.display = 'none'; // Hide the container if aftertaste characteristic is missing
           }
 
+          if (product.characteristics.serve && product.characteristics.serve.title) {
+            document.getElementById("serving-title").textContent = product.characteristics.serve.title;
+            document.getElementById("serving").textContent = product.characteristics.serve.description;
+          } else {
+            document.getElementById("serving-title").parentElement.style.display = 'none'; // Hide the container if aftertaste characteristic is missing
+          }
+
+
           if (product.images.product_image) document.getElementById("product-image").setAttribute("src", product.images.product_image);
           else document.getElementById("product-image").parentElement.style.display = 'none'; // Hide the container if product_image is missing
 
@@ -1355,40 +1356,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /// news and events functions //
 
-// Fetching JSON data from the products/updates.json file
-// fetch('products/updates.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     // Loop through the array of news items
-//     data.news.forEach(news => {
-//       addNewsSlide(news); // Call function to create a slide for each news item
-//     });
-//   })
-//   .catch(error => console.error('Error fetching JSON:', error));
-
-// // Function to generate the swiper slide dynamically for each news item
-// function addNewsSlide(news) {
-//   const swiperWrapper = document.getElementById('newswiperwrapper');
-
-//   const slideHTML = `
-//     <div class="swiper-slide">
-//       <div class="news-card">
-//         <a href="#!" class="news-title">
-//           ${news['news-title']}
-//         </a>
-//         <p class="news-para">
-//           ${news.content[0]} <!-- First paragraph from content -->
-//         </p>
-//         <p class="news-date">
-//           ${news['news-date'].date} <span>|</span>
-//           <span class="news-day">${news['news-date'].day}</span>
-//         </p>
-//       </div>
-//     </div>
-//   `;
-
-//   swiperWrapper.innerHTML += slideHTML; // Add the new slide to the swiper wrapper
-// }
 
 // Fetching JSON data from the products/updates.json file
 fetch('products/updates.json')
@@ -1489,132 +1456,7 @@ function addEventSlide(event) {
 
 
 
-// Get the newsId from the URL query string
-// const urlParams = new URLSearchParams(window.location.search);
-// const newsId = urlParams.get('newsId');
 
-// // Check if newsId is provided
-// if (newsId) {
-//   // Fetch the JSON data containing articles
-//   fetch('products/updates.json')
-//     .then(response => response.json())
-//     .then(data => {
-//       // Find the article with the matching newsId
-//       const article = data.news.find(news => news.id === newsId);
-
-//       // If the article is found, update the page with its data
-//       if (article) {
-//         // Update article title and date
-//         document.querySelector('.new-title').textContent = article['news-title'];
-//         document.querySelector('.news-date').innerHTML = `${article['news-date'].date} <span>|</span> <span class="news-day">${article['news-date'].day}</span>`;
-
-//         // Update article image (if present)
-//         const newsImage = document.querySelector('.news-image img');
-//         if (article.image) { // Assuming 'image' property contains the image URL
-//           newsImage.src = article.image;
-//         }
-
-//         // Update article content
-//         const newsContent = document.querySelector('.news-content');
-//         // Clear existing content if any
-//         newsContent.innerHTML = '';
-
-//         // Loop through each paragraph in the content array and add it as a <p> tag
-//         article.content.forEach(paragraph => {
-//           const paragraphElement = document.createElement('p');
-//           paragraphElement.textContent = paragraph;
-//           newsContent.appendChild(paragraphElement);
-//         });
-//       } else {
-//         console.error('Article not found');
-//       }
-//     })
-//     .catch(error => console.error('Error fetching article data:', error));
-// } else {
-//   console.error('No newsId provided in the URL');
-// }
-
-// Get the 'newsId' or 'eventId' from the URL query string
-// const urlParams = new URLSearchParams(window.location.search);
-// const newsId = urlParams.get('newsId');
-// const eventId = urlParams.get('eventId');
-
-// // Function to update page with news data
-// function updateNewsPage(news) {
-//   // Update article title and date
-//   document.querySelector('.new-title').textContent = news['news-title'];
-//   document.querySelector('.news-date').innerHTML = `${news['news-date'].date} <span>|</span> <span class="news-day">${news['news-date'].day}</span>`;
-
-//   // Update article image (if present)
-//   const newsImage = document.querySelector('.news-image img');
-//   if (news.image) { // Assuming 'image' property contains the image URL
-//     newsImage.src = news.image;
-//   }
-
-//   // Update article content
-//   const newsContent = document.querySelector('.news-content');
-//   newsContent.innerHTML = ''; // Clear existing content
-
-//   news.content.forEach(paragraph => {
-//     const paragraphElement = document.createElement('p');
-//     paragraphElement.textContent = paragraph;
-//     newsContent.appendChild(paragraphElement);
-//   });
-// }
-
-// // Function to update page with event data
-// function updateEventPage(event) {
-//   // Update event title and date
-//   document.querySelector('.new-title').textContent = event['event-title'];
-//   document.querySelector('.news-date').innerHTML = `${event['event-date'].date} <span>|</span> <span class="news-day">${event['event-date'].day}</span>`;
-
-//   // Update event image (if present)
-//   const eventImage = document.querySelector('.news-image img');
-//   if (event['event-image']) { // Assuming 'event-image' property contains the image URL
-//     eventImage.src = event['event-image'];
-//   }
-
-//   // Update event content
-//   const eventContent = document.querySelector('.news-content');
-//   eventContent.innerHTML = ''; // Clear existing content
-
-//   event['event-content'].forEach(paragraph => {
-//     const paragraphElement = document.createElement('p');
-//     paragraphElement.textContent = paragraph;
-//     eventContent.appendChild(paragraphElement);
-//   });
-// }
-
-// // Check if 'newsId' or 'eventId' is provided and fetch data
-// if (newsId) {
-//   // Fetch news data
-//   fetch('products/updates.json')
-//     .then(response => response.json())
-//     .then(data => {
-//       const article = data.news.find(news => news.id === newsId);
-//       if (article) {
-//         updateNewsPage(article); // Call function to update the page with news data
-//       } else {
-//         console.error('News article not found');
-//       }
-//     })
-//     .catch(error => console.error('Error fetching news data:', error));
-// } else if (eventId) {
-//   // Fetch event data
-//   fetch('products/updates.json')
-//     .then(response => response.json())
-//     .then(data => {
-//       const event = data.events.find(event => event.id === eventId);
-//       if (event) {
-//         updateEventPage(event); // Call function to update the page with event data
-//       } else {
-//         console.error('Event not found');
-//       }
-//     })
-//     .catch(error => console.error('Error fetching event data:', error));
-// } else {
-//   console.error('No newsId or eventId provided in the URL');
-// }
 
 
 
